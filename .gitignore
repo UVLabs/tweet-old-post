@@ -8,7 +8,9 @@ bin/
 tweet-old-post.zip
 .DS_Store
 dependencies/classes/*
+!dependencies/classes/.gitkeep
 dependencies/packages/*
+!dependencies/packages/.gitkeep
 
 
 
