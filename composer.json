@@ -22,6 +22,9 @@
   "autoload": {
     "files": [
       "vendor/codeinwp/themeisle-sdk/load.php"
+    ],
+    "classmap": [
+      "dependencies/classes"
     ]
   },
   "require": {
@@ -31,13 +34,45 @@
     "google/apiclient": "2.7.1"
   },
   "scripts": {
-    "post-install-cmd": "Google_Task_Composer::cleanup",
-    "post-update-cmd": "Google_Task_Composer::cleanup"
+    "post-install-cmd": [
+      "Google_Task_Composer::cleanup",
+      "\"vendor/bin/mozart\" compose",
+      "composer dump-autoload"
+    ],
+    "post-update-cmd": [
+      "Google_Task_Composer::cleanup",
+      "\"vendor/bin/mozart\" compose",
+      "composer dump-autoload"
+    ]
   },
   "extra": {
   "installer-disable": true,
   "google/apiclient-services": [
     ""
-  ]
+  ],
+  "mozart": {
+    "dep_namespace": "ROP\\Dependencies\\",
+    "dep_directory": "/dependencies/packages/",
+    "classmap_directory": "/dependencies/classes/",
+    "classmap_prefix": "ROP_Dependency",
+    "packages": [
+        "facebook/graph-sdk",
+        "abraham/twitteroauth",
+        "codeinwp/themeisle-sdk",
+        "google/apiclient"
+
+    ],
+    "override_autoload": {
+      "google/apiclient": {
+          "classmap": [
+              "src/"
+          ]
+      }
+  },
+    "delete_vendor_directories": true
+}
+  },
+  "require-dev": {
+    "coenjacobs/mozart": "^0.5.1"
   }
 }
