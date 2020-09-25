@@ -48,7 +48,7 @@
   "extra": {
   "installer-disable": true,
   "google/apiclient-services": [
-    ""
+    "AnalyticsReporting"
   ],
   "mozart": {
     "dep_namespace": "ROP\\Dependencies\\",
