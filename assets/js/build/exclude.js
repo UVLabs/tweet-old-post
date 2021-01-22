@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 313);
+/******/ 	return __webpack_require__(__webpack_require__.s = 314);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -17628,7 +17628,8 @@ module.exports = "\n\t<div id=\"rop-upsell-box\" _v-4cbae0f4=\"\">\n\t\t<div cla
 /* 310 */,
 /* 311 */,
 /* 312 */,
-/* 313 */
+/* 313 */,
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17642,7 +17643,7 @@ var _rop_store = __webpack_require__(34);
 
 var _rop_store2 = _interopRequireDefault(_rop_store);
 
-var _excludePostsPage = __webpack_require__(314);
+var _excludePostsPage = __webpack_require__(315);
 
 var _excludePostsPage2 = _interopRequireDefault(_excludePostsPage);
 
@@ -17662,13 +17663,13 @@ window.addEventListener('load', function () {
 /* exported RopExcludePosts */
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(315)
-__vue_script__ = __webpack_require__(317)
-__vue_template__ = __webpack_require__(323)
+__webpack_require__(316)
+__vue_script__ = __webpack_require__(318)
+__vue_template__ = __webpack_require__(324)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -17685,13 +17686,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(316);
+var content = __webpack_require__(317);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -17711,7 +17712,7 @@ if(false) {
 }
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -17725,7 +17726,7 @@ exports.push([module.i, "\n    #rop-sidebar-selector[_v-2401e5d8] {\n        bor
 
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17739,7 +17740,7 @@ var _upsellSidebar = __webpack_require__(80);
 
 var _upsellSidebar2 = _interopRequireDefault(_upsellSidebar);
 
-var _popover = __webpack_require__(318);
+var _popover = __webpack_require__(319);
 
 var _popover2 = _interopRequireDefault(_popover);
 
@@ -18178,13 +18179,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(319)
-__vue_script__ = __webpack_require__(321)
-__vue_template__ = __webpack_require__(322)
+__webpack_require__(320)
+__vue_script__ = __webpack_require__(322)
+__vue_template__ = __webpack_require__(323)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -18201,13 +18202,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(320);
+var content = __webpack_require__(321);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -18227,7 +18228,7 @@ if(false) {
 }
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -18241,7 +18242,7 @@ exports.push([module.i, "\n    .wpr-tooltip {\n        font: 10px \"Helvetica Ne
 
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18598,13 +18599,13 @@ exports.default = {
 // </style>
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports) {
 
 module.exports = "\n    <div class=\"wpr-tooltip\">\n        <div class=\"outlet\" @mouseover=\"autoShowWithMode\" @mouseleave=\"autoHideWithMode\" @click=\"autoShowWithMode\">\n            <slot name=\"outlet\"></slot>\n        </div>\n        <div class=\"wpr-tooltip\" :style=\"tooltipStyle\">\n            <div class=\"inner\">\n                <slot name=\"tooltip\"></slot>\n            </div>\n            <div class=\"wpr-arrow\" :style=\"arrowStyle\"></div>\n        </div>\n    </div>\n";
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports) {
 
 module.exports = "\n    <div id=\"rop_core\" class=\"columns \" _v-2401e5d8=\"\">\n        <div id=\"rop-sidebar-selector\" class=\"column col-3   col-xl-5 col-lg-5 col-md-6 col-sm-6 col-xs-12  pull-right\" _v-2401e5d8=\"\">\n            <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-2401e5d8=\"\">\n                <div class=\"column col-12 col-sm-12 vertical-align rop-control\" _v-2401e5d8=\"\">\n                    <b _v-2401e5d8=\"\">{{labels.post_types_title}}</b>\n                    <p class=\"text-gray\" _v-2401e5d8=\"\"> {{labels.filter_by_post_types_desc}}</p>\n                </div>\n                <div class=\"column col-12 col-sm-12 vertical-align text-left rop-control\" _v-2401e5d8=\"\">\n                    <multiple-select :options=\"postTypes\" :disabled=\"isPro\" :selected=\"generalSettings.selected_post_types\" :changed-selection=\"updatedPostTypes\" _v-2401e5d8=\"\"></multiple-select>\n                </div>\n            </div>\n\n            <span class=\"divider\" _v-2401e5d8=\"\"></span>\n            <div class=\"columns py-2\" v-if=\"!isPro\" _v-2401e5d8=\"\">\n                <div class=\"column text-center\" _v-2401e5d8=\"\">\n                    <p class=\"upsell\" _v-2401e5d8=\"\"><i class=\"fa fa-lock\" _v-2401e5d8=\"\"></i> {{labels.post_types_upsell}}</p>\n                </div>\n            </div>\n            <div class=\"columns py-2\" _v-2401e5d8=\"\">\n                <div class=\"column col-12 col-sm-12 vertical-align\" _v-2401e5d8=\"\">\n                    <b _v-2401e5d8=\"\">{{labels.taxonomies_title}}</b>\n                    <p class=\"text-gray\" _v-2401e5d8=\"\"> {{labels.filter_by_taxonomies_desc}}</p>\n                </div>\n                <div class=\"column col-12 col-sm-12 vertical-align text-left\" _v-2401e5d8=\"\">\n                    <div class=\"input-group\" _v-2401e5d8=\"\">\n                        <multiple-select :options=\"taxonomies\" :selected=\"generalSettings.selected_taxonomies\" :changed-selection=\"updatedTaxonomies\" _v-2401e5d8=\"\"></multiple-select>\n\n                    </div>\n                </div>\n\n            </div>\n            <upsell-sidebar _v-2401e5d8=\"\"></upsell-sidebar>\n        </div>\n        <div id=\"rop-posts-listing\" class=\"column col-9  col-xl-7 col-lg-7 col-md-6 col-sm-6 col-xs-12 col- pull-left\" _v-2401e5d8=\"\">\n            <div class=\"columns py-2\" _v-2401e5d8=\"\">\n                <div class=\"column col-12 col-sm-12 vertical-align\" _v-2401e5d8=\"\">\n                    <div class=\"input-group has-icon-right\" _v-2401e5d8=\"\">\n                        <input class=\"form-input\" type=\"text\" v-model=\"searchQuery\" :placeholder=\"labels.search_posts_to_exclude\" _v-2401e5d8=\"\">\n                        <i class=\"form-icon loading\" v-if=\"is_loading\" _v-2401e5d8=\"\"></i>\n                    </div>\n                </div>\n                <div class=\"column col-12 col-sm-12 mt-2\" _v-2401e5d8=\"\">\n                    <div class=\"form-group pull-right\" v-if=\"searchQuery != '' &amp;&amp; ! show_excluded\" _v-2401e5d8=\"\">\n                        <button class=\"btn btn-primary\" @click=\"excludePostsBatch\" _v-2401e5d8=\"\">\n                            <i class=\"fa fa-save \" v-if=\"!this.is_loading\" _v-2401e5d8=\"\"></i>\n                            <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-2401e5d8=\"\"></i>\n                            {{labels.exclude_matching}} \"{{searchQuery}}\"\n                        </button>\n                    </div>\n                    <div class=\"form-group pull-right \" _v-2401e5d8=\"\">\n                        <label class=\"form-switch\" _v-2401e5d8=\"\">\n                            <input type=\"checkbox\" v-model=\"show_excluded\" @change=\"excludePostsChange\" _v-2401e5d8=\"\">\n                            <i class=\"form-icon\" _v-2401e5d8=\"\"></i>{{labels.search_posts_show_excluded}}\n                        </label>\n                    </div>\n\n                    <p class=\"text-primary rop-post-type-badge\" v-if=\"apply_limit_exclude\" v-html=\"labels.post_types_exclude_limit\" _v-2401e5d8=\"\"></p>\n                </div>\n                <div class=\"column col-12  px-2\" v-if=\"postsAvailable\" _v-2401e5d8=\"\">\n                    <div v-if=\"postsAvailable.length === 0 &amp;&amp; !is_loading\" _v-2401e5d8=\"\">\n                        {{labels.no_posts_found}}\n                    </div>\n                    <div v-else=\"\" _v-2401e5d8=\"\">\n                        <table id=\"rop-posts-table\" class=\"table table-striped table-hover\" v-if=\" ! is_loading\" _v-2401e5d8=\"\">\n                            <tbody _v-2401e5d8=\"\"><tr v-for=\"(post,index ) in postsAvailable\" class=\"rop-post-item\" _v-2401e5d8=\"\">\n                                <td :class=\"'rop-post-' + post.selected\" _v-2401e5d8=\"\">{{post.name}}\n                                    <template _v-2401e5d8=\"\">\n                                        <tooltip placement=\"top-right\" mode=\"hover\" :is_show=\"apply_limit_exclude\" _v-2401e5d8=\"\">\n                                            <div slot=\"outlet\" _v-2401e5d8=\"\">\n                                                <button class=\"btn btn-error rop-exclude-post\" @click=\"excludeSinglePost(post.value,post.selected)\" _v-2401e5d8=\"\">\n                                                    <i class=\"fa\" :class=\"'fa-' + (post.selected ? 'plus' : 'remove') \" v-if=\"!is_loading_single\" _v-2401e5d8=\"\"></i>\n                                                    <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-2401e5d8=\"\"></i>\n                                                    <span v-html=\" ( post.selected ? labels.include_single_post  : labels.exclude_single_post) \" _v-2401e5d8=\"\"> </span>\n                                                </button>\n                                            </div>\n                                            <div slot=\"tooltip\" v-html=\"labels.post_types_exclude_limit_tooltip\" _v-2401e5d8=\"\"></div>\n                                        </tooltip>\n                                    </template>\n                                </td>\n                            </tr>\n                            <tr v-if=\"has_pages\" _v-2401e5d8=\"\">\n                                <td class=\"rop-load-more-posts\" _v-2401e5d8=\"\">\n                                    <button class=\"btn btn-error\" @click=\"loadMorePosts()\" _v-2401e5d8=\"\">\n                                        <i class=\"fa fa-newspaper-o \" v-if=\"!is_loading_single\" _v-2401e5d8=\"\"></i>\n                                        <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-2401e5d8=\"\"></i>\n                                        {{labels.load_more_posts}}\n                                    </button>\n                                </td>\n                            </tr>\n                        </tbody></table>\n                        <div class=\"loading loading-lg\" v-else=\"\" _v-2401e5d8=\"\"></div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n";

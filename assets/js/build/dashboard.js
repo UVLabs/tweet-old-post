@@ -1919,7 +1919,7 @@
             try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(284)("./" + name);
+                __webpack_require__(285)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {}
         }
@@ -4670,7 +4670,7 @@
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(283)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(284)(module)))
 
 /***/ }),
 /* 1 */
@@ -34478,7 +34478,7 @@ window.addEventListener('load', function () {
 var __vue_script__, __vue_template__
 __webpack_require__(216)
 __vue_script__ = __webpack_require__(218)
-__vue_template__ = __webpack_require__(312)
+__vue_template__ = __webpack_require__(313)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -34553,23 +34553,23 @@ var _settingsTabPanel = __webpack_require__(248);
 
 var _settingsTabPanel2 = _interopRequireDefault(_settingsTabPanel);
 
-var _accountsSelectorPanel = __webpack_require__(258);
+var _accountsSelectorPanel = __webpack_require__(259);
 
 var _accountsSelectorPanel2 = _interopRequireDefault(_accountsSelectorPanel);
 
-var _queueTabPanel = __webpack_require__(287);
+var _queueTabPanel = __webpack_require__(288);
 
 var _queueTabPanel2 = _interopRequireDefault(_queueTabPanel);
 
-var _logsTabPanel = __webpack_require__(295);
+var _logsTabPanel = __webpack_require__(296);
 
 var _logsTabPanel2 = _interopRequireDefault(_logsTabPanel);
 
-var _toast = __webpack_require__(300);
+var _toast = __webpack_require__(301);
 
 var _toast2 = _interopRequireDefault(_toast);
 
-var _countdown = __webpack_require__(305);
+var _countdown = __webpack_require__(306);
 
 var _countdown2 = _interopRequireDefault(_countdown);
 
@@ -36843,7 +36843,7 @@ module.exports = "\n    <div class=\"tab-view\" _v-45c67b1d=\"\">\n        <div 
 var __vue_script__, __vue_template__
 __webpack_require__(249)
 __vue_script__ = __webpack_require__(251)
-__vue_template__ = __webpack_require__(257)
+__vue_template__ = __webpack_require__(258)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -36922,8 +36922,16 @@ var _vueJsToggleButton = __webpack_require__(256);
 
 var _vueJsToggleButton2 = _interopRequireDefault(_vueJsToggleButton);
 
+var _post_age_filters = __webpack_require__(335);
+
+var _post_age_filters2 = _interopRequireDefault(_post_age_filters);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+_vue2.default.use(_vueJsToggleButton2.default);
+
+// TODO import only if pro plugin detected
+// import postAgeFilters from '../../../../tweet-old-post-pro/assets/js/build/post_age_filters_component.js'
 // <template>
 //     <div class="tab-view">
 //         <div class="panel-body">
@@ -36971,7 +36979,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //                     </div>
 //                 </div>
 //                 <span class="divider"></span>
-//                 <div class="columns py-2">
+//                 <!-- <div class="columns py-2">
 //                     <div class="column col-6 col-sm-12 vertical-align">
 //                         <b>{{labels.min_days_title}}</b>
 //                         <p class="text-gray">{{labels.min_days_desc}}</p>
@@ -36982,7 +36990,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //                     </div>
 //                 </div>
 //                 <!-- Max Post Age -->
-//                 <div class="columns py-2">
+//                 <!-- <div class="columns py-2">
 //                     <div class="column col-6 col-sm-12 vertical-align">
 //                         <b>{{labels.max_days_title}}</b>
 //                         <p class="text-gray">{{labels.max_days_desc}}</p>
@@ -36991,8 +36999,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //                         <counter-input id="max_post_age" :max-val="365"
 //                                        :value.sync="generalSettings.maximum_post_age"></counter-input>
 //                     </div>
+//                 </div> --> 
+//                 <div class="columns py-2">
+//                 <div id="post-age-filters">
+//                      <post-age-filters></post-age-filters> 
 //                 </div>
 //
+//                 </div>
 //                 <span class="divider"></span>
 //
 //                 <div class="columns py-2">
@@ -37228,7 +37241,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // </template>
 //
 // <script>
-_vue2.default.use(_vueJsToggleButton2.default);
+
 
 module.exports = {
     name: 'settings-view',
@@ -37453,7 +37466,8 @@ module.exports = {
     },
     components: {
         counterInput: _counterInput2.default,
-        MultipleSelect: _multipleSelect2.default
+        MultipleSelect: _multipleSelect2.default,
+        postAgeFilters: _post_age_filters2.default
     }
     // </script>
     //
@@ -38550,19 +38564,20 @@ module.exports = function listToStyles (parentId, list) {
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 257 */
+/* 257 */,
+/* 258 */
 /***/ (function(module, exports) {
 
-module.exports = "\n    <div class=\"tab-view\" _v-e19866cc=\"\">\n        <div class=\"panel-body\" _v-e19866cc=\"\">\n            <div class=\"container\" :class=\"'rop-tab-state-'+is_loading\" _v-e19866cc=\"\">\n                <div class=\"columns py-2\" v-if=\"this.apply_exclude_limit_cron\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.cron_type_label}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.cron_type_label_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <!-- @category New Cron System -->\n                            <div style=\"padding: 10px; text-align: left;\" _v-e19866cc=\"\">\n                                <toggle-button :value=\"rop_cron_remote\" :labels=\"{checked: 'Remote Cron', unchecked: 'Local Cron'}\" :width=\"110\" :height=\"28\" :switch-color=\"{checked: '#FFFFFF', unchecked: '#FFFFFF'}\" :color=\"{checked: '#7DCE94', unchecked: '#82C7EB'}\" @change=\"rop_cron_remote = $event.value; update_cron_type_action()\" :disabled=\"!rop_cron_remote_agreement\" :sync=\"true\" _v-e19866cc=\"\">\n                            </toggle-button></div>\n                          <input type=\"checkbox\" :checked=\"rop_cron_remote_agreement\" :disabled=\"rop_cron_remote_agreement\" @change=\"update_agreement_checkbox()\" _v-e19866cc=\"\"> <span v-html=\"labels.cron_type_label_desc_terms\" _v-e19866cc=\"\"></span>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"this.apply_exclude_limit_cron &amp;&amp; ! isBiz\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"! isBiz\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.min_interval_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.min_interval_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <counter-input id=\"default_interval\" :min-val=\"generalSettings.min_interval\" :step-val=\"generalSettings.step_interval\" :value.sync=\"generalSettings.default_interval\" _v-e19866cc=\"\"></counter-input>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.min_days_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.min_days_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <counter-input id=\"min_post_age\" :max-val=\"365\" :value.sync=\"generalSettings.minimum_post_age\" _v-e19866cc=\"\"></counter-input>\n                    </div>\n                </div>\n                <!-- Max Post Age -->\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.max_days_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.max_days_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <counter-input id=\"max_post_age\" :max-val=\"365\" :value.sync=\"generalSettings.maximum_post_age\" _v-e19866cc=\"\"></counter-input>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.no_posts_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.no_posts_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <counter-input id=\"no_of_posts\" :value.sync=\"generalSettings.number_of_posts\" _v-e19866cc=\"\"></counter-input>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <!-- Share more than once -->\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.share_once_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.share_once_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" id=\"share_more_than_once\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.more_than_once\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i> {{labels.share_once_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.post_types_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.post_types_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <multiple-select id=\"rop_post_types\" :options=\"postTypes\" :disabled=\"isPro\" :selected=\"generalSettings.selected_post_types\" :changed-selection=\"updatedPostTypes\" _v-e19866cc=\"\"></multiple-select>\n\n                        <p class=\"text-primary rop-post-type-badge\" v-if=\"checkMediaPostType \" v-html=\"labels.post_types_attachament_info\" _v-e19866cc=\"\"></p>\n                    </div>\n                </div>\n\n                <div class=\"columns \" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.post_types_upsell}}</p>\n                    </div>\n                </div>\n\n\t\t\t\t<span class=\"divider\" v-if=\"!isPro\" _v-e19866cc=\"\"></span>\n\n                <!-- Taxonomies -->\n\t\t\t\t<div class=\"columns py-2\" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.taxonomies_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.taxonomies_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div id=\"rop_taxonomies\" class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"input-group\" _v-e19866cc=\"\">\n                            <multiple-select :options=\"taxonomies\" :selected=\"generalSettings.selected_taxonomies\" :changed-selection=\"updatedTaxonomies\" :is_pro_version=\"isPro\" :apply_limit=\"isTaxLimit\" v-on:display-limiter-notice=\"displayProMessage\" _v-e19866cc=\"\"></multiple-select>\n                            <span class=\"input-group-addon vertical-align\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t<label class=\"form-checkbox\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" v-model=\"generalSettings.exclude_taxonomies\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t\t<i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.taxonomies_exclude}}\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</span>\n                        </div>\n                        <p class=\"text-primary rop-post-type-badge\" v-if=\"is_taxonomy_message\" v-html=\"labels.post_types_taxonomy_limit\" _v-e19866cc=\"\"></p>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <!-- Google Analytics -->\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.ga_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.ga_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.ga_tracking\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.ga_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.instant_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.instant_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_instant_share\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.instant_share\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.true_instant_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.true_instant_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.true_instant_share\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.true_instant_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" _v-e19866cc=\"\">\n                  <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                    <b _v-e19866cc=\"\">{{labels.instant_share_default_title}}</b>\n                    <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.instant_share_default_desc}}</p>\n                  </div>\n                  <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                    <div class=\"form-group\" _v-e19866cc=\"\">\n                      <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                        <input type=\"checkbox\" v-model=\"generalSettings.instant_share_default\" _v-e19866cc=\"\">\n                        <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_default_yes}}\n                      </label>\n                    </div>\n                  </div>\n                </div>\n\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.instant_share_future_scheduled_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.instant_share_future_scheduled_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.instant_share_future_scheduled\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_future_scheduled_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <!-- Upsell -->\n                <div class=\"columns \" v-if=\"!isPro &amp;&amp; isInstantShare\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.instant_share_future_scheduled_upsell}}</p>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.custom_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.custom_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_custom_share_msg\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" :disabled=\"!isPro\" v-model=\"generalSettings.custom_messages\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.custom_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" v-if=\"isCustomMsgs\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.custom_share_order_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.custom_share_order_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_custom_share_msg\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" :disabled=\"!isPro\" v-model=\"generalSettings.custom_messages_share_order\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.custom_share_order_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- Upsell -->\n                <div class=\"columns \" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.custom_share_upsell}}</p>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"isCustomMsgs\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.housekeeping}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.housekeeping_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.housekeeping\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.housekeeping_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n            </div>\n        </div>\n        <div class=\"panel-footer text-right\" _v-e19866cc=\"\">\n            <button class=\"btn btn-primary\" @click=\"saveGeneralSettings()\" _v-e19866cc=\"\"><i class=\"fa fa-check\" v-if=\"!this.is_loading\" _v-e19866cc=\"\"></i> <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-e19866cc=\"\"></i> {{labels.save}}\n            </button>\n        </div>\n    </div>\n";
+module.exports = "\n    <div class=\"tab-view\" _v-e19866cc=\"\">\n        <div class=\"panel-body\" _v-e19866cc=\"\">\n            <div class=\"container\" :class=\"'rop-tab-state-'+is_loading\" _v-e19866cc=\"\">\n                <div class=\"columns py-2\" v-if=\"this.apply_exclude_limit_cron\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.cron_type_label}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.cron_type_label_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <!-- @category New Cron System -->\n                            <div style=\"padding: 10px; text-align: left;\" _v-e19866cc=\"\">\n                                <toggle-button :value=\"rop_cron_remote\" :labels=\"{checked: 'Remote Cron', unchecked: 'Local Cron'}\" :width=\"110\" :height=\"28\" :switch-color=\"{checked: '#FFFFFF', unchecked: '#FFFFFF'}\" :color=\"{checked: '#7DCE94', unchecked: '#82C7EB'}\" @change=\"rop_cron_remote = $event.value; update_cron_type_action()\" :disabled=\"!rop_cron_remote_agreement\" :sync=\"true\" _v-e19866cc=\"\">\n                            </toggle-button></div>\n                          <input type=\"checkbox\" :checked=\"rop_cron_remote_agreement\" :disabled=\"rop_cron_remote_agreement\" @change=\"update_agreement_checkbox()\" _v-e19866cc=\"\"> <span v-html=\"labels.cron_type_label_desc_terms\" _v-e19866cc=\"\"></span>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"this.apply_exclude_limit_cron &amp;&amp; ! isBiz\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"! isBiz\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.min_interval_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.min_interval_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <counter-input id=\"default_interval\" :min-val=\"generalSettings.min_interval\" :step-val=\"generalSettings.step_interval\" :value.sync=\"generalSettings.default_interval\" _v-e19866cc=\"\"></counter-input>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n                <!-- <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>{{labels.min_days_title}}</b>\n                        <p class=\"text-gray\">{{labels.min_days_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <counter-Input id=\"min_post_age\" :max-val=\"365\"\n                                       :value.sync=\"generalSettings.minimum_post_age\"></counter-Input>\n                    </div>\n                </div>\n                <!-- Max Post Age -->\n                <!-- <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>{{labels.max_days_title}}</b>\n                        <p class=\"text-gray\">{{labels.max_days_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <counter-input id=\"max_post_age\" :max-val=\"365\"\n                                       :value.sync=\"generalSettings.maximum_post_age\"></counter-input>\n                    </div>\n                </div> --> \n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                <div id=\"post-age-filters\" _v-e19866cc=\"\">\n                     <post-age-filters _v-e19866cc=\"\"></post-age-filters> \n                </div>\n                   \n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.no_posts_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.no_posts_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <counter-input id=\"no_of_posts\" :value.sync=\"generalSettings.number_of_posts\" _v-e19866cc=\"\"></counter-input>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <!-- Share more than once -->\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.share_once_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.share_once_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" id=\"share_more_than_once\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.more_than_once\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i> {{labels.share_once_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.post_types_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.post_types_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <multiple-select id=\"rop_post_types\" :options=\"postTypes\" :disabled=\"isPro\" :selected=\"generalSettings.selected_post_types\" :changed-selection=\"updatedPostTypes\" _v-e19866cc=\"\"></multiple-select>\n\n                        <p class=\"text-primary rop-post-type-badge\" v-if=\"checkMediaPostType \" v-html=\"labels.post_types_attachament_info\" _v-e19866cc=\"\"></p>\n                    </div>\n                </div>\n\n                <div class=\"columns \" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.post_types_upsell}}</p>\n                    </div>\n                </div>\n\n\t\t\t\t<span class=\"divider\" v-if=\"!isPro\" _v-e19866cc=\"\"></span>\n\n                <!-- Taxonomies -->\n\t\t\t\t<div class=\"columns py-2\" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.taxonomies_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.taxonomies_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div id=\"rop_taxonomies\" class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"input-group\" _v-e19866cc=\"\">\n                            <multiple-select :options=\"taxonomies\" :selected=\"generalSettings.selected_taxonomies\" :changed-selection=\"updatedTaxonomies\" :is_pro_version=\"isPro\" :apply_limit=\"isTaxLimit\" v-on:display-limiter-notice=\"displayProMessage\" _v-e19866cc=\"\"></multiple-select>\n                            <span class=\"input-group-addon vertical-align\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t<label class=\"form-checkbox\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" v-model=\"generalSettings.exclude_taxonomies\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t\t<i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.taxonomies_exclude}}\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</span>\n                        </div>\n                        <p class=\"text-primary rop-post-type-badge\" v-if=\"is_taxonomy_message\" v-html=\"labels.post_types_taxonomy_limit\" _v-e19866cc=\"\"></p>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <!-- Google Analytics -->\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.ga_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.ga_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.ga_tracking\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.ga_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.instant_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.instant_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_instant_share\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.instant_share\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.true_instant_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.true_instant_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.true_instant_share\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.true_instant_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" _v-e19866cc=\"\">\n                  <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                    <b _v-e19866cc=\"\">{{labels.instant_share_default_title}}</b>\n                    <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.instant_share_default_desc}}</p>\n                  </div>\n                  <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                    <div class=\"form-group\" _v-e19866cc=\"\">\n                      <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                        <input type=\"checkbox\" v-model=\"generalSettings.instant_share_default\" _v-e19866cc=\"\">\n                        <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_default_yes}}\n                      </label>\n                    </div>\n                  </div>\n                </div>\n\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.instant_share_future_scheduled_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.instant_share_future_scheduled_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.instant_share_future_scheduled\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_future_scheduled_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <!-- Upsell -->\n                <div class=\"columns \" v-if=\"!isPro &amp;&amp; isInstantShare\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.instant_share_future_scheduled_upsell}}</p>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.custom_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.custom_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_custom_share_msg\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" :disabled=\"!isPro\" v-model=\"generalSettings.custom_messages\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.custom_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" v-if=\"isCustomMsgs\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.custom_share_order_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.custom_share_order_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_custom_share_msg\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" :disabled=\"!isPro\" v-model=\"generalSettings.custom_messages_share_order\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.custom_share_order_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- Upsell -->\n                <div class=\"columns \" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.custom_share_upsell}}</p>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"isCustomMsgs\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.housekeeping}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.housekeeping_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.housekeeping\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.housekeeping_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n            </div>\n        </div>\n        <div class=\"panel-footer text-right\" _v-e19866cc=\"\">\n            <button class=\"btn btn-primary\" @click=\"saveGeneralSettings()\" _v-e19866cc=\"\"><i class=\"fa fa-check\" v-if=\"!this.is_loading\" _v-e19866cc=\"\"></i> <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-e19866cc=\"\"></i> {{labels.save}}\n            </button>\n        </div>\n    </div>\n";
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(259)
-__vue_script__ = __webpack_require__(261)
-__vue_template__ = __webpack_require__(286)
+__webpack_require__(260)
+__vue_script__ = __webpack_require__(262)
+__vue_template__ = __webpack_require__(287)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -38579,13 +38594,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(260);
+var content = __webpack_require__(261);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -38605,7 +38620,7 @@ if(false) {
 }
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -38619,7 +38634,7 @@ exports.push([module.i, "\n\t.icon_box[_v-6ded7d15] {\n\t\twidth: 30px;\n\t\thei
 
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38629,15 +38644,15 @@ var _keys = __webpack_require__(19);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _emptyActiveAccounts = __webpack_require__(262);
+var _emptyActiveAccounts = __webpack_require__(263);
 
 var _emptyActiveAccounts2 = _interopRequireDefault(_emptyActiveAccounts);
 
-var _postFormat = __webpack_require__(265);
+var _postFormat = __webpack_require__(266);
 
 var _postFormat2 = _interopRequireDefault(_postFormat);
 
-var _accountSchedule = __webpack_require__(270);
+var _accountSchedule = __webpack_require__(271);
 
 var _accountSchedule2 = _interopRequireDefault(_accountSchedule);
 
@@ -38941,12 +38956,12 @@ module.exports = {
 };
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__vue_script__ = __webpack_require__(263)
-__vue_template__ = __webpack_require__(264)
+__vue_script__ = __webpack_require__(264)
+__vue_template__ = __webpack_require__(265)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -38963,7 +38978,7 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38998,19 +39013,19 @@ module.exports = {
 };
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports) {
 
 module.exports = "\n\t<div class=\"empty\">\n\t\t<div class=\"empty-icon\">\n\t\t\t<i class=\"fa fa-3x fa-user-circle-o\"></i>\n\t\t</div>\n\t\t<p class=\"empty-title h5\">{{labels.no_active_accounts}}</p>\n\t\t<p class=\"empty-subtitle\" v-html=\"labels.no_active_accounts_desc\"></p>\n\t\t<button class=\"btn btn-primary\" @click=\"goToAccounts()\">{{labels.go_to_accounts_btn}}</button>\n\t</div>\n";
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(266)
-__vue_script__ = __webpack_require__(268)
-__vue_template__ = __webpack_require__(269)
+__webpack_require__(267)
+__vue_script__ = __webpack_require__(269)
+__vue_template__ = __webpack_require__(270)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -39027,13 +39042,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(267);
+var content = __webpack_require__(268);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -39053,7 +39068,7 @@ if(false) {
 }
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -39067,7 +39082,7 @@ exports.push([module.i, "\n    #rop_core .panel-body .text-gray[_v-2ea0dffc] {\n
 
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39585,19 +39600,19 @@ module.exports = {
 // <script>
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports) {
 
 module.exports = "\n    <div _v-2ea0dffc=\"\">\n        <div class=\"columns py-2\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.post_content_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.post_content_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <select class=\"form-select\" v-model=\"post_format.post_content\" _v-2ea0dffc=\"\">\n                        <option value=\"post_title\" _v-2ea0dffc=\"\">{{labels.post_content_option_title}}</option>\n                        <option value=\"post_content\" _v-2ea0dffc=\"\">{{labels.post_content_option_content}}</option>\n                        <option value=\"post_title_content\" _v-2ea0dffc=\"\">{{labels.post_content_option_title_content}}</option>\n                        <option value=\"custom_field\" _v-2ea0dffc=\"\">{{labels.post_content_option_custom_field}}</option>\n                    </select>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"columns py-2\" v-if=\"post_format.post_content === 'custom_field'\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.custom_meta_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.custom_meta_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <input class=\"form-input\" type=\"text\" v-model=\"post_format.custom_meta_field\" value=\"\" placeholder=\"\" _v-2ea0dffc=\"\">\n                </div>\n            </div>\n        </div>\n\n        <span class=\"divider\" _v-2ea0dffc=\"\"></span>\n\n        <div class=\"columns py-2\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.max_char_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.max_char_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <input class=\"form-input\" type=\"number\" v-model=\"post_format.maximum_length\" value=\"\" placeholder=\"\" _v-2ea0dffc=\"\">\n                </div>\n            </div>\n        </div>\n        <span class=\"divider\" _v-2ea0dffc=\"\"></span>\n\n        <div class=\"columns py-2\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.add_char_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\"><span v-html=\"labels.add_char_desc\" _v-2ea0dffc=\"\"></span></p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n\t\t\t\t\t<textarea class=\"form-input\" v-model=\"post_format.custom_text\" v-bind:placeholder=\"labels.add_char_placeholder\" _v-2ea0dffc=\"\">{{post_format.custom_text}}</textarea>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"columns py-2\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.add_pos_title}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <select class=\"form-select\" v-model=\"post_format.custom_text_pos\" _v-2ea0dffc=\"\">\n                        <option value=\"beginning\" _v-2ea0dffc=\"\">{{labels.add_pos_option_start}}</option>\n                        <option value=\"end\" _v-2ea0dffc=\"\">{{labels.add_pos_option_end}}</option>\n                    </select>\n                </div>\n            </div>\n        </div>\n        <span class=\"divider\" _v-2ea0dffc=\"\"></span>\n        <div class=\"columns py-2\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.add_link_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.add_link_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"input-group\" _v-2ea0dffc=\"\">\n                    <label class=\"form-checkbox\" _v-2ea0dffc=\"\">\n                        <input type=\"checkbox\" v-model=\"post_format.include_link\" _v-2ea0dffc=\"\">\n                        <i class=\"form-icon\" _v-2ea0dffc=\"\"></i> {{labels.add_link_yes}}\n                    </label>\n                </div>\n            </div>\n        </div>\n        <span class=\"divider\" _v-2ea0dffc=\"\"></span>\n        <div class=\"columns py-2\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.meta_link_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.meta_link_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"input-group\" _v-2ea0dffc=\"\">\n                    <label class=\"form-checkbox\" _v-2ea0dffc=\"\">\n                        <input type=\"checkbox\" v-model=\"post_format.url_from_meta\" _v-2ea0dffc=\"\">\n                        <i class=\"form-icon\" _v-2ea0dffc=\"\"></i> {{labels.meta_link_yes}}\n                    </label>\n                </div>\n            </div>\n        </div>\n\n        <!-- Custom Field -->\n        <div class=\"columns py-2\" v-if=\"post_format.url_from_meta\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.meta_link_name_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.meta_link_name_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <input class=\"form-input\" type=\"text\" v-model=\"post_format.url_meta_key\" value=\"\" placeholder=\"\" _v-2ea0dffc=\"\">\n                </div>\n            </div>\n        </div>\n        <span class=\"divider\" _v-2ea0dffc=\"\"></span>\n\n        <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels_settings.taxonomies_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\"><span v-html=\"labels_settings.taxonomies_desc\" _v-2ea0dffc=\"\"></span></p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"input-group\" _v-2ea0dffc=\"\">\n                    <multiple-select :disabled=\"!!isPro\" :options=\"taxonomy\" :selected=\"taxonomy_filter\" :name=\"post_format.taxonomy_filter\" :changed-selection=\"updated_tax_filter\" :key=\"this.account_id\" _v-2ea0dffc=\"\"></multiple-select>\n                    <span class=\"input-group-addon vertical-align\" _v-2ea0dffc=\"\">\n                        <label class=\"form-checkbox\" _v-2ea0dffc=\"\">\n\t\t\t\t\t\t    <input :disabled=\"!isPro\" type=\"checkbox\" v-model=\"post_format.exclude_taxonomies\" _v-2ea0dffc=\"\">\n\t\t\t\t\t\t\t<i class=\"form-icon\" _v-2ea0dffc=\"\"></i>{{labels_settings.taxonomies_exclude}}\n\t\t\t\t\t\t</label>\n\t\t\t\t\t</span>\n                </div>\n            </div>\n        </div>\n        <div class=\"columns \" v-if=\"!isPro\" _v-2ea0dffc=\"\">\n            <div class=\"column text-center\" _v-2ea0dffc=\"\">\n                <p class=\"upsell\" _v-2ea0dffc=\"\"><i class=\"fa fa-lock\" _v-2ea0dffc=\"\"></i> {{labels.taxonomy_based_sharing_upsell}}</p>\n            </div>\n        </div>\n        <span class=\"divider\" _v-2ea0dffc=\"\"></span>\n        <div class=\"columns py-2\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.use_shortner_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.use_shortner_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"input-group\" _v-2ea0dffc=\"\">\n                    <label class=\"form-checkbox\" _v-2ea0dffc=\"\">\n                        <input type=\"checkbox\" v-model=\"post_format.short_url\" _v-2ea0dffc=\"\">\n                        <i class=\"form-icon\" _v-2ea0dffc=\"\"></i> {{labels.use_shortner_yes}}\n                    </label>\n                </div>\n            </div>\n        </div>\n        <div class=\"columns py-2\" v-if=\"post_format.short_url\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.shortner_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.shortner_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <select class=\"form-select\" v-model=\"post_format.short_url_service\" _v-2ea0dffc=\"\">\n                        <option v-for=\"shortener in shorteners\" :value=\"shortener.id\" :disabled=\"shortener.active !== true\" :selected=\"shortener.name == post_format.short_url_service\" _v-2ea0dffc=\"\">{{ shortener.name }}{{ !shortener.active ? labels_generic.only_pro_suffix : ''}}</option>\n                    </select>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"columns py-2\" v-if=\"post_format.short_url\" v-for=\"( credential, key_name ) in post_format.shortner_credentials\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{ key_name | capitalize }}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.shortner_field_desc_start}} \"{{key_name}}\"\n                    {{labels.shortner_field_desc_end}}\n                    <strong _v-2ea0dffc=\"\">{{post_format.short_url_service}}</strong> {{labels.shortner_api_field}}.</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <input class=\"form-input\" type=\"text\" v-model=\"post_format.shortner_credentials[key_name]\" _v-2ea0dffc=\"\">\n                </div>\n            </div>\n        </div>\n\n        <div class=\"columns py-2\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.hashtags_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.hashtags_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <select class=\"form-select\" v-model=\"post_format.hashtags\" _v-2ea0dffc=\"\">\n                        <option value=\"no-hashtags\" _v-2ea0dffc=\"\">{{labels.hashtags_option_no}}</option>\n                        <option value=\"common-hashtags\" _v-2ea0dffc=\"\">{{labels.hashtags_option_common}}</option>\n                        <option value=\"categories-hashtags\" _v-2ea0dffc=\"\">{{labels.hashtags_option_cats}}</option>\n                        <option value=\"tags-hashtags\" _v-2ea0dffc=\"\">{{labels.hashtags_option_tags}}</option>\n                        <option value=\"custom-hashtags\" _v-2ea0dffc=\"\">{{labels.hashtags_option_field}}</option>\n                    </select>\n                </div>\n            </div>\n        </div>\n        <div class=\"columns py-2\" v-if=\"post_format.hashtags === 'common-hashtags'\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.hastags_common_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.hastags_common_desc}} \",\".</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <input class=\"form-input\" type=\"text\" v-model=\"post_format.hashtags_common\" value=\"\" placeholder=\"\" _v-2ea0dffc=\"\">\n                </div>\n            </div>\n        </div>\n\n        <div class=\"columns py-2\" v-if=\"post_format.hashtags === 'custom-hashtags'\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.hastags_field_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.hastags_field_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <input class=\"form-input\" type=\"text\" v-model=\"post_format.hashtags_custom\" value=\"\" placeholder=\"\" _v-2ea0dffc=\"\">\n                </div>\n            </div>\n        </div>\n\n        <div class=\"columns py-2\" v-if=\"post_format.hashtags !== 'no-hashtags'\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.hashtags_length_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.hashtags_length_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <input class=\"form-input\" type=\"number\" v-model=\"post_format.hashtags_length\" value=\"\" placeholder=\"\" _v-2ea0dffc=\"\">\n                </div>\n            </div>\n        </div>\n\n        <span class=\"divider\" _v-2ea0dffc=\"\"></span>\n\n        <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.image_title}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\"><span v-html=\"labels.image_desc\" _v-2ea0dffc=\"\"></span></p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align\" _v-2ea0dffc=\"\">\n                <div class=\"input-group\" _v-2ea0dffc=\"\">\n                    <label class=\"form-checkbox\" _v-2ea0dffc=\"\">\n                        <input type=\"checkbox\" v-model=\"post_format.image\" :disabled=\"!isPro\" _v-2ea0dffc=\"\">\n                        <i class=\"form-icon\" _v-2ea0dffc=\"\"></i> {{labels.image_yes}}\n                    </label>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"columns \" v-if=\"!isPro\" _v-2ea0dffc=\"\">\n            <div class=\"column text-center\" _v-2ea0dffc=\"\">\n                <p class=\"upsell\" _v-2ea0dffc=\"\"><i class=\"fa fa-lock\" _v-2ea0dffc=\"\"></i> {{labels.image_upsell}}</p>\n            </div>\n        </div>\n        <span class=\"divider\" _v-2ea0dffc=\"\"></span>\n        <!-- Google Analytics -->\n        <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.utm_campaign_medium}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.utm_campaign_medium_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <input type=\"text\" :disabled=\"!isPro\" class=\"form-input\" v-model=\"post_format.utm_campaign_medium\" placeholder=\"social\" _v-2ea0dffc=\"\">\n                </div>\n            </div>\n        </div>\n\n        <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-2ea0dffc=\"\">\n            <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-2ea0dffc=\"\">\n                <b _v-2ea0dffc=\"\">{{labels.utm_campaign_name}}</b>\n                <p class=\"text-gray\" _v-2ea0dffc=\"\">{{labels.utm_campaign_name_desc}}</p>\n            </div>\n            <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-2ea0dffc=\"\">\n                <div class=\"form-group\" _v-2ea0dffc=\"\">\n                    <input type=\"text\" :disabled=\"!isPro\" class=\"form-input\" v-model=\"post_format.utm_campaign_name\" placeholder=\"ReviveOldPost\" _v-2ea0dffc=\"\">\n                </div>\n            </div>\n        </div>\n        <div class=\"columns \" v-if=\"!isPro\" _v-2ea0dffc=\"\">\n            <div class=\"column text-center\" _v-2ea0dffc=\"\">\n                <p class=\"upsell\" _v-2ea0dffc=\"\"><i class=\"fa fa-lock\" _v-2ea0dffc=\"\"></i> {{labels.custom_utm_upsell}}</p>\n            </div>\n        </div>\n        <span class=\"divider\" _v-2ea0dffc=\"\"></span>\n    </div>\n";
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(271)
-__vue_script__ = __webpack_require__(273)
-__vue_template__ = __webpack_require__(285)
+__webpack_require__(272)
+__vue_script__ = __webpack_require__(274)
+__vue_template__ = __webpack_require__(286)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -39614,13 +39629,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(272);
+var content = __webpack_require__(273);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -39640,7 +39655,7 @@ if(false) {
 }
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -39654,7 +39669,7 @@ exports.push([module.i, "\n\t.rop-control-container-false[_v-07e2d0a2]  {\n\t\tc
 
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39664,7 +39679,7 @@ var _buttonCheckbox = __webpack_require__(75);
 
 var _buttonCheckbox2 = _interopRequireDefault(_buttonCheckbox);
 
-var _vue2Timepicker = __webpack_require__(274);
+var _vue2Timepicker = __webpack_require__(275);
 
 var _vue2Timepicker2 = _interopRequireDefault(_vue2Timepicker);
 
@@ -39939,20 +39954,20 @@ module.exports = {
 };
 
 /***/ }),
-/* 274 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(275)
-
-
-/***/ }),
 /* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(276)
+
+
+/***/ }),
+/* 276 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var __vue_script__, __vue_template__
-__webpack_require__(276)
-__vue_script__ = __webpack_require__(279)
-__vue_template__ = __webpack_require__(282)
+__webpack_require__(277)
+__vue_script__ = __webpack_require__(280)
+__vue_template__ = __webpack_require__(283)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -39969,13 +39984,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(277);
+var content = __webpack_require__(278);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -39995,12 +40010,12 @@ if(false) {
 }
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
 // imports
-exports.i(__webpack_require__(278), "");
+exports.i(__webpack_require__(279), "");
 
 // module
 exports.push([module.i, "\n", ""]);
@@ -40009,7 +40024,7 @@ exports.push([module.i, "\n", ""]);
 
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -40023,7 +40038,7 @@ exports.push([module.i, ".time-picker {\n  display: inline-block;\n  position: r
 
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40037,7 +40052,7 @@ var _keys = __webpack_require__(19);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _stringify = __webpack_require__(280);
+var _stringify = __webpack_require__(281);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -40413,13 +40428,13 @@ exports.default = {
 };
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(281), __esModule: true };
+module.exports = { "default": __webpack_require__(282), __esModule: true };
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var core = __webpack_require__(3);
@@ -40430,13 +40445,13 @@ module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
 
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, exports) {
 
 module.exports = "\n<span class=\"time-picker\">\n  <input class=\"display-time\" :id=\"id\" v-model=\"displayTime\" @click.stop=\"toggleDropdown\" type=\"text\" readonly />\n  <span class=\"clear-btn\" v-if=\"!hideClearButton\" v-show=\"!showDropdown && showClearBtn\" @click.stop=\"clearTime\">&times;</span>\n  <div class=\"time-picker-overlay\" v-if=\"showDropdown\" @click.stop=\"toggleDropdown\"></div>\n  <div class=\"dropdown\" v-show=\"showDropdown\">\n    <div class=\"select-list\">\n      <ul class=\"hours\">\n        <li class=\"hint\" v-text=\"hourType\"></li>\n        <li v-for=\"hr in hours\" v-text=\"hr\" :class=\"{active: hour === hr}\" @click.stop=\"select('hour', hr)\"></li>\n      </ul>\n      <ul class=\"minutes\">\n        <li class=\"hint\" v-text=\"minuteType\"></li>\n        <li v-for=\"m in minutes\" v-text=\"m\" :class=\"{active: minute === m}\" @click.stop=\"select('minute', m)\"></li>\n      </ul>\n      <ul class=\"seconds\" v-if=\"secondType\">\n        <li class=\"hint\" v-text=\"secondType\"></li>\n        <li v-for=\"s in seconds\" v-text=\"s\" :class=\"{active: second === s}\" @click.stop=\"select('second', s)\"></li>\n      </ul>\n      <ul class=\"apms\" v-if=\"apmType\">\n        <li class=\"hint\" v-text=\"apmType\"></li>\n        <li v-for=\"a in apms\" v-text=\"a\" :class=\"{active: apm === a}\" @click.stop=\"select('apm', a)\"></li>\n      </ul>\n    </div>\n  </div>\n</span>\n";
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -40464,7 +40479,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -40737,27 +40752,27 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 284;
-
-/***/ }),
-/* 285 */
-/***/ (function(module, exports) {
-
-module.exports = "\n\t<div :class=\"'rop-control-container-'+ ( license > 1 ) +  '  rop-schedule-tab-container'\" _v-07e2d0a2=\"\">\n\n\t\t<div class=\"columns py-2 rop-control\" _v-07e2d0a2=\"\">\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<b _v-07e2d0a2=\"\">{{labels.schedule_type_title}}</b>\n\t\t\t\t<p class=\"text-gray\" _v-07e2d0a2=\"\">{{labels.schedule_type_desc}}</p>\n\t\t\t</div>\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<div class=\"form-group\" _v-07e2d0a2=\"\">\n\t\t\t\t\t<select class=\"form-select\" v-model=\"schedule.type\" _v-07e2d0a2=\"\">\n\t\t\t\t\t\t<option value=\"recurring\" _v-07e2d0a2=\"\">{{labels.schedule_type_option_rec}}</option>\n\t\t\t\t\t\t<option value=\"fixed\" _v-07e2d0a2=\"\">{{labels.schedule_type_option_fix}}</option>\n\t\t\t\t\t</select>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- Fixed Schedule Days -->\n\t\t<div class=\"columns py-2 rop-control\" v-if=\"schedule.type === 'fixed'\" _v-07e2d0a2=\"\">\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<b _v-07e2d0a2=\"\">{{labels.schedule_fixed_days_title}}</b>\n\t\t\t\t<p class=\"text-gray\" _v-07e2d0a2=\"\">{{labels.schedule_fixed_days_desc}}</p>\n\t\t\t</div>\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<div class=\"form-group input-group\" _v-07e2d0a2=\"\">\n\t\t\t\t\t<button-checkbox v-for=\"( data, label ) in daysObject\" :key=\"label\" :value=\"data.value\" :label=\"label\" :checked=\"data.checked\" @add-day=\"addDay\" @rmv-day=\"rmvDay\" _v-07e2d0a2=\"\"></button-checkbox>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- Fixed Schedule time -->\n\t\t<div class=\"columns py-2 rop-control\" v-if=\"schedule.type === 'fixed'\" _v-07e2d0a2=\"\">\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<b _v-07e2d0a2=\"\">{{labels.schedule_fixed_time_title}}</b>\n\t\t\t\t<p class=\"text-gray\" _v-07e2d0a2=\"\">{{labels.schedule_fixed_time_desc}}</p>\n\t\t\t</div>\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<div class=\"form-group\" _v-07e2d0a2=\"\">\n\t\t\t\t\t<div class=\"input-group\" v-for=\"( time, index ) in schedule.interval_f.time\" _v-07e2d0a2=\"\">\n\t\t\t\t\t\t<vue-timepicker :minute-interval=\"generalSettings.minute_interval\" class=\"timepicker-style-fix\" :value=\"getTime( index )\" @change=\"syncTime( $event, index )\" hide-clear-button=\"\" _v-07e2d0a2=\"\"></vue-timepicker>\n\t\t\t\t\t\t<button class=\"btn btn-danger input-group-btn\" v-if=\"schedule.interval_f.time.length > 1\" @click=\"rmvTime( index )\" _v-07e2d0a2=\"\">\n\t\t\t\t\t\t\t<i class=\"fa fa-fw fa-minus\" _v-07e2d0a2=\"\"></i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t\t<button class=\"btn btn-success input-group-btn\" v-if=\"index == schedule.interval_f.time.length - 1\" @click=\"addTime()\" _v-07e2d0a2=\"\">\n\t\t\t\t\t\t\t<i class=\"fa fa-fw fa-plus\" _v-07e2d0a2=\"\"></i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- Current time -->\n<div class=\"column col-6 col-sm-12 vertical-align float-right\" v-if=\"schedule.type === 'fixed'\" _v-07e2d0a2=\"\">\n\t\t<div class=\"toast rop-current-time text-center\" v-if=\"formatedDate\" _v-07e2d0a2=\"\">\n\t\t\t\t{{labels.time_now}}: {{ formatedDate }}\n\t\t</div>\n</div>\n\n\t\t<div class=\"columns py-2 rop-control\" v-else=\"\" _v-07e2d0a2=\"\">\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<b _v-07e2d0a2=\"\">{{labels.schedule_rec_title}}</b>\n\t\t\t\t<p class=\"text-gray\" _v-07e2d0a2=\"\">{{labels.schedule_rec_desc}}</p>\n\t\t\t</div>\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<div class=\"form-group\" _v-07e2d0a2=\"\">\n\t\t\t\t\t<counter-input id=\"interval_r\" :value.sync=\"schedule.interval_r\" :min-val=\"generalSettings.min_interval\" :step-val=\"generalSettings.step_interval\" _v-07e2d0a2=\"\"></counter-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- Upsell -->\n\t\t<div class=\"columns py-2\" v-if=\"license < 2\" _v-07e2d0a2=\"\">\n\t\t\t<div class=\"column text-center\" _v-07e2d0a2=\"\">\n\t\t\t\t<p class=\"upsell\" _v-07e2d0a2=\"\"><i class=\"fa fa-lock\" _v-07e2d0a2=\"\"></i> {{labels.schedule_upsell}}</p>\n\t\t\t</div>\n\t\t</div>\n\t\t<span class=\"divider\" _v-07e2d0a2=\"\"></span>\n\t</div>\n";
+webpackContext.id = 285;
 
 /***/ }),
 /* 286 */
 /***/ (function(module, exports) {
 
-module.exports = "\n\t<div class=\"tab-view\" _v-6ded7d15=\"\">\n\t\t<div class=\"panel-body\" _v-6ded7d15=\"\">\n\t\t\t<div class=\"d-inline-block mt-2 column col-12\" _v-6ded7d15=\"\">\n\t\t\t\t<p class=\"text-gray\" _v-6ded7d15=\"\"><i class=\"fa fa-info-circle\" _v-6ded7d15=\"\"></i> <span v-html=\"labels.accounts_selector\" _v-6ded7d15=\"\"></span>\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t\t<empty-active-accounts v-if=\"accountsCount === 0\" _v-6ded7d15=\"\"></empty-active-accounts>\n\t\t\t<div class=\"container\" v-if=\"accountsCount > 0\" _v-6ded7d15=\"\">\n\t\t\t\t<div class=\"columns\" _v-6ded7d15=\"\">\n\t\t\t\t\t<div class=\"column col-3 col-sm-12 col-md-12 col-xl-3 col-lg-3 col-xs-12 col-rop-selector-accounts\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t<span class=\"divider\" _v-6ded7d15=\"\"></span>\n\t\t\t\t\t\t<div v-for=\"( account, id ) in active_accounts\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t<div class=\"rop-selector-account-container\" :class=\"{active: selected_account===id}\" @click=\"setActiveAccount(id)\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t<div class=\"tile tile-centered rop-account\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"tile-icon\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"icon_box\" :class=\" (account.img ? 'has_image' : 'no-image' ) + ' ' +account.service \" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<img class=\"service_account_image\" :src=\"account.img\" v-if=\"account.img\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa  \" :class=\"getIcon(account)\" aria-hidden=\"true\" _v-6ded7d15=\"\"></i>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"tile-content\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t\t\t<p class=\"rop-account-name\" _v-6ded7d15=\"\">{{account.user}}</p>\n\t\t\t\t\t\t\t\t\t\t<strong class=\"rop-service-name\" _v-6ded7d15=\"\">{{account.service}}</strong>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<span class=\"divider\" _v-6ded7d15=\"\"></span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"column col-9 col-sm-12  col-md-12  col-xl-9 col-lg-9 col-xs-12\" :class=\"'rop-tab-state-'+is_loading\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t<component :is=\"type\" :account_id=\"selected_account\" :license=\"license\" _v-6ded7d15=\"\"></component>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"panel-footer\" v-if=\"accountsCount > 0\" _v-6ded7d15=\"\">\n\t\t\t<div class=\"panel-actions text-right\" v-if=\"allow_footer\" _v-6ded7d15=\"\">\n\t\t\t\t<button class=\"btn btn-secondary\" @click=\"resetAccountData()\" _v-6ded7d15=\"\"><i class=\"fa fa-ban\" v-if=\"!this.is_loading\" _v-6ded7d15=\"\"></i> <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-6ded7d15=\"\"></i> {{labels.reset_selector_btn}} {{component_label}}\n\t\t\t\t\t{{labels.for}}\n\t\t\t\t\t<b _v-6ded7d15=\"\">{{active_account_name}}</b>\n\t\t\t\t</button>\n\t\t\t\t<button class=\"btn btn-primary\" @click=\"saveAccountData()\" _v-6ded7d15=\"\"><i class=\"fa fa-check\" v-if=\"!this.is_loading\" _v-6ded7d15=\"\"></i> <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-6ded7d15=\"\"></i> {{labels.save_selector_btn}} {{component_label}}\n\t\t\t\t</button>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n";
+module.exports = "\n\t<div :class=\"'rop-control-container-'+ ( license > 1 ) +  '  rop-schedule-tab-container'\" _v-07e2d0a2=\"\">\n\n\t\t<div class=\"columns py-2 rop-control\" _v-07e2d0a2=\"\">\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<b _v-07e2d0a2=\"\">{{labels.schedule_type_title}}</b>\n\t\t\t\t<p class=\"text-gray\" _v-07e2d0a2=\"\">{{labels.schedule_type_desc}}</p>\n\t\t\t</div>\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<div class=\"form-group\" _v-07e2d0a2=\"\">\n\t\t\t\t\t<select class=\"form-select\" v-model=\"schedule.type\" _v-07e2d0a2=\"\">\n\t\t\t\t\t\t<option value=\"recurring\" _v-07e2d0a2=\"\">{{labels.schedule_type_option_rec}}</option>\n\t\t\t\t\t\t<option value=\"fixed\" _v-07e2d0a2=\"\">{{labels.schedule_type_option_fix}}</option>\n\t\t\t\t\t</select>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- Fixed Schedule Days -->\n\t\t<div class=\"columns py-2 rop-control\" v-if=\"schedule.type === 'fixed'\" _v-07e2d0a2=\"\">\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<b _v-07e2d0a2=\"\">{{labels.schedule_fixed_days_title}}</b>\n\t\t\t\t<p class=\"text-gray\" _v-07e2d0a2=\"\">{{labels.schedule_fixed_days_desc}}</p>\n\t\t\t</div>\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<div class=\"form-group input-group\" _v-07e2d0a2=\"\">\n\t\t\t\t\t<button-checkbox v-for=\"( data, label ) in daysObject\" :key=\"label\" :value=\"data.value\" :label=\"label\" :checked=\"data.checked\" @add-day=\"addDay\" @rmv-day=\"rmvDay\" _v-07e2d0a2=\"\"></button-checkbox>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- Fixed Schedule time -->\n\t\t<div class=\"columns py-2 rop-control\" v-if=\"schedule.type === 'fixed'\" _v-07e2d0a2=\"\">\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<b _v-07e2d0a2=\"\">{{labels.schedule_fixed_time_title}}</b>\n\t\t\t\t<p class=\"text-gray\" _v-07e2d0a2=\"\">{{labels.schedule_fixed_time_desc}}</p>\n\t\t\t</div>\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<div class=\"form-group\" _v-07e2d0a2=\"\">\n\t\t\t\t\t<div class=\"input-group\" v-for=\"( time, index ) in schedule.interval_f.time\" _v-07e2d0a2=\"\">\n\t\t\t\t\t\t<vue-timepicker :minute-interval=\"generalSettings.minute_interval\" class=\"timepicker-style-fix\" :value=\"getTime( index )\" @change=\"syncTime( $event, index )\" hide-clear-button=\"\" _v-07e2d0a2=\"\"></vue-timepicker>\n\t\t\t\t\t\t<button class=\"btn btn-danger input-group-btn\" v-if=\"schedule.interval_f.time.length > 1\" @click=\"rmvTime( index )\" _v-07e2d0a2=\"\">\n\t\t\t\t\t\t\t<i class=\"fa fa-fw fa-minus\" _v-07e2d0a2=\"\"></i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t\t<button class=\"btn btn-success input-group-btn\" v-if=\"index == schedule.interval_f.time.length - 1\" @click=\"addTime()\" _v-07e2d0a2=\"\">\n\t\t\t\t\t\t\t<i class=\"fa fa-fw fa-plus\" _v-07e2d0a2=\"\"></i>\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- Current time -->\n<div class=\"column col-6 col-sm-12 vertical-align float-right\" v-if=\"schedule.type === 'fixed'\" _v-07e2d0a2=\"\">\n\t\t<div class=\"toast rop-current-time text-center\" v-if=\"formatedDate\" _v-07e2d0a2=\"\">\n\t\t\t\t{{labels.time_now}}: {{ formatedDate }}\n\t\t</div>\n</div>\n\n\t\t<div class=\"columns py-2 rop-control\" v-else=\"\" _v-07e2d0a2=\"\">\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<b _v-07e2d0a2=\"\">{{labels.schedule_rec_title}}</b>\n\t\t\t\t<p class=\"text-gray\" _v-07e2d0a2=\"\">{{labels.schedule_rec_desc}}</p>\n\t\t\t</div>\n\t\t\t<div class=\"column col-6 col-sm-12 vertical-align\" _v-07e2d0a2=\"\">\n\t\t\t\t<div class=\"form-group\" _v-07e2d0a2=\"\">\n\t\t\t\t\t<counter-input id=\"interval_r\" :value.sync=\"schedule.interval_r\" :min-val=\"generalSettings.min_interval\" :step-val=\"generalSettings.step_interval\" _v-07e2d0a2=\"\"></counter-input>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<!-- Upsell -->\n\t\t<div class=\"columns py-2\" v-if=\"license < 2\" _v-07e2d0a2=\"\">\n\t\t\t<div class=\"column text-center\" _v-07e2d0a2=\"\">\n\t\t\t\t<p class=\"upsell\" _v-07e2d0a2=\"\"><i class=\"fa fa-lock\" _v-07e2d0a2=\"\"></i> {{labels.schedule_upsell}}</p>\n\t\t\t</div>\n\t\t</div>\n\t\t<span class=\"divider\" _v-07e2d0a2=\"\"></span>\n\t</div>\n";
 
 /***/ }),
 /* 287 */
+/***/ (function(module, exports) {
+
+module.exports = "\n\t<div class=\"tab-view\" _v-6ded7d15=\"\">\n\t\t<div class=\"panel-body\" _v-6ded7d15=\"\">\n\t\t\t<div class=\"d-inline-block mt-2 column col-12\" _v-6ded7d15=\"\">\n\t\t\t\t<p class=\"text-gray\" _v-6ded7d15=\"\"><i class=\"fa fa-info-circle\" _v-6ded7d15=\"\"></i> <span v-html=\"labels.accounts_selector\" _v-6ded7d15=\"\"></span>\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t\t<empty-active-accounts v-if=\"accountsCount === 0\" _v-6ded7d15=\"\"></empty-active-accounts>\n\t\t\t<div class=\"container\" v-if=\"accountsCount > 0\" _v-6ded7d15=\"\">\n\t\t\t\t<div class=\"columns\" _v-6ded7d15=\"\">\n\t\t\t\t\t<div class=\"column col-3 col-sm-12 col-md-12 col-xl-3 col-lg-3 col-xs-12 col-rop-selector-accounts\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t<span class=\"divider\" _v-6ded7d15=\"\"></span>\n\t\t\t\t\t\t<div v-for=\"( account, id ) in active_accounts\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t<div class=\"rop-selector-account-container\" :class=\"{active: selected_account===id}\" @click=\"setActiveAccount(id)\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t<div class=\"tile tile-centered rop-account\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"tile-icon\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"icon_box\" :class=\" (account.img ? 'has_image' : 'no-image' ) + ' ' +account.service \" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<img class=\"service_account_image\" :src=\"account.img\" v-if=\"account.img\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa  \" :class=\"getIcon(account)\" aria-hidden=\"true\" _v-6ded7d15=\"\"></i>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"tile-content\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t\t\t\t\t<p class=\"rop-account-name\" _v-6ded7d15=\"\">{{account.user}}</p>\n\t\t\t\t\t\t\t\t\t\t<strong class=\"rop-service-name\" _v-6ded7d15=\"\">{{account.service}}</strong>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<span class=\"divider\" _v-6ded7d15=\"\"></span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"column col-9 col-sm-12  col-md-12  col-xl-9 col-lg-9 col-xs-12\" :class=\"'rop-tab-state-'+is_loading\" _v-6ded7d15=\"\">\n\t\t\t\t\t\t<component :is=\"type\" :account_id=\"selected_account\" :license=\"license\" _v-6ded7d15=\"\"></component>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"panel-footer\" v-if=\"accountsCount > 0\" _v-6ded7d15=\"\">\n\t\t\t<div class=\"panel-actions text-right\" v-if=\"allow_footer\" _v-6ded7d15=\"\">\n\t\t\t\t<button class=\"btn btn-secondary\" @click=\"resetAccountData()\" _v-6ded7d15=\"\"><i class=\"fa fa-ban\" v-if=\"!this.is_loading\" _v-6ded7d15=\"\"></i> <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-6ded7d15=\"\"></i> {{labels.reset_selector_btn}} {{component_label}}\n\t\t\t\t\t{{labels.for}}\n\t\t\t\t\t<b _v-6ded7d15=\"\">{{active_account_name}}</b>\n\t\t\t\t</button>\n\t\t\t\t<button class=\"btn btn-primary\" @click=\"saveAccountData()\" _v-6ded7d15=\"\"><i class=\"fa fa-check\" v-if=\"!this.is_loading\" _v-6ded7d15=\"\"></i> <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-6ded7d15=\"\"></i> {{labels.save_selector_btn}} {{component_label}}\n\t\t\t\t</button>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n";
+
+/***/ }),
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__vue_script__ = __webpack_require__(288)
-__vue_template__ = __webpack_require__(294)
+__vue_script__ = __webpack_require__(289)
+__vue_template__ = __webpack_require__(295)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -40774,7 +40789,7 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40784,7 +40799,7 @@ var _keys = __webpack_require__(19);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _queueCard = __webpack_require__(289);
+var _queueCard = __webpack_require__(290);
 
 var _queueCard2 = _interopRequireDefault(_queueCard);
 
@@ -40900,13 +40915,13 @@ module.exports = {
 // <script>
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(290)
-__vue_script__ = __webpack_require__(292)
-__vue_template__ = __webpack_require__(293)
+__webpack_require__(291)
+__vue_script__ = __webpack_require__(293)
+__vue_template__ = __webpack_require__(294)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -40923,13 +40938,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(291);
+var content = __webpack_require__(292);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -40949,7 +40964,7 @@ if(false) {
 }
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -40963,7 +40978,7 @@ exports.push([module.i, "\n\t.fa[_v-0395a54b] {\n\t\tbackground: transparent;\n\
 
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41284,25 +41299,25 @@ module.exports = {
 };
 
 /***/ }),
-/* 293 */
+/* 294 */
 /***/ (function(module, exports) {
 
 module.exports = "\n\t<div class=\"card\" _v-0395a54b=\"\">\n\t\t<div class=\"columns\" _v-0395a54b=\"\">\n\t\t\t<div class=\"column col-sm-12 col-justified\" _v-0395a54b=\"\">\n\t\t\t\t<div class=\"columns\" _v-0395a54b=\"\">\n\t\t\t\t\t<div class=\"column\" _v-0395a54b=\"\">\n\t\t\t\t\t\t<p class=\"text-gray text-left \" _v-0395a54b=\"\"><i class=\"fa fa-clock-o\" _v-0395a54b=\"\"></i> {{card_data.date}} <b _v-0395a54b=\"\"><i class=\"fa fa-at\" _v-0395a54b=\"\"></i></b> <i class=\"service fa\" :class=\"iconClass( card_data.account_id )\" _v-0395a54b=\"\"></i>\n\t\t\t\t\t\t\t{{getAccountName(card_data.account_id)}}</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"columns\" v-if=\"!edit\" _v-0395a54b=\"\">\n\t\t\t\t\t<div class=\"column col-12\" _v-0395a54b=\"\">\n\t\t\t\t\t\t<p v-html=\"content.content + hashtags( content.hashtags )\" _v-0395a54b=\"\"></p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group columns\" v-if=\"edit\" _v-0395a54b=\"\">\n\t\t\t\t\t<div class=\"column col-12\" v-if=\"content.post_with_image\" _v-0395a54b=\"\">\n\t\t\t\t\t\t<label class=\"form-label\" for=\"image\" _v-0395a54b=\"\">{{labels.queue_image}}</label>\n\t\t\t\t\t\t<div class=\"input-group\" _v-0395a54b=\"\">\n\t\t\t\t\t\t\t<span class=\"input-group-addon\" _v-0395a54b=\"\"><i class=\"fa fa-file-image-o\" _v-0395a54b=\"\"></i></span>\n\t\t\t\t\t\t\t<input id=\"image\" type=\"text\" class=\"form-input\" :value=\"content.post_image\" readonly=\"\" _v-0395a54b=\"\">\n\t\t\t\t\t\t\t<button class=\"btn btn-primary input-group-btn tooltip\" @click=\"uploadImage\" :data-tooltip=\"labels.upload_image\" _v-0395a54b=\"\">\n\t\t\t\t\t\t\t\t<i class=\"fa fa-upload\" aria-hidden=\"true\" _v-0395a54b=\"\"></i>\n\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t\t<button class=\"btn btn-danger input-group-btn tooltip\" @click=\"removeImage\" :data-tooltip=\"labels.remove_image\" _v-0395a54b=\"\">\n\t\t\t\t\t\t\t\t<i class=\"fa fa-remove\" aria-hidden=\"true\" _v-0395a54b=\"\"></i>\n\t\t\t\t\t\t\t</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"column col-12\" _v-0395a54b=\"\">\n\t\t\t\t\t\t<label class=\"form-label\" for=\"content\" _v-0395a54b=\"\">{{labels.queue_content}}</label>\n\t\t\t\t\t\t<textarea class=\"form-input\" id=\"content\" placeholder=\"\" rows=\"3\" @keyup=\"checkCount\" _v-0395a54b=\"\">{{content.content}}</textarea>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"columns col-justified\" v-if=\"!edit\" _v-0395a54b=\"\">\n\t\t\t\t\t<div class=\"column col-3\" _v-0395a54b=\"\">\n\t\t\t\t\t\t<button class=\"btn btn-sm btn-block btn-warning tooltip   tooltip-bottom \" @click=\"skipPost(card_data.account_id, card_data.post_id)\" :data-tooltip=\"labels.reschedule_post\" :disabled=\" ! enabled\" _v-0395a54b=\"\">\n\t\t\t\t\t\t\t<i class=\"fa fa-spinner fa-spin\" v-if=\" is_loading === 'skip'\" _v-0395a54b=\"\"></i>\n\t\t\t\t\t\t\t<i class=\"fa fa-step-forward\" v-else=\"\" aria-hidden=\"true\" _v-0395a54b=\"\"></i>\n\t\t\t\t\t\t\t{{labels.skip_btn_queue}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"column col-3\" _v-0395a54b=\"\">\n\t\t\t\t\t\t<button class=\"btn btn-sm btn-block btn-danger tooltip     tooltip-bottom  \" :data-tooltip=\"labels.ban_post\" @click=\"blockPost(card_data.account_id, card_data.post_id)\" :disabled=\" ! enabled\" _v-0395a54b=\"\">\n\t\t\t\t\t\t\t<i class=\"fa fa-spinner fa-spin\" v-if=\" is_loading === 'block'\" _v-0395a54b=\"\"></i>\n\t\t\t\t\t\t\t<i class=\"fa fa-ban\" aria-hidden=\"true\" v-else=\"\" _v-0395a54b=\"\"></i>\n\t\t\t\t\t\t\t{{labels.block_btn_queue}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"column col-3\" _v-0395a54b=\"\">\n\t\t\t\t\t\t<button class=\"btn btn-sm btn-block btn-primary\" @click=\"toggleEditState\" v-if=\"!edit\" :disabled=\" ! enabled\" _v-0395a54b=\"\">\n\t\t\t\t\t\t\t<i class=\"fa fa-pencil\" aria-hidden=\"true\" _v-0395a54b=\"\"></i> {{labels.edit_queue}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"column col-3 col-ml-auto text-right\" v-if=\"content.post_url !== ''\" _v-0395a54b=\"\">\n\t\t\t\t\t\t<p class=\"m-0\" _v-0395a54b=\"\">\n\t\t\t\t\t\t\t<b _v-0395a54b=\"\">{{labels.link_title}}:</b>\n\t\t\t\t\t\t\t<a :href=\"content.post_url\" target=\"_blank\" class=\"tooltip\" :data-tooltip=\"labels.link_shortned_start + ' ' + ( content.short_url_service == '' ? 'permalink' : content.short_url_service )  \" _v-0395a54b=\"\">\n\t\t\t\t\t\t\t\t{{'{' + ( content.short_url_service == '' ? 'permalink' : content.short_url_service ) +\n\t\t\t\t\t\t\t\t'}'}}</a>\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"columns\" v-else=\"\" _v-0395a54b=\"\">\n\t\t\t\t\t<div class=\"column col-3\" _v-0395a54b=\"\">\n\t\t\t\t\t\t<button class=\"btn btn-sm btn-block btn-success\" @click=\"saveChanges(card_data.account_id, card_data.post_id)\" v-if=\"edit\" :disabled=\" ! enabled\" _v-0395a54b=\"\">\n\t\t\t\t\t\t\t<i class=\"fa fa-spinner fa-spin\" v-if=\" is_loading === 'edit'\" _v-0395a54b=\"\"></i>\n\t\t\t\t\t\t\t<i class=\"fa fa-check\" aria-hidden=\"true\" v-else=\"\" _v-0395a54b=\"\"></i>\n\t\t\t\t\t\t\t{{labels.save_edit}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"column col-3\" _v-0395a54b=\"\">\n\t\t\t\t\t\t<button class=\"btn btn-sm btn-block btn-warning\" @click=\"cancelChanges\" v-if=\"edit\" :disabled=\" ! enabled\" _v-0395a54b=\"\">\n\t\t\t\t\t\t\t<i class=\"fa fa-times\" aria-hidden=\"true\" _v-0395a54b=\"\"></i>\n\t\t\t\t\t\t\t{{labels.cancel_edit}}\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"column col-4 col-sm-12 vertical-align\" v-if=\"!edit &amp;&amp; content.post_with_image\" _v-0395a54b=\"\">\n\t\t\t\t<div v-if=\"content.post_image !== ''\" _v-0395a54b=\"\">\n\t\t\t\t\t<figure class=\"figure\" v-if=\"content.post_image !== ''\" _v-0395a54b=\"\">\n\t\t\t\t\t\t<img :src=\"( content.mimetype.type.indexOf('image') > -1 ? content.post_image : video_placeholder )\" class=\"img-fit-cover img-responsive\" _v-0395a54b=\"\">\n\t\t\t\t\t</figure>\n\t\t\t\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"rop-image-placeholder\" v-else=\"\" _v-0395a54b=\"\">\n\t\t\t\t\t<summary _v-0395a54b=\"\">\n\t\t\t\t\t\t<i class=\"fa fa-file-image-o\" _v-0395a54b=\"\"></i>\n\t\t\t\t\t\t{{labels.queue_no_image}}\n\t\t\t\t\t</summary>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n";
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, exports) {
 
 module.exports = "\n\t<div class=\"tab-view rop-queue-tab-container\">\n\t\t<div class=\"panel-body\" :class=\"'rop-tab-state-'+is_loading\">\n\t\t\t<div class=\"columns\" v-if=\"! start_status\">\n\t\t\t\t<div class=\"column col-12 text-center empty-container\">\n\t\t\t\t\t<div class=\"empty-icon\">\n\t\t\t\t\t\t<i class=\"fa fa-3x fa-info-circle\"></i>\n\t\t\t\t\t</div>\n\t\t\t\t\t<p class=\"empty-title h5\">{{labels.sharing_not_started}}</p>\n\t\t\t\t\t<p class=\"empty-subtitle\">{{labels.sharing_not_started_desc}}</p>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div v-else-if=\"start_status && queueCount > 0 \">\n\n\t\t\t\t<div class=\"columns py-2\" v-if=\"! is_business\">\n\t\t\t\t\t<div class=\"column text-center\">\n\t\t\t\t\t\t<p class=\"upsell\"><i class=\"fa fa-lock\"></i> <span v-html=\"labels.biz_only\"></span></p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<!-- When sharing is started but we  have the business plan. -->\n\t\t\t\t<div class=\"d-inline-block mt-2 column col-12\">\n\t\t\t\t\t<p class=\"text-gray info-paragraph\"><i class=\"fa fa-info-circle\"></i> {{labels.queue_desc}}</p>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"empty\" v-else-if=\"start_status && queueCount === 0\">\n\t\t\t\t<div class=\"empty-icon\">\n\t\t\t\t\t<i class=\"fa fa-3x fa-info-circle\"></i>\n\t\t\t\t</div>\n\t\t\t\t<p class=\"empty-title h5\">{{labels.no_posts}}</p>\n\t\t\t\t<p class=\"empty-subtitle\" v-html=\"labels.no_posts_desc\"></p>\n\t\t\t</div>\n\t\t\t<div class=\"columns\" v-if=\"start_status && queueCount > 0\">\n\t\t\t\t<div class=\"column col-12 text-left\" v-for=\" (data, index) in queue \">\n\t\t\t\t\t<queue-card :card_data=\"data.post_data\" :id=\"index\" :enabled=\"is_business\"/>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"panel-footer text-rightcade\" v-if=\"start_status\">\n\t\t\t<button class=\"btn btn-secondary\" @click=\"refreshQueue(true)\">\n\t\t\t\t<i class=\"fa fa-refresh\" v-if=\"!is_loading\"></i>\n\t\t\t\t<i class=\"fa fa-spinner fa-spin\" v-else></i>\n\t\t\t\t{{labels.refresh_btn}}\n\t\t\t</button>\n\t\t</div>\n\t</div>\n";
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(296)
-__vue_script__ = __webpack_require__(298)
-__vue_template__ = __webpack_require__(299)
+__webpack_require__(297)
+__vue_script__ = __webpack_require__(299)
+__vue_template__ = __webpack_require__(300)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -41319,13 +41334,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(297);
+var content = __webpack_require__(298);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -41345,7 +41360,7 @@ if(false) {
 }
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -41359,7 +41374,7 @@ exports.push([module.i, "\n\t#rop_core .toast.log-toast p[_v-ed733db4] {\n\t\tma
 
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41502,19 +41517,19 @@ module.exports = {
 // <script>
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, exports) {
 
 module.exports = "\n\t<div class=\"tab-view\" _v-ed733db4=\"\">\n\t\t<div class=\"panel-body\" _v-ed733db4=\"\">\n\t\t\t<div class=\" columns mt-2\" v-if=\"logs_no > 0\" _v-ed733db4=\"\">\n\t\t\t\t<div class=\"column  col-12 text-right \" _v-ed733db4=\"\">\n\t\t\t\t\t<button class=\"btn  btn-secondary \" @click=\"getLogs(true)\" _v-ed733db4=\"\">\n\t\t\t\t\t\t<i class=\"fa fa-remove\" v-if=\"!is_loading\" _v-ed733db4=\"\"></i>\n\t\t\t\t\t\t<i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-ed733db4=\"\"></i>\n\t\t\t\t\t\t{{labels.clear_btn}}\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"columns\" _v-ed733db4=\"\">\n\t\t\t\t<div class=\"empty column col-12\" v-if=\"is_loading\" _v-ed733db4=\"\">\n\t\t\t\t\t<div class=\"empty-icon\" _v-ed733db4=\"\">\n\t\t\t\t\t\t<i class=\"fa fa-3x fa-spinner fa-spin\" _v-ed733db4=\"\"></i>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"empty column col-12\" v-else-if=\"logs_no === 0\" _v-ed733db4=\"\">\n\t\t\t\t\t<div class=\"empty-icon\" _v-ed733db4=\"\">\n\t\t\t\t\t\t<i class=\"fa fa-3x fa-info-circle\" _v-ed733db4=\"\"></i>\n\t\t\t\t\t</div>\n\t\t\t\t\t<p class=\"empty-title h5\" _v-ed733db4=\"\">{{labels.no_logs}}</p>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"column col-12 mt-2\" v-for=\" (data, index) in logs \" v-else-if=\"logs_no >  0\" _v-ed733db4=\"\">\n\t\t\t\t\t<div class=\"toast log-toast\" :class=\"'toast-' + data.type\" _v-ed733db4=\"\">\n\t\t\t\t\t\t<small class=\"pull-right text-right\" _v-ed733db4=\"\">{{formatDate ( data.time ) }}</small>\n\t\t\t\t\t\t<p _v-ed733db4=\"\">{{data.message}}</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n";
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(301)
-__vue_script__ = __webpack_require__(303)
-__vue_template__ = __webpack_require__(304)
+__webpack_require__(302)
+__vue_script__ = __webpack_require__(304)
+__vue_template__ = __webpack_require__(305)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -41531,13 +41546,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(302);
+var content = __webpack_require__(303);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -41557,7 +41572,7 @@ if(false) {
 }
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -41571,7 +41586,7 @@ exports.push([module.i, "\n\t#rop_core .toast.hidden {\n\t\tdisplay: none;\n\t}\
 
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41632,18 +41647,18 @@ module.exports = {
 };
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports) {
 
 module.exports = "\n\t<div class=\"toast\" :class=\"toastTypeClass\" >\n\t\t<button class=\"btn btn-clear float-right\" @click=\"closeThis\"></button>\n\t\t<b><i class=\"fa\" :class=\"iconClass\"></i> {{ toast.title }}</b><br/>\n\t\t<small>{{ toast.message }}</small>\n\t</div>\n";
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__vue_script__ = __webpack_require__(306)
-__vue_template__ = __webpack_require__(311)
+__vue_script__ = __webpack_require__(307)
+__vue_template__ = __webpack_require__(312)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -41660,7 +41675,7 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41670,7 +41685,7 @@ var _keys = __webpack_require__(19);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _trunc = __webpack_require__(307);
+var _trunc = __webpack_require__(308);
 
 var _trunc2 = _interopRequireDefault(_trunc);
 
@@ -41678,7 +41693,7 @@ var _moment = __webpack_require__(0);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-__webpack_require__(310);
+__webpack_require__(311);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41745,21 +41760,21 @@ module.exports = {
 };
 
 /***/ }),
-/* 307 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(308), __esModule: true };
-
-/***/ }),
 /* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(309);
+module.exports = { "default": __webpack_require__(309), __esModule: true };
+
+/***/ }),
+/* 309 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(310);
 module.exports = __webpack_require__(3).Math.trunc;
 
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.34 Math.trunc(x)
@@ -41773,7 +41788,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! Moment Duration Format v2.2.2
@@ -43519,16 +43534,745 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports) {
 
 module.exports = "\n\t<div class=\"toast rop-next-share-time\" v-if=\"isOn && accounts_no > 0\">\n\t\t<span v-if=\"diff_seconds>0\"> <b><i\n\t\t\t\tclass=\"fa fa-fast-forward\"></i> {{labels.next_share}}</b> {{labels.in}}</span>\n\t\t<small v-if=\"timediff !== ''\">{{timediff}}</small>\n\t</div>\n";
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports) {
 
 module.exports = "\n    <div>\n        <div class=\"columns panel-header\">\n            <div class=\"column header-logo vertical-align\" v-if=\"is_preloading_over > 0\">\n                <div>\n                    <img :src=\"plugin_logo\" class=\"plugin-logo avatar avatar-lg\"/>\n                    <h1 class=\"plugin-title d-inline-block\">Revive Old Posts</h1><span class=\"powered d-inline-block\"> {{labels.by}} <a\n                        href=\"https://revive.social\" target=\"_blank\"><b>Revive.Social</b></a></span>\n                </div>\n            </div>\n            <toast/>\n            <div v-if=\" is_rest_api_error \" class=\"toast toast-error rop-api-not-available\" v-html=\"labels.api_not_available\">\n            </div>\n            <div v-if=\" is_fb_domain_notice \" class=\"toast toast-primary\">\n                <button class=\"btn btn-clear float-right\" @click=\"close_fb_domain_notice()\"></button>\n                <div v-html=\"labels.rop_facebook_domain_toast\"></div>\n            </div>\n            <div class=\"sidebar sidebar-top card rop-container-start\">\n\n                <!-- Next post count down -->\n                <countdown :current_time=\"current_time\"/>\n                <!--  -->\n\n                <button class=\"btn btn-sm\" :class=\"btn_class\"\n                        :data-tooltip=\"labels.active_account_warning\"\n                        @click=\"togglePosting()\" :disabled=\"!haveAccountsActive\">\n                    <i class=\"fa fa-play\" v-if=\"!is_loading && !start_status\"></i>\n                    <i class=\"fa fa-stop\" v-else-if=\"!is_loading && start_status\"></i>\n                    <i class=\"fa fa-spinner fa-spin\" v-else></i>\n                    {{( start_status ? labels.stop : labels.start )}} {{labels.sharing}}\n                </button>\n            </div>\n        </div>\n\n        <div class=\"columns\">\n            <div class=\"panel column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12\">\n                <div class=\"panel-nav\" style=\"padding: 8px;\" v-if=\"is_preloading_over > 0\">\n                    <ul class=\"tab \">\n                        <li class=\"tab-item c-hand\" v-for=\"tab in displayTabs\"\n                            :class=\"{ active: tab.isActive }\" v-bind:id=\"tab.name.replace(' ', '').toLowerCase()\">\n                            <a :class=\" ( tab.slug === 'logs' && logs_no > 0  )  ? ' badge-logs badge' : '' \"\n                               :data-badge=\"logs_no\"\n                               @click=\"switchTab( tab.slug )\">{{ tab.name }}</a>\n                        </li>\n                    </ul>\n                </div>\n                <component :is=\"page.template\" :type=\"page.view\"></component>\n            </div>\n\n            <div class=\"sidebar column col-3 col-xs-12 col-sm-12  col-md-12 col-lg-12\"\n                 :class=\"'rop-license-plan-'+license\" v-if=\"is_preloading_over > 0\">\n\n                <div class=\"card rop-container-start\">\n                     <button id=\"rop_start_stop_btn\" class=\"btn\" :class=\"btn_class\"\n                            :data-tooltip=\"labels.active_account_warning\"\n                            @click=\"togglePosting()\" :disabled=\"!haveAccountsActive\">\n                        <i class=\"fa fa-play\" v-if=\"!is_loading && !start_status\"></i>\n                        <i class=\"fa fa-stop\" v-else-if=\"!is_loading && start_status\"></i>\n                        <i class=\"fa fa-spinner fa-spin\" v-else></i>\n                        {{labels.click}} {{labels.to}} {{( start_status ? labels.stop : labels.start )}} {{labels.sharing}}\n                    </button>\n\n                    <div class=\"sharing-box\" :class=\"status_color_class\">{{ status_label_display }}</div>\n\n                    <countdown :current_time=\"current_time\"/>\n\n                    <div id=\"staging-status\" v-if=\"staging\" v-html=\"labels.staging_status\">\n                    </div>\n                    <div v-if=\"!haveAccounts\" class=\"rop-spacer\"></div>\n                    <div v-if=\"haveAccounts\">\n                        <upsell-sidebar></upsell-sidebar>\n                    </div>\n                    <a v-if=\"license  >= 1\" href=\"https://revive.social/pro-support/\" target=\"_blank\" class=\"btn rop-sidebar-action-btns\">{{labels.rop_support}}</a>\n                    <a v-if=\"license  < 1\" href=\"https://revive.social/support/\" target=\"_blank\" class=\"btn rop-sidebar-action-btns\">{{labels.rop_support}}</a>\n                    <a v-if=\"haveAccounts\" href=\"https://docs.revive.social/\" target=\"_blank\"\n                       class=\"btn rop-sidebar-action-btns\">{{labels.rop_docs}}</a>\n                    <a v-if=\"haveAccounts\"\n                       href=\"https://wordpress.org/support/plugin/tweet-old-post/reviews/?rate=5#new-post\"\n                       target=\"_blank\" class=\"btn rop-sidebar-action-btns\">{{labels.review_it}}</a>\n                </div>\n\n            </div>\n        </div>\n    </div>\n";
+
+/***/ }),
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_script__, __vue_template__
+__webpack_require__(336)
+__vue_script__ = __webpack_require__(340)
+__vue_template__ = __webpack_require__(341)
+module.exports = __vue_script__ || {}
+if (module.exports.__esModule) module.exports = module.exports.default
+if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
+if (false) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/uvdev/Local Sites/rop/app/public/wp-content/plugins/tweet-old-post-pro/vue/src/vue-elements/post_age_filters.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, __vue_template__)
+  }
+})()}
+
+/***/ }),
+/* 336 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(337);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(339)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../../tweet-old-post/node_modules/vue-loader/lib/style-rewriter.js?id=_v-11fb7e18&file=post_age_filters.vue!../../../../tweet-old-post/node_modules/vue-loader/lib/selector.js?type=style&index=0!../../../../tweet-old-post/node_modules/eslint-loader/index.js!../../../../tweet-old-post/node_modules/eslint-loader/index.js!./post_age_filters.vue", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../../tweet-old-post/node_modules/vue-loader/lib/style-rewriter.js?id=_v-11fb7e18&file=post_age_filters.vue!../../../../tweet-old-post/node_modules/vue-loader/lib/selector.js?type=style&index=0!../../../../tweet-old-post/node_modules/eslint-loader/index.js!../../../../tweet-old-post/node_modules/eslint-loader/index.js!./post_age_filters.vue");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 337 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(338)();
+// imports
+
+
+// module
+exports.push([module.i, "\n    #rop_core .badge[data-badge]::after {\n        position: absolute;\n        bottom: -16px;\n        right: 0px;\n    }\n\n    #rop_core .rop-api-not-available {\n        margin: 10px 0px 10px 0px;\n    }\n\n    #rop_core .badge.badge-logs::after {\n        right: auto;\n        top: 0px;\n    }\n\n    #rop_core .badge.badge-logs {\n        padding-right: 10px;\n    }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 338 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function() {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		var result = [];
+		for(var i = 0; i < this.length; i++) {
+			var item = this[i];
+			if(item[2]) {
+				result.push("@media " + item[2] + "{" + item[1] + "}");
+			} else {
+				result.push(item[1]);
+			}
+		}
+		return result.join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+
+/***/ }),
+/* 339 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+var stylesInDom = {},
+	memoize = function(fn) {
+		var memo;
+		return function () {
+			if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+			return memo;
+		};
+	},
+	isOldIE = memoize(function() {
+		return /msie [6-9]\b/.test(self.navigator.userAgent.toLowerCase());
+	}),
+	getHeadElement = memoize(function () {
+		return document.head || document.getElementsByTagName("head")[0];
+	}),
+	singletonElement = null,
+	singletonCounter = 0,
+	styleElementsInsertedAtTop = [];
+
+module.exports = function(list, options) {
+	if(typeof DEBUG !== "undefined" && DEBUG) {
+		if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the bottom of <head>.
+	if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+	var styles = listToStyles(list);
+	addStylesToDom(styles, options);
+
+	return function update(newList) {
+		var mayRemove = [];
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+		if(newList) {
+			var newStyles = listToStyles(newList);
+			addStylesToDom(newStyles, options);
+		}
+		for(var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+			if(domStyle.refs === 0) {
+				for(var j = 0; j < domStyle.parts.length; j++)
+					domStyle.parts[j]();
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+}
+
+function addStylesToDom(styles, options) {
+	for(var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+		if(domStyle) {
+			domStyle.refs++;
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles(list) {
+	var styles = [];
+	var newStyles = {};
+	for(var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+		if(!newStyles[id])
+			styles.push(newStyles[id] = {id: id, parts: [part]});
+		else
+			newStyles[id].parts.push(part);
+	}
+	return styles;
+}
+
+function insertStyleElement(options, styleElement) {
+	var head = getHeadElement();
+	var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+	if (options.insertAt === "top") {
+		if(!lastStyleElementInsertedAtTop) {
+			head.insertBefore(styleElement, head.firstChild);
+		} else if(lastStyleElementInsertedAtTop.nextSibling) {
+			head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			head.appendChild(styleElement);
+		}
+		styleElementsInsertedAtTop.push(styleElement);
+	} else if (options.insertAt === "bottom") {
+		head.appendChild(styleElement);
+	} else {
+		throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+	}
+}
+
+function removeStyleElement(styleElement) {
+	styleElement.parentNode.removeChild(styleElement);
+	var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+	if(idx >= 0) {
+		styleElementsInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement(options) {
+	var styleElement = document.createElement("style");
+	styleElement.type = "text/css";
+	insertStyleElement(options, styleElement);
+	return styleElement;
+}
+
+function createLinkElement(options) {
+	var linkElement = document.createElement("link");
+	linkElement.rel = "stylesheet";
+	insertStyleElement(options, linkElement);
+	return linkElement;
+}
+
+function addStyle(obj, options) {
+	var styleElement, update, remove;
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+		styleElement = singletonElement || (singletonElement = createStyleElement(options));
+		update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+	} else if(obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function") {
+		styleElement = createLinkElement(options);
+		update = updateLink.bind(null, styleElement);
+		remove = function() {
+			removeStyleElement(styleElement);
+			if(styleElement.href)
+				URL.revokeObjectURL(styleElement.href);
+		};
+	} else {
+		styleElement = createStyleElement(options);
+		update = applyToTag.bind(null, styleElement);
+		remove = function() {
+			removeStyleElement(styleElement);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle(newObj) {
+		if(newObj) {
+			if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+				return;
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag(styleElement, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (styleElement.styleSheet) {
+		styleElement.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = styleElement.childNodes;
+		if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+		if (childNodes.length) {
+			styleElement.insertBefore(cssNode, childNodes[index]);
+		} else {
+			styleElement.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag(styleElement, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		styleElement.setAttribute("media", media)
+	}
+
+	if(styleElement.styleSheet) {
+		styleElement.styleSheet.cssText = css;
+	} else {
+		while(styleElement.firstChild) {
+			styleElement.removeChild(styleElement.firstChild);
+		}
+		styleElement.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink(linkElement, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	if(sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = linkElement.href;
+
+	linkElement.href = URL.createObjectURL(blob);
+
+	if(oldSrc)
+		URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+/* 340 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _counterInput = __webpack_require__(86);
+
+var _counterInput2 = _interopRequireDefault(_counterInput);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// export default {
+//     name: 'post-age-filters'
+// }
+module.exports = {
+    name: 'post-age-filter',
+    components: {
+        counterInput: _counterInput2.default
+    }
+    // module.exports = {
+    //     name: 'main-page-panel',
+    //     computed: {
+    //         is_preloading_over: function () {
+    //             return this.$store.state.hide_preloading;
+    //         },
+    //         /**
+    //          * Display the clicked tab.
+    //          *
+    //          * @returns {module.exports.computed.displayTabs|*[]}
+    //          */
+    //         displayTabs: function () {
+    //             return this.$store.state.displayTabs
+    //         },
+    //         /**
+    //          * Get active page.
+    //          */
+    //         page: function () {
+    //             return this.$store.state.page
+    //         },
+    //         /**
+    //          * Check if rest api is available.
+    //          */
+    //         is_rest_api_error: function () {
+    //             return this.$store.state.api_not_available
+    //         },
+    //         /**
+    //          * Check if rest api is available.
+    //          */
+    //         is_fb_domain_notice: function () {
+    //             return this.$store.state.fb_exception_toast
+    //         },
+    //         current_time: {
+    //             get: function () {
+    //                 return this.$store.state.cron_status.current_time;
+    //             },
+    //             set: function (value) {
+    //                 this.$store.state.cron_status.current_time = value;
+    //             }
+    //         },
+    //         date_format: function () {
+
+    //             return this.$store.state.cron_status.date_format;
+    //         },
+    //         logs_no: function () {
+
+    //             return this.$store.state.cron_status.logs_number;
+    //         },
+    //         /**
+    //          * Get btn start class.
+    //          */
+    //         btn_class: function () {
+    //             let btn_class = ('btn-' + (this.start_status ? 'danger' : 'success'));
+    //             if (!this.haveAccountsActive) {
+    //                 btn_class += ' tooltip button-disabled ';
+    //             }
+    //             return btn_class;
+    //         },
+    //         /**
+    //          * Status label.
+    //          */
+    //         status_color_class: function () {
+    //             let status_color_class = ('sharing-status-' + (this.start_status ? 'sharing' : 'notsharing'));
+    //             if (!this.haveAccountsActive) {
+    //                 status_color_class = ' sharing-status-notsharing  ';
+    //             }
+    //             if (this.status_is_error_display) {
+    //                 return ' sharing-status-error ';
+    //             }
+    //             return status_color_class;
+    //         },
+    //         status_label_display: function () {
+    //             let labels = this.$store.state.labels.general;
+    //             let status_label_display = (this.start_status ? labels.sharing_to_account : labels.sharing_not_started);
+    //             if (!this.haveAccountsActive) {
+    //                 status_label_display = labels.sharing_not_started;
+    //             }
+
+    //             if (this.status_is_error_display) {
+    //                 return labels.status + ': ' + labels.error_check_log;
+    //             }
+    //             return labels.status + ': ' + status_label_display;
+    //         },
+    //         status_is_error_display: function () {
+    //             return this.status_is_error_display;
+    //         },
+    //         /**
+    //          * Check if we have accounts connected.
+    //          *
+    //          * @returns {boolean}
+    //          */
+    //         haveAccounts: function () {
+    //             return (Object.keys(this.$store.state.authenticatedServices).length > 0);
+    //         },
+    //         /**
+    //          * Check if we have accounts active.
+    //          *
+    //          * @returns {boolean}
+    //          */
+    //         haveAccountsActive: function () {
+    //             return (Object.keys(this.$store.state.activeAccounts).length > 0);
+    //         },
+    //         /*
+    //         * Check if the sharing is started.
+    //         */
+    //         start_status: function () {
+    //             return this.$store.state.cron_status.current_status
+    //         },
+
+    //         /**
+    //          * Get general settings.
+    //          * @returns {module.exports.computed.generalSettings|Array|*}
+    //          */
+    //         generalSettings: function () {
+    //             return this.$store.state.generalSettings
+    //         },
+    //     },
+    //     mounted: function () {
+    //         setInterval(() => {
+    //             //this.$log.info('counting');
+    //             if (this.current_time > 0) {
+    //                 this.current_time += 1;
+    //             }
+    //         }, 1000);
+
+    //         this.get_toast_message(false);
+    //     },
+    //     created() {
+    //         this.$root.$refs.main_page = this;
+    //     },
+    //     data: function () {
+    //         return {
+    //             to_pro_upsell: ROP_ASSETS_URL + 'img/to_pro.png',
+    //             to_business_upsell: ROP_ASSETS_URL + 'img/to_business.png',
+    //             plugin_logo: ROP_ASSETS_URL + 'img/logo_rop.png',
+    //             license: this.$store.state.licence,
+    //             labels: this.$store.state.labels.general,
+    //             upsell_link: ropApiSettings.upsell_link,
+    //             staging: ropApiSettings.staging,
+    //             is_loading: false,
+    //             is_loading_logs: false,
+    //             status_is_error_display: false
+    //         }
+    //     },
+    //     methods: {
+    //         /**
+    //          *
+    //          * */
+    //         close_fb_domain_notice() {
+    //             if (this.is_loading) {
+    //                 this.$log.warn('Request in progress...Bail');
+    //                 return;
+    //             }
+
+    //             this.$store.dispatch('fetchAJAXPromise', {
+    //                 req: 'fb_exception_toast',
+    //                 data: {action: 'hide'}
+    //             }).then(response => {
+    //                 this.$log.info('Succesfully closed facebook domain toast.');
+    //                 this.is_loading = false;
+    //             }, error => {
+    //                 this.is_loading = false;
+    //                 Vue.$log.error('Got nothing from server. Prompt user to check internet connection and try again', error)
+    //             })
+    //         },
+    //         /**
+    //          * Toggle sharing.
+    //          *
+    //          * @category New Cron System - adapted
+    //          */
+    //         togglePosting(force_status) {
+    //             if (this.is_loading) {
+    //                 this.$log.warn('Request in progress...Bail');
+    //                 return;
+    //             }
+
+    //             let new_status = false;
+
+    //             if (typeof force_status === 'undefined') {
+    //                 new_status = this.start_status === false ? 'start' : 'stop';
+    //             } else {
+    //                 new_status = force_status === false ? 'start' : 'stop';
+    //             }
+
+    //             this.is_loading = true;
+
+    //             this.$store.dispatch('fetchAJAXPromise', {
+    //                 req: 'manage_cron',
+    //                 data: {
+    //                     'action': new_status
+    //                 }
+    //             }).then(response => {
+    //                 this.is_loading = false;
+    //             }, error => {
+    //                 this.is_loading = false;
+    //                 Vue.$log.error('Got nothing from server. Prompt user to check internet connection and try again', error)
+    //             })
+    //         },
+    //         /**
+    //          * Toggle tab active.
+    //          * @param slug
+    //          */
+    //         switchTab(slug) {
+    //             this.$store.commit('setTabView', slug)
+    //         },
+
+    //         get_toast_message(force) {
+    //             if (this.is_loading_logs) {
+    //                 this.$log.warn('Request in progress...Bail');
+    //                 return;
+    //             }
+    //             this.is_loading_logs = true;
+    //             this.$store.dispatch('fetchAJAXPromise', {
+    //                 req: 'get_toast',
+    //                 data: {force: force}
+    //             }).then(response => {
+    //                 this.$log.info('Succesfully fetched toast log.');
+    //                 this.is_loading_logs = false;
+    //                 this.$store.dispatch('fetchAJAX', {req: 'manage_cron', data: {action: 'status'}});
+
+    //                 // Toast message code start
+    //                 if (response.length) {
+    //                     for (let index_error in response) {
+    //                         if ('error' === response[index_error].type) {
+    //                             let toast = {
+    //                                 type: response[index_error].type,
+    //                                 show: true,
+    //                                 title: 'Error encountered',
+    //                                 message: response[index_error].message
+    //                             };
+    //                             this.$store.commit('updateState', {stateData: toast, requestName: 'update_toast'});
+    //                         } else if ('status_error' === response[index_error].type) {
+    //                             this.$log.warn('Status is error check logs, global admin notice will be displayed');
+    //                             this.status_is_error_display = true;
+    //                         }
+    //                     }
+    //                 }
+    //                 // Toast message code end
+
+    //             }, error => {
+    //                 Vue.$log.error('Got nothing from server. Prompt user to check internet connection and try again', error)
+    //                 this.is_loading_logs = false;
+    //             })
+    //         }
+    //     },
+    //     components: {
+    //         'accounts': AccountsTab,
+    //         'settings': SettingsTab,
+    //         'accounts-selector': AccountsSelectorTab,
+    //         'queue': QueueTab,
+    //         'logs': LogsTab,
+    //         'upsell-sidebar': upsellSidebar,
+    //         'toast': Toast,
+    //         'countdown': CountDown
+    //     }
+    // }
+    // </script>
+    //
+    // <style>
+    //     #rop_core .badge[data-badge]::after {
+    //         position: absolute;
+    //         bottom: -16px;
+    //         right: 0px;
+    //     }
+    //
+    //     #rop_core .rop-api-not-available {
+    //         margin: 10px 0px 10px 0px;
+    //     }
+    //
+    //     #rop_core .badge.badge-logs::after {
+    //         right: auto;
+    //         top: 0px;
+    //     }
+    //
+    //     #rop_core .badge.badge-logs {
+    //         padding-right: 10px;
+    //     }
+    // </style>
+    //
+
+}; // <template>
+//     <div>
+//         <div class="columns py-2">
+//                     <div class="column col-6 col-sm-12 vertical-align">
+//                         <b>Minimum Post age</b>
+//                         <p class="text-gray">Minimum Post age desc</p>
+//                     </div>
+//                     <div class="column col-6 col-sm-12 vertical-align">
+//                         <counter-input id="min_post_age" :max-val="365"></counter-input>
+//                         <!-- <counter-Input id="min_post_age" :max-val="365"
+//                                        :value.sync="generalSettings.minimum_post_age"></counter-Input> -->
+//                     </div>
+//                 </div>
+//                 <!-- Max Post Age -->
+//                 <div class="columns py-2">
+//                     <div class="column col-6 col-sm-12 vertical-align">
+//                         <b>Maximum Post age</b>
+//                         <p class="text-gray">Maximum Post age</p>
+//                     </div>
+//                     <div class="column col-6 col-sm-12 vertical-align">
+//                         <counter-input id="max_post_age" :max-val="365"></counter-input>
+//                         <!-- <counter-input id="max_post_age" :max-val="365"
+//                                        :value.sync="generalSettings.maximum_post_age"></counter-input> -->
+//                     </div>
+//                 </div>
+//     </div>
+// </template>
+//
+// <script>
+
+/***/ }),
+/* 341 */
+/***/ (function(module, exports) {
+
+module.exports = "\n    <div>\n        <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>Minimum Post age</b>\n                        <p class=\"text-gray\">Minimum Post age desc</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <counter-input id=\"min_post_age\" :max-val=\"365\"></counter-input>\n                        <!-- <counter-Input id=\"min_post_age\" :max-val=\"365\"\n                                       :value.sync=\"generalSettings.minimum_post_age\"></counter-Input> -->\n                    </div>\n                </div>\n                <!-- Max Post Age -->\n                <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>Maximum Post age</b>\n                        <p class=\"text-gray\">Maximum Post age</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <counter-input id=\"max_post_age\" :max-val=\"365\"></counter-input>\n                        <!-- <counter-input id=\"max_post_age\" :max-val=\"365\"\n                                       :value.sync=\"generalSettings.maximum_post_age\"></counter-input> -->\n                    </div>\n                </div>\n    </div>\n";
 
 /***/ })
 /******/ ]);

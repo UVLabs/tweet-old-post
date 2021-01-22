@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 324);
+/******/ 	return __webpack_require__(__webpack_require__.s = 325);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -796,7 +796,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ 324:
+/***/ 325:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -810,7 +810,7 @@ var _rop_store = __webpack_require__(34);
 
 var _rop_store2 = _interopRequireDefault(_rop_store);
 
-var _publishNow = __webpack_require__(325);
+var _publishNow = __webpack_require__(326);
 
 var _publishNow2 = _interopRequireDefault(_publishNow);
 
@@ -830,13 +830,13 @@ window.addEventListener('load', function () {
 
 /***/ }),
 
-/***/ 325:
+/***/ 326:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(326)
-__vue_script__ = __webpack_require__(328)
-__vue_template__ = __webpack_require__(333)
+__webpack_require__(327)
+__vue_script__ = __webpack_require__(329)
+__vue_template__ = __webpack_require__(334)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -854,13 +854,13 @@ if (false) {(function () {  module.hot.accept()
 
 /***/ }),
 
-/***/ 326:
+/***/ 327:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(327);
+var content = __webpack_require__(328);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -881,7 +881,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 327:
+/***/ 328:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -896,13 +896,13 @@ exports.push([module.i, "\n\t.rop-publish-now-branding{\n\t\ttext-align: right;\
 
 /***/ }),
 
-/***/ 328:
+/***/ 329:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _defineProperty2 = __webpack_require__(329);
+var _defineProperty2 = __webpack_require__(330);
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
@@ -1028,37 +1028,6 @@ module.exports = (0, _defineProperty3.default)({
 // </template>
 //
 // <script>
-
-/***/ }),
-
-/***/ 329:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _defineProperty = __webpack_require__(330);
-
-var _defineProperty2 = _interopRequireDefault(_defineProperty);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = function (obj, key, value) {
-  if (key in obj) {
-    (0, _defineProperty2.default)(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-};
 
 /***/ }),
 
@@ -1259,14 +1228,45 @@ exports.default = function (obj, key, value) {
 /***/ 330:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(331), __esModule: true };
+"use strict";
+
+
+exports.__esModule = true;
+
+var _defineProperty = __webpack_require__(331);
+
+var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (obj, key, value) {
+  if (key in obj) {
+    (0, _defineProperty2.default)(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+};
 
 /***/ }),
 
 /***/ 331:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(332);
+module.exports = { "default": __webpack_require__(332), __esModule: true };
+
+/***/ }),
+
+/***/ 332:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(333);
 var $Object = __webpack_require__(3).Object;
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
@@ -1275,7 +1275,7 @@ module.exports = function defineProperty(it, key, desc) {
 
 /***/ }),
 
-/***/ 332:
+/***/ 333:
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(22);
@@ -1285,7 +1285,7 @@ $export($export.S + $export.F * !__webpack_require__(5), 'Object', { definePrope
 
 /***/ }),
 
-/***/ 333:
+/***/ 334:
 /***/ (function(module, exports) {
 
 module.exports = "\n\t<div class=\"rop-control-container\" v-if=\"Object.keys(accounts).length > 0\" >\n\n\t\t<!-- Share on publish/update -->\n\t\t<fieldset>\n\t\t\t<label class=\"form-checkbox\">\n\t\t\t\t<input type=\"checkbox\" :checked=\"share_on_update_enabled\" v-on:click=\"share_on_update_enabled = !share_on_update_enabled\" name=\"publish_now\" value=\"1\"/>\n\t\t\t\t<span v-html=\" labels.share_on_update\"></span>\n\t\t\t</label>\n\n\t\t\t<div class=\"form-group rop-publish-now-accounts-wrapper\" v-if=\"share_on_update_enabled\" v-for=\"(account, key) in accounts\" :id=\"key\" v-bind:key=\"key\">\n\t\t\t\t<label class=\"form-checkbox rop-publish-now-account\" :id=\"key\">\n\t\t\t\t\t<input type=\"checkbox\" :checked=\"share_on_update_enabled\" :value=\"key\" v-on:click=\"toggleServices($event, key)\" name=\"publish_now_accounts[]\" class=\"rop-account-names\"/>\n\t\t\t\t\t<i class=\" fa \" :class=\"getServiceClass(account.service)\"></i> {{account.user}}\n\t\t\t\t</label>\n\t\t\t\t<span v-on:click=\"togglefields(key)\" :id=\"key\" class=\"rop-edit-custom-instant-share-message-text\">{{ showField[key] ? 'done' : 'edit message' }}</span>\n\t\t\t\t<p v-show=\"showField[key]\" class=\"rop-custom-instant-share-message-text\">Custom share message:</p>\n\t\t\t\t<textarea v-show=\"showField[key]\" :name=\"key\" :disabled=\"!isPro\" class=\"rop-custom-instant-share-message-area\"></textarea>\n\t\t\t\t<p v-if=\"!isPro && showField[key]\" v-html=\"labels.custom_instant_share_messages_upsell\" class=\"custom-instant-share-upsell\"></p>\n\t\t\t</div>\n\t\t</fieldset>\n\n\t</div>\n";

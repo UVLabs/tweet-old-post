@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <span class="divider"></span>
-                <div class="columns py-2">
+                <!-- <div class="columns py-2">
                     <div class="column col-6 col-sm-12 vertical-align">
                         <b>{{labels.min_days_title}}</b>
                         <p class="text-gray">{{labels.min_days_desc}}</p>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <!-- Max Post Age -->
-                <div class="columns py-2">
+                <!-- <div class="columns py-2">
                     <div class="column col-6 col-sm-12 vertical-align">
                         <b>{{labels.max_days_title}}</b>
                         <p class="text-gray">{{labels.max_days_desc}}</p>
@@ -65,8 +65,13 @@
                         <counter-input id="max_post_age" :max-val="365"
                                        :value.sync="generalSettings.maximum_post_age"></counter-input>
                     </div>
+                </div> --> 
+                <div class="columns py-2">
+                <div id="post-age-filters">
+                     <post-age-filters></post-age-filters> 
                 </div>
-
+                   
+                </div>
                 <span class="divider"></span>
 
                 <div class="columns py-2">
@@ -307,6 +312,11 @@
     import MultipleSelect from './reusables/multiple-select.vue'
     import ToggleButton from 'vue-js-toggle-button'
 
+    // TODO import only if pro plugin detected
+    // import postAgeFilters from '../../../../tweet-old-post-pro/assets/js/build/post_age_filters_component.js'
+    import postAgeFilters from '../../../../tweet-old-post-pro/vue/src/vue-elements/post_age_filters.vue'
+
+
     Vue.use(ToggleButton);
 
     module.exports = {
@@ -529,7 +539,8 @@
 		},
 		components: {
 			counterInput,
-			MultipleSelect
+            MultipleSelect,
+            postAgeFilters
 		}
 	}
 </script>
