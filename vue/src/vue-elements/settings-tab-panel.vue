@@ -68,7 +68,7 @@
                 </div> --> 
                 <div class="columns py-2">
                 <div id="post-age-filters">
-                     <post-age-filters></post-age-filters> 
+                     <post-age-filters v-on:min-post-age-change="PassMinPostAge" v-on:max-post-age-change="PassMaxPostAge"></post-age-filters> 
                 </div>
                    
                 </div>
@@ -388,6 +388,13 @@
             this.getGeneralSettings();
         },
         methods: {
+
+            PassMinPostAge(value){
+                this.generalSettings.minimum_post_age =  value;
+            },
+            PassMaxPostAge(value){
+                this.generalSettings.maximum_post_age =  value;
+            },
             /**
              * Will update settings related to Cron
              * true = Will use remote true Cron Job System

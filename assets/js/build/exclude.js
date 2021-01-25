@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 314);
+/******/ 	return __webpack_require__(__webpack_require__.s = 320);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -16363,8 +16363,8 @@ module.exports = function (it, tag, stat) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__vue_script__ = __webpack_require__(72)
-__vue_template__ = __webpack_require__(74)
+__vue_script__ = __webpack_require__(73)
+__vue_template__ = __webpack_require__(75)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -16698,7 +16698,8 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 72 */
+/* 72 */,
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16708,7 +16709,7 @@ var _getIterator2 = __webpack_require__(49);
 
 var _getIterator3 = _interopRequireDefault(_getIterator2);
 
-var _vueClickaway = __webpack_require__(73);
+var _vueClickaway = __webpack_require__(74);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17182,7 +17183,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17272,24 +17273,24 @@ exports.mixin = mixin;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = "\n\t<div class=\"form-autocomplete\" style=\"width: 100%;\" v-on-clickaway=\"closeDropdown\">\n\t\t<!-- autocomplete input container -->\n\t\t<div class=\"form-autocomplete-input form-input\" :class=\"is_focused\">\n\t\t\t\n\t\t\t<!-- autocomplete chips -->\n\t\t\t<label class=\"chip\" v-for=\"( option, index ) in selected\">\n\t\t\t\t{{option.name}}\n\t\t\t\t<a href=\"#\" class=\"btn btn-clear\" aria-label=\"Close\" @click.prevent=\"removeSelected(index)\"\n\t\t\t\t   role=\"button\"></a>\n\t\t\t</label>\n\t\t\t\n\t\t\t<!-- autocomplete real input box -->\n\t\t\t<input style=\"height: 1.0rem;\" class=\"form-input\" type=\"text\" ref=\"search\" v-model=\"search\"\n\t\t\t       :placeholder=\"autocomplete_placeholder\" @click=\"magic_flag = true\" @focus=\"magic_flag = true\"\n\t\t\t       @keyup=\"magic_flag = true\" @keydown.8=\"popLast()\" @keydown.38=\"highlightItem(true)\"\n\t\t\t       @keydown.40=\"highlightItem()\" :disabled=\"is_disabled\">\n\t\t</div>\n\t\t\n\t\t<!-- autocomplete suggestion list -->\n\t\t<ul class=\"menu\" ref=\"autocomplete_results\" :class=\"is_visible\"\n\t\t    style=\"overflow-y: scroll; max-height: 120px\">\n\t\t\t<!-- menu list chips -->\n\t\t\t<li class=\"menu-item\" v-for=\"( option, index ) in options\" v-if=\"filterSearch(option)\">\n\t\t\t\t<a href=\"#\" @click.prevent=\"addToSelected(index)\" @keydown.38=\"highlightItem(true)\"\n\t\t\t\t   @keydown.40=\"highlightItem()\">\n\t\t\t\t\t<div class=\"tile tile-centered\">\n\t\t\t\t\t\t<div class=\"tile-content\" v-html=\"markMatch(option.name, search)\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</a>\n\t\t\t</li>\n\t\t\t<li v-if=\"has_results\">\n\t\t\t\t<a href=\"#\">\n\t\t\t\t\t<div class=\"tile tile-centered\">\n\t\t\t\t\t\t<div class=\"tile-content\"><i>{{labels.multiselect_not_found}}\"{{search}}\" ...</i></div>\n\t\t\t\t\t</div>\n\t\t\t\t</a>\n\t\t\t</li>\n\t\t</ul>\n\t</div>\n\n";
 
 /***/ }),
-/* 75 */,
 /* 76 */,
 /* 77 */,
 /* 78 */,
 /* 79 */,
-/* 80 */
+/* 80 */,
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(81)
-__vue_script__ = __webpack_require__(83)
-__vue_template__ = __webpack_require__(84)
+__webpack_require__(82)
+__vue_script__ = __webpack_require__(84)
+__vue_template__ = __webpack_require__(85)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -17306,13 +17307,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(82);
+var content = __webpack_require__(83);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -17332,7 +17333,7 @@ if(false) {
 }
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -17346,7 +17347,7 @@ exports.push([module.i, "\n\t#rop-upsell-box[_v-4cbae0f4]{\n\t\tmargin-top:20px;
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17394,13 +17395,12 @@ module.exports = {
 };
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports) {
 
 module.exports = "\n\t<div id=\"rop-upsell-box\" _v-4cbae0f4=\"\">\n\t\t<div class=\"card rop-upsell-pro-card\" v-if=\"license  < 1 \" _v-4cbae0f4=\"\">\n\t\t\t<a :href=\"upsell_link\" target=\"_blank\" _v-4cbae0f4=\"\">\n\t\t\t\t<img class=\"img-responsive\" :src=\"to_pro_upsell\" :alt=\"labels.upgrade_pro_cta\" _v-4cbae0f4=\"\">\n\t\t\t</a>\n\t\t</div>\n\t\t<div class=\"card rop-upsell-business-card\" v-if=\"license  === 1\" _v-4cbae0f4=\"\">\n\t\t\t<a :href=\"upsell_link\" target=\"_blank\" _v-4cbae0f4=\"\">\n\t\t\t\t<img class=\"img-responsive\" :src=\"to_business_upsell\" :alt=\"labels.upgrade_biz_cta\" _v-4cbae0f4=\"\">\n\t\t\t</a>\n\t\t</div>\n\t</div>\n";
 
 /***/ }),
-/* 85 */,
 /* 86 */,
 /* 87 */,
 /* 88 */,
@@ -17629,7 +17629,13 @@ module.exports = "\n\t<div id=\"rop-upsell-box\" _v-4cbae0f4=\"\">\n\t\t<div cla
 /* 311 */,
 /* 312 */,
 /* 313 */,
-/* 314 */
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17643,7 +17649,7 @@ var _rop_store = __webpack_require__(34);
 
 var _rop_store2 = _interopRequireDefault(_rop_store);
 
-var _excludePostsPage = __webpack_require__(315);
+var _excludePostsPage = __webpack_require__(321);
 
 var _excludePostsPage2 = _interopRequireDefault(_excludePostsPage);
 
@@ -17663,13 +17669,13 @@ window.addEventListener('load', function () {
 /* exported RopExcludePosts */
 
 /***/ }),
-/* 315 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(316)
-__vue_script__ = __webpack_require__(318)
-__vue_template__ = __webpack_require__(324)
+__webpack_require__(322)
+__vue_script__ = __webpack_require__(324)
+__vue_template__ = __webpack_require__(330)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -17686,13 +17692,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 316 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(317);
+var content = __webpack_require__(323);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -17712,7 +17718,7 @@ if(false) {
 }
 
 /***/ }),
-/* 317 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -17726,7 +17732,7 @@ exports.push([module.i, "\n    #rop-sidebar-selector[_v-2401e5d8] {\n        bor
 
 
 /***/ }),
-/* 318 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17736,11 +17742,11 @@ var _multipleSelect = __webpack_require__(52);
 
 var _multipleSelect2 = _interopRequireDefault(_multipleSelect);
 
-var _upsellSidebar = __webpack_require__(80);
+var _upsellSidebar = __webpack_require__(81);
 
 var _upsellSidebar2 = _interopRequireDefault(_upsellSidebar);
 
-var _popover = __webpack_require__(319);
+var _popover = __webpack_require__(325);
 
 var _popover2 = _interopRequireDefault(_popover);
 
@@ -18179,13 +18185,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 319 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(320)
-__vue_script__ = __webpack_require__(322)
-__vue_template__ = __webpack_require__(323)
+__webpack_require__(326)
+__vue_script__ = __webpack_require__(328)
+__vue_template__ = __webpack_require__(329)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -18202,13 +18208,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 320 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(321);
+var content = __webpack_require__(327);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -18228,7 +18234,7 @@ if(false) {
 }
 
 /***/ }),
-/* 321 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -18242,7 +18248,7 @@ exports.push([module.i, "\n    .wpr-tooltip {\n        font: 10px \"Helvetica Ne
 
 
 /***/ }),
-/* 322 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18599,13 +18605,13 @@ exports.default = {
 // </style>
 
 /***/ }),
-/* 323 */
+/* 329 */
 /***/ (function(module, exports) {
 
 module.exports = "\n    <div class=\"wpr-tooltip\">\n        <div class=\"outlet\" @mouseover=\"autoShowWithMode\" @mouseleave=\"autoHideWithMode\" @click=\"autoShowWithMode\">\n            <slot name=\"outlet\"></slot>\n        </div>\n        <div class=\"wpr-tooltip\" :style=\"tooltipStyle\">\n            <div class=\"inner\">\n                <slot name=\"tooltip\"></slot>\n            </div>\n            <div class=\"wpr-arrow\" :style=\"arrowStyle\"></div>\n        </div>\n    </div>\n";
 
 /***/ }),
-/* 324 */
+/* 330 */
 /***/ (function(module, exports) {
 
 module.exports = "\n    <div id=\"rop_core\" class=\"columns \" _v-2401e5d8=\"\">\n        <div id=\"rop-sidebar-selector\" class=\"column col-3   col-xl-5 col-lg-5 col-md-6 col-sm-6 col-xs-12  pull-right\" _v-2401e5d8=\"\">\n            <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-2401e5d8=\"\">\n                <div class=\"column col-12 col-sm-12 vertical-align rop-control\" _v-2401e5d8=\"\">\n                    <b _v-2401e5d8=\"\">{{labels.post_types_title}}</b>\n                    <p class=\"text-gray\" _v-2401e5d8=\"\"> {{labels.filter_by_post_types_desc}}</p>\n                </div>\n                <div class=\"column col-12 col-sm-12 vertical-align text-left rop-control\" _v-2401e5d8=\"\">\n                    <multiple-select :options=\"postTypes\" :disabled=\"isPro\" :selected=\"generalSettings.selected_post_types\" :changed-selection=\"updatedPostTypes\" _v-2401e5d8=\"\"></multiple-select>\n                </div>\n            </div>\n\n            <span class=\"divider\" _v-2401e5d8=\"\"></span>\n            <div class=\"columns py-2\" v-if=\"!isPro\" _v-2401e5d8=\"\">\n                <div class=\"column text-center\" _v-2401e5d8=\"\">\n                    <p class=\"upsell\" _v-2401e5d8=\"\"><i class=\"fa fa-lock\" _v-2401e5d8=\"\"></i> {{labels.post_types_upsell}}</p>\n                </div>\n            </div>\n            <div class=\"columns py-2\" _v-2401e5d8=\"\">\n                <div class=\"column col-12 col-sm-12 vertical-align\" _v-2401e5d8=\"\">\n                    <b _v-2401e5d8=\"\">{{labels.taxonomies_title}}</b>\n                    <p class=\"text-gray\" _v-2401e5d8=\"\"> {{labels.filter_by_taxonomies_desc}}</p>\n                </div>\n                <div class=\"column col-12 col-sm-12 vertical-align text-left\" _v-2401e5d8=\"\">\n                    <div class=\"input-group\" _v-2401e5d8=\"\">\n                        <multiple-select :options=\"taxonomies\" :selected=\"generalSettings.selected_taxonomies\" :changed-selection=\"updatedTaxonomies\" _v-2401e5d8=\"\"></multiple-select>\n\n                    </div>\n                </div>\n\n            </div>\n            <upsell-sidebar _v-2401e5d8=\"\"></upsell-sidebar>\n        </div>\n        <div id=\"rop-posts-listing\" class=\"column col-9  col-xl-7 col-lg-7 col-md-6 col-sm-6 col-xs-12 col- pull-left\" _v-2401e5d8=\"\">\n            <div class=\"columns py-2\" _v-2401e5d8=\"\">\n                <div class=\"column col-12 col-sm-12 vertical-align\" _v-2401e5d8=\"\">\n                    <div class=\"input-group has-icon-right\" _v-2401e5d8=\"\">\n                        <input class=\"form-input\" type=\"text\" v-model=\"searchQuery\" :placeholder=\"labels.search_posts_to_exclude\" _v-2401e5d8=\"\">\n                        <i class=\"form-icon loading\" v-if=\"is_loading\" _v-2401e5d8=\"\"></i>\n                    </div>\n                </div>\n                <div class=\"column col-12 col-sm-12 mt-2\" _v-2401e5d8=\"\">\n                    <div class=\"form-group pull-right\" v-if=\"searchQuery != '' &amp;&amp; ! show_excluded\" _v-2401e5d8=\"\">\n                        <button class=\"btn btn-primary\" @click=\"excludePostsBatch\" _v-2401e5d8=\"\">\n                            <i class=\"fa fa-save \" v-if=\"!this.is_loading\" _v-2401e5d8=\"\"></i>\n                            <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-2401e5d8=\"\"></i>\n                            {{labels.exclude_matching}} \"{{searchQuery}}\"\n                        </button>\n                    </div>\n                    <div class=\"form-group pull-right \" _v-2401e5d8=\"\">\n                        <label class=\"form-switch\" _v-2401e5d8=\"\">\n                            <input type=\"checkbox\" v-model=\"show_excluded\" @change=\"excludePostsChange\" _v-2401e5d8=\"\">\n                            <i class=\"form-icon\" _v-2401e5d8=\"\"></i>{{labels.search_posts_show_excluded}}\n                        </label>\n                    </div>\n\n                    <p class=\"text-primary rop-post-type-badge\" v-if=\"apply_limit_exclude\" v-html=\"labels.post_types_exclude_limit\" _v-2401e5d8=\"\"></p>\n                </div>\n                <div class=\"column col-12  px-2\" v-if=\"postsAvailable\" _v-2401e5d8=\"\">\n                    <div v-if=\"postsAvailable.length === 0 &amp;&amp; !is_loading\" _v-2401e5d8=\"\">\n                        {{labels.no_posts_found}}\n                    </div>\n                    <div v-else=\"\" _v-2401e5d8=\"\">\n                        <table id=\"rop-posts-table\" class=\"table table-striped table-hover\" v-if=\" ! is_loading\" _v-2401e5d8=\"\">\n                            <tbody _v-2401e5d8=\"\"><tr v-for=\"(post,index ) in postsAvailable\" class=\"rop-post-item\" _v-2401e5d8=\"\">\n                                <td :class=\"'rop-post-' + post.selected\" _v-2401e5d8=\"\">{{post.name}}\n                                    <template _v-2401e5d8=\"\">\n                                        <tooltip placement=\"top-right\" mode=\"hover\" :is_show=\"apply_limit_exclude\" _v-2401e5d8=\"\">\n                                            <div slot=\"outlet\" _v-2401e5d8=\"\">\n                                                <button class=\"btn btn-error rop-exclude-post\" @click=\"excludeSinglePost(post.value,post.selected)\" _v-2401e5d8=\"\">\n                                                    <i class=\"fa\" :class=\"'fa-' + (post.selected ? 'plus' : 'remove') \" v-if=\"!is_loading_single\" _v-2401e5d8=\"\"></i>\n                                                    <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-2401e5d8=\"\"></i>\n                                                    <span v-html=\" ( post.selected ? labels.include_single_post  : labels.exclude_single_post) \" _v-2401e5d8=\"\"> </span>\n                                                </button>\n                                            </div>\n                                            <div slot=\"tooltip\" v-html=\"labels.post_types_exclude_limit_tooltip\" _v-2401e5d8=\"\"></div>\n                                        </tooltip>\n                                    </template>\n                                </td>\n                            </tr>\n                            <tr v-if=\"has_pages\" _v-2401e5d8=\"\">\n                                <td class=\"rop-load-more-posts\" _v-2401e5d8=\"\">\n                                    <button class=\"btn btn-error\" @click=\"loadMorePosts()\" _v-2401e5d8=\"\">\n                                        <i class=\"fa fa-newspaper-o \" v-if=\"!is_loading_single\" _v-2401e5d8=\"\"></i>\n                                        <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-2401e5d8=\"\"></i>\n                                        {{labels.load_more_posts}}\n                                    </button>\n                                </td>\n                            </tr>\n                        </tbody></table>\n                        <div class=\"loading loading-lg\" v-else=\"\" _v-2401e5d8=\"\"></div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n";

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 325);
+/******/ 	return __webpack_require__(__webpack_require__.s = 331);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -796,241 +796,6 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ 325:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _vue = __webpack_require__(6);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _rop_store = __webpack_require__(34);
-
-var _rop_store2 = _interopRequireDefault(_rop_store);
-
-var _publishNow = __webpack_require__(326);
-
-var _publishNow2 = _interopRequireDefault(_publishNow);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-window.addEventListener('load', function () {
-	var RopPublishNow = new _vue2.default({
-		el: '#rop_publish_now',
-		store: _rop_store2.default,
-		components: {
-			PublishNow: _publishNow2.default
-		},
-		created: function created() {}
-	});
-}); // jshint ignore: start
-/* eslint no-unused-vars: 0 */
-
-/***/ }),
-
-/***/ 326:
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_script__, __vue_template__
-__webpack_require__(327)
-__vue_script__ = __webpack_require__(329)
-__vue_template__ = __webpack_require__(334)
-module.exports = __vue_script__ || {}
-if (module.exports.__esModule) module.exports = module.exports.default
-if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
-if (false) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  var id = "/Users/uvdev/Local Sites/rop/app/public/wp-content/plugins/tweet-old-post/vue/src/vue-elements/pro/publish-now.vue"
-  if (!module.hot.data) {
-    hotAPI.createRecord(id, module.exports)
-  } else {
-    hotAPI.update(id, module.exports, __vue_template__)
-  }
-})()}
-
-/***/ }),
-
-/***/ 327:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(328);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(2)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-9512fc24&file=publish-now.vue!../../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!../../../../node_modules/eslint-loader/index.js!../../../../node_modules/eslint-loader/index.js!./publish-now.vue", function() {
-			var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-9512fc24&file=publish-now.vue!../../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!../../../../node_modules/eslint-loader/index.js!../../../../node_modules/eslint-loader/index.js!./publish-now.vue");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 328:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)();
-// imports
-
-
-// module
-exports.push([module.i, "\n\t.rop-publish-now-branding{\n\t\ttext-align: right;\n\t\twidth:100%;\n\t\tfloat:right;\n\t}\n\t.rop-edit-custom-instant-share-message-text{\n\t\ttext-decoration: underline;\n\t\tcolor: #0073aa;\n\t\tfont-size: 12px;\n\t\tfont-style:italic;\n\t\tcursor: pointer;\n\t}\n\t.rop-publish-now-account, .rop-custom-instant-share-message-area{\n\t\tmargin: 0 0 0 16px;\n\t}\n\t.custom-instant-share-upsell{\n\t\tcolor: #808080;\n\t\tmargin: 0 0 12px 16px;\n\t}\n\t.rop-custom-instant-share-message-text{\n\t\tmargin: 5px 0 5px 16px;\n\t\tfont-style: italic;\n\t}\n\t.rop-publish-now-accounts-wrapper{\n\t\tmargin-top:10px;\n\t}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 329:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _defineProperty2 = __webpack_require__(330);
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _keys = __webpack_require__(19);
-
-var _keys2 = _interopRequireDefault(_keys);
-
-var _buttonCheckbox = __webpack_require__(75);
-
-var _buttonCheckbox2 = _interopRequireDefault(_buttonCheckbox);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = (0, _defineProperty3.default)({
-	name: 'publish-now',
-	created: function created() {},
-
-	computed: {},
-	data: function data() {
-		var fields = {};
-		(0, _keys2.default)(this.$store.state.publish_now.accounts).forEach(function (e) {
-			fields[e] = false;
-		});
-
-		return {
-			license: this.$store.state.licence,
-			labels: this.$store.state.labels.publish_now,
-			accounts: this.$store.state.publish_now.accounts,
-			share_on_update_enabled: this.$store.state.publish_now.action,
-			showField: fields
-		};
-	},
-	components: {
-		ButtonCheckbox: _buttonCheckbox2.default
-	},
-	methods: {
-		getServiceClass: function getServiceClass(service) {
-			var serviceIcon = 'fa-';
-			if (service === 'facebook') serviceIcon = serviceIcon.concat('facebook');
-			if (service === 'twitter') serviceIcon = serviceIcon.concat('twitter');
-			if (service === 'linkedin') serviceIcon = serviceIcon.concat('linkedin');
-			if (service === 'tumblr') serviceIcon = serviceIcon.concat('tumblr');
-			if (service === 'pinterest') serviceIcon = serviceIcon.concat('pinterest');
-			if (service === 'vk') serviceIcon = serviceIcon.concat('vk');
-			if (service === 'gmb') serviceIcon = serviceIcon.concat('google');
-
-			return serviceIcon;
-		},
-
-		toggleServices: function toggleServices(event, value) {
-			var self = this;
-			if (event.target.checked) {
-				return;
-			}
-
-			return self.showField[value] = false;
-		},
-
-		togglefields: function togglefields(value) {
-			var self = this;
-			return self.showField[value] = !self.showField[value];
-		}
-
-	}
-}, 'computed', {
-	isPro: function isPro() {
-		return this.license > 0;
-	}
-});
-// </script>
-// <style>
-// 	.rop-publish-now-branding{
-// 		text-align: right;
-// 		width:100%;
-// 		float:right;
-// 	}
-// 	.rop-edit-custom-instant-share-message-text{
-// 		text-decoration: underline;
-// 		color: #0073aa;
-// 		font-size: 12px;
-// 		font-style:italic;
-// 		cursor: pointer;
-// 	}
-// 	.rop-publish-now-account, .rop-custom-instant-share-message-area{
-// 		margin: 0 0 0 16px;
-// 	}
-// 	.custom-instant-share-upsell{
-// 		color: #808080;
-// 		margin: 0 0 12px 16px;
-// 	}
-// 	.rop-custom-instant-share-message-text{
-// 		margin: 5px 0 5px 16px;
-// 		font-style: italic;
-// 	}
-// 	.rop-publish-now-accounts-wrapper{
-// 		margin-top:10px;
-// 	}
-// </style>
-//
-// <template>
-// 	<div class="rop-control-container" v-if="Object.keys(accounts).length > 0" >
-//
-// 		<!-- Share on publish/update -->
-// 		<fieldset>
-// 			<label class="form-checkbox">
-// 				<input type="checkbox" :checked="share_on_update_enabled" v-on:click="share_on_update_enabled = !share_on_update_enabled" name="publish_now" value="1"/>
-// 				<span v-html=" labels.share_on_update"></span>
-// 			</label>
-//
-// 			<div class="form-group rop-publish-now-accounts-wrapper" v-if="share_on_update_enabled" v-for="(account, key) in accounts" :id="key" v-bind:key="key">
-// 				<label class="form-checkbox rop-publish-now-account" :id="key">
-// 					<input type="checkbox" :checked="share_on_update_enabled" :value="key" v-on:click="toggleServices($event, key)" name="publish_now_accounts[]" class="rop-account-names"/>
-// 					<i class=" fa " :class="getServiceClass(account.service)"></i> {{account.user}}
-// 				</label>
-// 				<span v-on:click="togglefields(key)" :id="key" class="rop-edit-custom-instant-share-message-text">{{ showField[key] ? 'done' : 'edit message' }}</span>
-// 				<p v-show="showField[key]" class="rop-custom-instant-share-message-text">Custom share message:</p>
-// 				<textarea v-show="showField[key]" :name="key" :disabled="!isPro" class="rop-custom-instant-share-message-area"></textarea>
-// 				<p v-if="!isPro && showField[key]" v-html="labels.custom_instant_share_messages_upsell" class="custom-instant-share-upsell"></p>
-// 			</div>
-// 		</fieldset>
-//
-// 	</div>
-// </template>
-//
-// <script>
-
-/***/ }),
-
 /***/ 33:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1225,7 +990,242 @@ module.exports = (0, _defineProperty3.default)({
 
 /***/ }),
 
-/***/ 330:
+/***/ 331:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _vue = __webpack_require__(6);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _rop_store = __webpack_require__(34);
+
+var _rop_store2 = _interopRequireDefault(_rop_store);
+
+var _publishNow = __webpack_require__(332);
+
+var _publishNow2 = _interopRequireDefault(_publishNow);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+window.addEventListener('load', function () {
+	var RopPublishNow = new _vue2.default({
+		el: '#rop_publish_now',
+		store: _rop_store2.default,
+		components: {
+			PublishNow: _publishNow2.default
+		},
+		created: function created() {}
+	});
+}); // jshint ignore: start
+/* eslint no-unused-vars: 0 */
+
+/***/ }),
+
+/***/ 332:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_script__, __vue_template__
+__webpack_require__(333)
+__vue_script__ = __webpack_require__(335)
+__vue_template__ = __webpack_require__(340)
+module.exports = __vue_script__ || {}
+if (module.exports.__esModule) module.exports = module.exports.default
+if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
+if (false) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/uvdev/Local Sites/rop/app/public/wp-content/plugins/tweet-old-post/vue/src/vue-elements/pro/publish-now.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, __vue_template__)
+  }
+})()}
+
+/***/ }),
+
+/***/ 333:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(334);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(2)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-9512fc24&file=publish-now.vue!../../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!../../../../node_modules/eslint-loader/index.js!../../../../node_modules/eslint-loader/index.js!./publish-now.vue", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-9512fc24&file=publish-now.vue!../../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!../../../../node_modules/eslint-loader/index.js!../../../../node_modules/eslint-loader/index.js!./publish-now.vue");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 334:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)();
+// imports
+
+
+// module
+exports.push([module.i, "\n\t.rop-publish-now-branding{\n\t\ttext-align: right;\n\t\twidth:100%;\n\t\tfloat:right;\n\t}\n\t.rop-edit-custom-instant-share-message-text{\n\t\ttext-decoration: underline;\n\t\tcolor: #0073aa;\n\t\tfont-size: 12px;\n\t\tfont-style:italic;\n\t\tcursor: pointer;\n\t}\n\t.rop-publish-now-account, .rop-custom-instant-share-message-area{\n\t\tmargin: 0 0 0 16px;\n\t}\n\t.custom-instant-share-upsell{\n\t\tcolor: #808080;\n\t\tmargin: 0 0 12px 16px;\n\t}\n\t.rop-custom-instant-share-message-text{\n\t\tmargin: 5px 0 5px 16px;\n\t\tfont-style: italic;\n\t}\n\t.rop-publish-now-accounts-wrapper{\n\t\tmargin-top:10px;\n\t}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 335:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _defineProperty2 = __webpack_require__(336);
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _keys = __webpack_require__(19);
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _buttonCheckbox = __webpack_require__(76);
+
+var _buttonCheckbox2 = _interopRequireDefault(_buttonCheckbox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = (0, _defineProperty3.default)({
+	name: 'publish-now',
+	created: function created() {},
+
+	computed: {},
+	data: function data() {
+		var fields = {};
+		(0, _keys2.default)(this.$store.state.publish_now.accounts).forEach(function (e) {
+			fields[e] = false;
+		});
+
+		return {
+			license: this.$store.state.licence,
+			labels: this.$store.state.labels.publish_now,
+			accounts: this.$store.state.publish_now.accounts,
+			share_on_update_enabled: this.$store.state.publish_now.action,
+			showField: fields
+		};
+	},
+	components: {
+		ButtonCheckbox: _buttonCheckbox2.default
+	},
+	methods: {
+		getServiceClass: function getServiceClass(service) {
+			var serviceIcon = 'fa-';
+			if (service === 'facebook') serviceIcon = serviceIcon.concat('facebook');
+			if (service === 'twitter') serviceIcon = serviceIcon.concat('twitter');
+			if (service === 'linkedin') serviceIcon = serviceIcon.concat('linkedin');
+			if (service === 'tumblr') serviceIcon = serviceIcon.concat('tumblr');
+			if (service === 'pinterest') serviceIcon = serviceIcon.concat('pinterest');
+			if (service === 'vk') serviceIcon = serviceIcon.concat('vk');
+			if (service === 'gmb') serviceIcon = serviceIcon.concat('google');
+
+			return serviceIcon;
+		},
+
+		toggleServices: function toggleServices(event, value) {
+			var self = this;
+			if (event.target.checked) {
+				return;
+			}
+
+			return self.showField[value] = false;
+		},
+
+		togglefields: function togglefields(value) {
+			var self = this;
+			return self.showField[value] = !self.showField[value];
+		}
+
+	}
+}, 'computed', {
+	isPro: function isPro() {
+		return this.license > 0;
+	}
+});
+// </script>
+// <style>
+// 	.rop-publish-now-branding{
+// 		text-align: right;
+// 		width:100%;
+// 		float:right;
+// 	}
+// 	.rop-edit-custom-instant-share-message-text{
+// 		text-decoration: underline;
+// 		color: #0073aa;
+// 		font-size: 12px;
+// 		font-style:italic;
+// 		cursor: pointer;
+// 	}
+// 	.rop-publish-now-account, .rop-custom-instant-share-message-area{
+// 		margin: 0 0 0 16px;
+// 	}
+// 	.custom-instant-share-upsell{
+// 		color: #808080;
+// 		margin: 0 0 12px 16px;
+// 	}
+// 	.rop-custom-instant-share-message-text{
+// 		margin: 5px 0 5px 16px;
+// 		font-style: italic;
+// 	}
+// 	.rop-publish-now-accounts-wrapper{
+// 		margin-top:10px;
+// 	}
+// </style>
+//
+// <template>
+// 	<div class="rop-control-container" v-if="Object.keys(accounts).length > 0" >
+//
+// 		<!-- Share on publish/update -->
+// 		<fieldset>
+// 			<label class="form-checkbox">
+// 				<input type="checkbox" :checked="share_on_update_enabled" v-on:click="share_on_update_enabled = !share_on_update_enabled" name="publish_now" value="1"/>
+// 				<span v-html=" labels.share_on_update"></span>
+// 			</label>
+//
+// 			<div class="form-group rop-publish-now-accounts-wrapper" v-if="share_on_update_enabled" v-for="(account, key) in accounts" :id="key" v-bind:key="key">
+// 				<label class="form-checkbox rop-publish-now-account" :id="key">
+// 					<input type="checkbox" :checked="share_on_update_enabled" :value="key" v-on:click="toggleServices($event, key)" name="publish_now_accounts[]" class="rop-account-names"/>
+// 					<i class=" fa " :class="getServiceClass(account.service)"></i> {{account.user}}
+// 				</label>
+// 				<span v-on:click="togglefields(key)" :id="key" class="rop-edit-custom-instant-share-message-text">{{ showField[key] ? 'done' : 'edit message' }}</span>
+// 				<p v-show="showField[key]" class="rop-custom-instant-share-message-text">Custom share message:</p>
+// 				<textarea v-show="showField[key]" :name="key" :disabled="!isPro" class="rop-custom-instant-share-message-area"></textarea>
+// 				<p v-if="!isPro && showField[key]" v-html="labels.custom_instant_share_messages_upsell" class="custom-instant-share-upsell"></p>
+// 			</div>
+// 		</fieldset>
+//
+// 	</div>
+// </template>
+//
+// <script>
+
+/***/ }),
+
+/***/ 336:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1233,7 +1233,7 @@ module.exports = (0, _defineProperty3.default)({
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(331);
+var _defineProperty = __webpack_require__(337);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -1256,17 +1256,17 @@ exports.default = function (obj, key, value) {
 
 /***/ }),
 
-/***/ 331:
+/***/ 337:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(332), __esModule: true };
+module.exports = { "default": __webpack_require__(338), __esModule: true };
 
 /***/ }),
 
-/***/ 332:
+/***/ 338:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(333);
+__webpack_require__(339);
 var $Object = __webpack_require__(3).Object;
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
@@ -1275,20 +1275,13 @@ module.exports = function defineProperty(it, key, desc) {
 
 /***/ }),
 
-/***/ 333:
+/***/ 339:
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(22);
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
 $export($export.S + $export.F * !__webpack_require__(5), 'Object', { defineProperty: __webpack_require__(17).f });
 
-
-/***/ }),
-
-/***/ 334:
-/***/ (function(module, exports) {
-
-module.exports = "\n\t<div class=\"rop-control-container\" v-if=\"Object.keys(accounts).length > 0\" >\n\n\t\t<!-- Share on publish/update -->\n\t\t<fieldset>\n\t\t\t<label class=\"form-checkbox\">\n\t\t\t\t<input type=\"checkbox\" :checked=\"share_on_update_enabled\" v-on:click=\"share_on_update_enabled = !share_on_update_enabled\" name=\"publish_now\" value=\"1\"/>\n\t\t\t\t<span v-html=\" labels.share_on_update\"></span>\n\t\t\t</label>\n\n\t\t\t<div class=\"form-group rop-publish-now-accounts-wrapper\" v-if=\"share_on_update_enabled\" v-for=\"(account, key) in accounts\" :id=\"key\" v-bind:key=\"key\">\n\t\t\t\t<label class=\"form-checkbox rop-publish-now-account\" :id=\"key\">\n\t\t\t\t\t<input type=\"checkbox\" :checked=\"share_on_update_enabled\" :value=\"key\" v-on:click=\"toggleServices($event, key)\" name=\"publish_now_accounts[]\" class=\"rop-account-names\"/>\n\t\t\t\t\t<i class=\" fa \" :class=\"getServiceClass(account.service)\"></i> {{account.user}}\n\t\t\t\t</label>\n\t\t\t\t<span v-on:click=\"togglefields(key)\" :id=\"key\" class=\"rop-edit-custom-instant-share-message-text\">{{ showField[key] ? 'done' : 'edit message' }}</span>\n\t\t\t\t<p v-show=\"showField[key]\" class=\"rop-custom-instant-share-message-text\">Custom share message:</p>\n\t\t\t\t<textarea v-show=\"showField[key]\" :name=\"key\" :disabled=\"!isPro\" class=\"rop-custom-instant-share-message-area\"></textarea>\n\t\t\t\t<p v-if=\"!isPro && showField[key]\" v-html=\"labels.custom_instant_share_messages_upsell\" class=\"custom-instant-share-upsell\"></p>\n\t\t\t</div>\n\t\t</fieldset>\n\n\t</div>\n";
 
 /***/ }),
 
@@ -1643,6 +1636,13 @@ exports.default = new _vuex2.default.Store({
         }
     }
 });
+
+/***/ }),
+
+/***/ 340:
+/***/ (function(module, exports) {
+
+module.exports = "\n\t<div class=\"rop-control-container\" v-if=\"Object.keys(accounts).length > 0\" >\n\n\t\t<!-- Share on publish/update -->\n\t\t<fieldset>\n\t\t\t<label class=\"form-checkbox\">\n\t\t\t\t<input type=\"checkbox\" :checked=\"share_on_update_enabled\" v-on:click=\"share_on_update_enabled = !share_on_update_enabled\" name=\"publish_now\" value=\"1\"/>\n\t\t\t\t<span v-html=\" labels.share_on_update\"></span>\n\t\t\t</label>\n\n\t\t\t<div class=\"form-group rop-publish-now-accounts-wrapper\" v-if=\"share_on_update_enabled\" v-for=\"(account, key) in accounts\" :id=\"key\" v-bind:key=\"key\">\n\t\t\t\t<label class=\"form-checkbox rop-publish-now-account\" :id=\"key\">\n\t\t\t\t\t<input type=\"checkbox\" :checked=\"share_on_update_enabled\" :value=\"key\" v-on:click=\"toggleServices($event, key)\" name=\"publish_now_accounts[]\" class=\"rop-account-names\"/>\n\t\t\t\t\t<i class=\" fa \" :class=\"getServiceClass(account.service)\"></i> {{account.user}}\n\t\t\t\t</label>\n\t\t\t\t<span v-on:click=\"togglefields(key)\" :id=\"key\" class=\"rop-edit-custom-instant-share-message-text\">{{ showField[key] ? 'done' : 'edit message' }}</span>\n\t\t\t\t<p v-show=\"showField[key]\" class=\"rop-custom-instant-share-message-text\">Custom share message:</p>\n\t\t\t\t<textarea v-show=\"showField[key]\" :name=\"key\" :disabled=\"!isPro\" class=\"rop-custom-instant-share-message-area\"></textarea>\n\t\t\t\t<p v-if=\"!isPro && showField[key]\" v-html=\"labels.custom_instant_share_messages_upsell\" class=\"custom-instant-share-upsell\"></p>\n\t\t\t</div>\n\t\t</fieldset>\n\n\t</div>\n";
 
 /***/ }),
 
@@ -16620,13 +16620,13 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
-__webpack_require__(76)
-__vue_script__ = __webpack_require__(78)
-__vue_template__ = __webpack_require__(79)
+__webpack_require__(77)
+__vue_script__ = __webpack_require__(79)
+__vue_template__ = __webpack_require__(80)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -16644,13 +16644,13 @@ if (false) {(function () {  module.hot.accept()
 
 /***/ }),
 
-/***/ 76:
+/***/ 77:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(77);
+var content = __webpack_require__(78);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(2)(content, {});
@@ -16671,7 +16671,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 77:
+/***/ 78:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)();
@@ -16686,7 +16686,7 @@ exports.push([module.i, "\n\t#rop_core .input-group .input-group-addon.btn.activ
 
 /***/ }),
 
-/***/ 78:
+/***/ 79:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16763,13 +16763,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ 79:
-/***/ (function(module, exports) {
-
-module.exports = "\n\t<button class=\"btn input-group-addon column\" :class=\"is_active\" @click=\"toggleThis()\" _v-1c9c2ce2=\"\">{{label}}</button>\n";
-
-/***/ }),
-
 /***/ 8:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16782,6 +16775,13 @@ module.exports = __webpack_require__(5) ? function (object, key, value) {
   return object;
 };
 
+
+/***/ }),
+
+/***/ 80:
+/***/ (function(module, exports) {
+
+module.exports = "\n\t<button class=\"btn input-group-addon column\" :class=\"is_active\" @click=\"toggleThis()\" _v-1c9c2ce2=\"\">{{label}}</button>\n";
 
 /***/ })
 
