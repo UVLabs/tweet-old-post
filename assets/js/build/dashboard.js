@@ -36929,10 +36929,21 @@ var _post_age_filters2 = _interopRequireDefault(_post_age_filters);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//    System.import('../../../../tweet-old-post-pro/vue/src/vue-elements/post_age_filters.vue');
+//    import postAgeFilters from '../../../../tweet-old-post-pro/vue/src/vue-elements/post_age_filterss.vue'
+//    }
+
+// function loadWidget(widget){
+// 	return {
+//   		[widget]: () =>   System.import('../../../../tweet-old-post-pro/vue/src/vue-elements/post_age_filters.vue')
+// 	}
+// }
+
 _vue2.default.use(_vueJsToggleButton2.default);
 
 // TODO import only if pro plugin detected
 // import postAgeFilters from '../../../../tweet-old-post-pro/assets/js/build/post_age_filters_component.js'
+//    if( !isPro ){
 // <template>
 //     <div class="tab-view">
 //         <div class="panel-body">
@@ -37001,12 +37012,12 @@ _vue2.default.use(_vueJsToggleButton2.default);
 //                                        :value.sync="generalSettings.maximum_post_age"></counter-input>
 //                     </div>
 //                 </div> --> 
-//                 <div class="columns py-2">
 //                 <div id="post-age-filters">
-//                      <post-age-filters v-on:min-post-age-change="PassMinPostAge" v-on:max-post-age-change="PassMaxPostAge"></post-age-filters> 
+//                      <!-- <post-age-filters  v-on:min-post-age-change="PassMinPostAge" v-on:max-post-age-change="PassMaxPostAge"></post-age-filters>  -->
+//                      <!-- <post-age-filters v-on:min-post-age-change="PassMinPostAge" v-on:max-post-age-change="PassMaxPostAge"></post-age-filters>  -->
+//                      <post-age-filters></post-age-filters> 
 //                 </div>
 //
-//                 </div>
 //                 <span class="divider"></span>
 //
 //                 <div class="columns py-2">
@@ -37316,13 +37327,13 @@ module.exports = {
         this.getGeneralSettings();
     },
     methods: {
-        PassMinPostAge: function PassMinPostAge(value) {
-            this.generalSettings.minimum_post_age = value;
-        },
-        PassMaxPostAge: function PassMaxPostAge(value) {
-            this.generalSettings.maximum_post_age = value;
-        },
 
+        // PassMinPostAge(value){
+        //     this.generalSettings.minimum_post_age =  value;
+        // },
+        // PassMaxPostAge(value){
+        //     this.generalSettings.maximum_post_age =  value;
+        // },
         /**
          * Will update settings related to Cron
          * true = Will use remote true Cron Job System
@@ -37476,6 +37487,7 @@ module.exports = {
         counterInput: _counterInput2.default,
         MultipleSelect: _multipleSelect2.default,
         postAgeFilters: _post_age_filters2.default
+        // loadWidget(postAgeFilters)
     }
     // </script>
     //
@@ -38955,299 +38967,61 @@ var _counterInput2 = _interopRequireDefault(_counterInput);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// export default {
-//     name: 'post-age-filters'
-// }
 module.exports = {
     name: 'post-age-filter',
     data: function data() {
         return {
-            minimum_post_age: 0,
-            maximum_post_age: 0
+
+            // minimum_post_age: 0,
+            // maximum_post_age: 0,
         };
     },
 
+    computed: {
+
+        generalSettings: function generalSettings() {
+            return this.$store.state.generalSettings;
+        }
+
+    },
     methods: {
-        emitMinPostAgeToParent: function emitMinPostAgeToParent() {
-            this.$emit('min-post-age-change', this.minimum_post_age);
-            // console.log(this.minimum_post_age);
-            // console.log(this.$store.state.generalSettings.minimum_post_age)
-            // console.log(this.$store.state.generalSettings.number_of_posts)
-        },
-        emitMaxPostAgeToParent: function emitMaxPostAgeToParent() {
-            this.$emit('max-post-age-change', this.maximum_post_age);
-            console.log(this.maximum_post_age);
-        }
+        // emitMinPostAgeToParent(){
+        //     this.$emit('min-post-age-change', this.minimum_post_age);
+
+
+        // },
+        // emitMaxPostAgeToParent(){
+        //     this.$emit('max-post-age-change', this.maximum_post_age);
+        //     console.log(this.maximum_post_age);
+        // },
+
+        // setMinPostAge(){
+        //     this.minimum_post_age = this.$store.state.generalSettings.minimum_post_age;
+        // },
+
+        // setMaxPostAge(){
+        //     this.maximum_post_age = this.$store.state.generalSettings.maximum_post_age;
+        // }
+
     },
-    mounted: {},
-    watch: {
-        minimum_post_age: function minimum_post_age() {
-            this.emitMinPostAgeToParent();
-        },
-        maximum_post_age: function maximum_post_age() {
-            this.emitMaxPostAgeToParent();
-        }
-    },
+    // created: function(){
+    //     this.setMinPostAge();
+    //     this.setMaxPostAge();
+
+    // },
+    // watch: {
+    //     minimum_post_age(){
+    //         this.emitMinPostAgeToParent();
+    //     },
+
+    //     maximum_post_age(){
+    //         this.emitMaxPostAgeToParent();
+    //     }
+    // },
     components: {
         counterInput: _counterInput2.default
     }
 
-    // module.exports = {
-    //     name: 'main-page-panel',
-    //     computed: {
-    //         is_preloading_over: function () {
-    //             return this.$store.state.hide_preloading;
-    //         },
-    //         /**
-    //          * Display the clicked tab.
-    //          *
-    //          * @returns {module.exports.computed.displayTabs|*[]}
-    //          */
-    //         displayTabs: function () {
-    //             return this.$store.state.displayTabs
-    //         },
-    //         /**
-    //          * Get active page.
-    //          */
-    //         page: function () {
-    //             return this.$store.state.page
-    //         },
-    //         /**
-    //          * Check if rest api is available.
-    //          */
-    //         is_rest_api_error: function () {
-    //             return this.$store.state.api_not_available
-    //         },
-    //         /**
-    //          * Check if rest api is available.
-    //          */
-    //         is_fb_domain_notice: function () {
-    //             return this.$store.state.fb_exception_toast
-    //         },
-    //         current_time: {
-    //             get: function () {
-    //                 return this.$store.state.cron_status.current_time;
-    //             },
-    //             set: function (value) {
-    //                 this.$store.state.cron_status.current_time = value;
-    //             }
-    //         },
-    //         date_format: function () {
-
-    //             return this.$store.state.cron_status.date_format;
-    //         },
-    //         logs_no: function () {
-
-    //             return this.$store.state.cron_status.logs_number;
-    //         },
-    //         /**
-    //          * Get btn start class.
-    //          */
-    //         btn_class: function () {
-    //             let btn_class = ('btn-' + (this.start_status ? 'danger' : 'success'));
-    //             if (!this.haveAccountsActive) {
-    //                 btn_class += ' tooltip button-disabled ';
-    //             }
-    //             return btn_class;
-    //         },
-    //         /**
-    //          * Status label.
-    //          */
-    //         status_color_class: function () {
-    //             let status_color_class = ('sharing-status-' + (this.start_status ? 'sharing' : 'notsharing'));
-    //             if (!this.haveAccountsActive) {
-    //                 status_color_class = ' sharing-status-notsharing  ';
-    //             }
-    //             if (this.status_is_error_display) {
-    //                 return ' sharing-status-error ';
-    //             }
-    //             return status_color_class;
-    //         },
-    //         status_label_display: function () {
-    //             let labels = this.$store.state.labels.general;
-    //             let status_label_display = (this.start_status ? labels.sharing_to_account : labels.sharing_not_started);
-    //             if (!this.haveAccountsActive) {
-    //                 status_label_display = labels.sharing_not_started;
-    //             }
-
-    //             if (this.status_is_error_display) {
-    //                 return labels.status + ': ' + labels.error_check_log;
-    //             }
-    //             return labels.status + ': ' + status_label_display;
-    //         },
-    //         status_is_error_display: function () {
-    //             return this.status_is_error_display;
-    //         },
-    //         /**
-    //          * Check if we have accounts connected.
-    //          *
-    //          * @returns {boolean}
-    //          */
-    //         haveAccounts: function () {
-    //             return (Object.keys(this.$store.state.authenticatedServices).length > 0);
-    //         },
-    //         /**
-    //          * Check if we have accounts active.
-    //          *
-    //          * @returns {boolean}
-    //          */
-    //         haveAccountsActive: function () {
-    //             return (Object.keys(this.$store.state.activeAccounts).length > 0);
-    //         },
-    //         /*
-    //         * Check if the sharing is started.
-    //         */
-    //         start_status: function () {
-    //             return this.$store.state.cron_status.current_status
-    //         },
-
-    //         /**
-    //          * Get general settings.
-    //          * @returns {module.exports.computed.generalSettings|Array|*}
-    //          */
-    //         generalSettings: function () {
-    //             return this.$store.state.generalSettings
-    //         },
-    //     },
-    //     mounted: function () {
-    //         setInterval(() => {
-    //             //this.$log.info('counting');
-    //             if (this.current_time > 0) {
-    //                 this.current_time += 1;
-    //             }
-    //         }, 1000);
-
-    //         this.get_toast_message(false);
-    //     },
-    //     created() {
-    //         this.$root.$refs.main_page = this;
-    //     },
-    //     data: function () {
-    //         return {
-    //             to_pro_upsell: ROP_ASSETS_URL + 'img/to_pro.png',
-    //             to_business_upsell: ROP_ASSETS_URL + 'img/to_business.png',
-    //             plugin_logo: ROP_ASSETS_URL + 'img/logo_rop.png',
-    //             license: this.$store.state.licence,
-    //             labels: this.$store.state.labels.general,
-    //             upsell_link: ropApiSettings.upsell_link,
-    //             staging: ropApiSettings.staging,
-    //             is_loading: false,
-    //             is_loading_logs: false,
-    //             status_is_error_display: false
-    //         }
-    //     },
-    //     methods: {
-    //         /**
-    //          *
-    //          * */
-    //         close_fb_domain_notice() {
-    //             if (this.is_loading) {
-    //                 this.$log.warn('Request in progress...Bail');
-    //                 return;
-    //             }
-
-    //             this.$store.dispatch('fetchAJAXPromise', {
-    //                 req: 'fb_exception_toast',
-    //                 data: {action: 'hide'}
-    //             }).then(response => {
-    //                 this.$log.info('Succesfully closed facebook domain toast.');
-    //                 this.is_loading = false;
-    //             }, error => {
-    //                 this.is_loading = false;
-    //                 Vue.$log.error('Got nothing from server. Prompt user to check internet connection and try again', error)
-    //             })
-    //         },
-    //         /**
-    //          * Toggle sharing.
-    //          *
-    //          * @category New Cron System - adapted
-    //          */
-    //         togglePosting(force_status) {
-    //             if (this.is_loading) {
-    //                 this.$log.warn('Request in progress...Bail');
-    //                 return;
-    //             }
-
-    //             let new_status = false;
-
-    //             if (typeof force_status === 'undefined') {
-    //                 new_status = this.start_status === false ? 'start' : 'stop';
-    //             } else {
-    //                 new_status = force_status === false ? 'start' : 'stop';
-    //             }
-
-    //             this.is_loading = true;
-
-    //             this.$store.dispatch('fetchAJAXPromise', {
-    //                 req: 'manage_cron',
-    //                 data: {
-    //                     'action': new_status
-    //                 }
-    //             }).then(response => {
-    //                 this.is_loading = false;
-    //             }, error => {
-    //                 this.is_loading = false;
-    //                 Vue.$log.error('Got nothing from server. Prompt user to check internet connection and try again', error)
-    //             })
-    //         },
-    //         /**
-    //          * Toggle tab active.
-    //          * @param slug
-    //          */
-    //         switchTab(slug) {
-    //             this.$store.commit('setTabView', slug)
-    //         },
-
-    //         get_toast_message(force) {
-    //             if (this.is_loading_logs) {
-    //                 this.$log.warn('Request in progress...Bail');
-    //                 return;
-    //             }
-    //             this.is_loading_logs = true;
-    //             this.$store.dispatch('fetchAJAXPromise', {
-    //                 req: 'get_toast',
-    //                 data: {force: force}
-    //             }).then(response => {
-    //                 this.$log.info('Succesfully fetched toast log.');
-    //                 this.is_loading_logs = false;
-    //                 this.$store.dispatch('fetchAJAX', {req: 'manage_cron', data: {action: 'status'}});
-
-    //                 // Toast message code start
-    //                 if (response.length) {
-    //                     for (let index_error in response) {
-    //                         if ('error' === response[index_error].type) {
-    //                             let toast = {
-    //                                 type: response[index_error].type,
-    //                                 show: true,
-    //                                 title: 'Error encountered',
-    //                                 message: response[index_error].message
-    //                             };
-    //                             this.$store.commit('updateState', {stateData: toast, requestName: 'update_toast'});
-    //                         } else if ('status_error' === response[index_error].type) {
-    //                             this.$log.warn('Status is error check logs, global admin notice will be displayed');
-    //                             this.status_is_error_display = true;
-    //                         }
-    //                     }
-    //                 }
-    //                 // Toast message code end
-
-    //             }, error => {
-    //                 Vue.$log.error('Got nothing from server. Prompt user to check internet connection and try again', error)
-    //                 this.is_loading_logs = false;
-    //             })
-    //         }
-    //     },
-    //     components: {
-    //         'accounts': AccountsTab,
-    //         'settings': SettingsTab,
-    //         'accounts-selector': AccountsSelectorTab,
-    //         'queue': QueueTab,
-    //         'logs': LogsTab,
-    //         'upsell-sidebar': upsellSidebar,
-    //         'toast': Toast,
-    //         'countdown': CountDown
-    //     }
-    // }
     // </script>
     //
     // <style>
@@ -39280,9 +39054,10 @@ module.exports = {
 //                         <p class="text-gray">Minimum Post age desc</p>
 //                     </div>
 //                     <div class="column col-6 col-sm-12 vertical-align">
-//                         <!-- <counter-input id="min_post_age" :max-val="365"></counter-input> -->
+//                         <!-- <counter-Input id="min_post_age" :max-val="365"
+//                                        :value.sync="minimum_post_age" ></counter-Input> -->
 //                         <counter-Input id="min_post_age" :max-val="365"
-//                                        :value.sync="minimum_post_age" ></counter-Input>
+//                                        :value.sync="generalSettings.minimum_post_age" ></counter-Input>
 //                     </div>
 //                 </div>
 //                 <!-- Max Post Age -->
@@ -39292,9 +39067,10 @@ module.exports = {
 //                         <p class="text-gray">Maximum Post age</p>
 //                     </div>
 //                     <div class="column col-6 col-sm-12 vertical-align">
-//                         <!-- <counter-input id="max_post_age" :max-val="365"></counter-input> -->
+//                         <!-- <counter-input id="max_post_age" :max-val="365"
+//                                        :value.sync="maximum_post_age"></counter-input> -->
 //                         <counter-input id="max_post_age" :max-val="365"
-//                                        :value.sync="maximum_post_age"></counter-input>
+//                                        :value.sync="generalSettings.maximum_post_age"></counter-input>
 //                     </div>
 //                 </div>
 //     </div>
@@ -39306,13 +39082,13 @@ module.exports = {
 /* 263 */
 /***/ (function(module, exports) {
 
-module.exports = "\n    <div>\n        <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>Minimum Post age</b>\n                        <p class=\"text-gray\">Minimum Post age desc</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <!-- <counter-input id=\"min_post_age\" :max-val=\"365\"></counter-input> -->\n                        <counter-Input id=\"min_post_age\" :max-val=\"365\"\n                                       :value.sync=\"minimum_post_age\" ></counter-Input>\n                    </div>\n                </div>\n                <!-- Max Post Age -->\n                <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>Maximum Post age</b>\n                        <p class=\"text-gray\">Maximum Post age</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <!-- <counter-input id=\"max_post_age\" :max-val=\"365\"></counter-input> -->\n                        <counter-input id=\"max_post_age\" :max-val=\"365\"\n                                       :value.sync=\"maximum_post_age\"></counter-input>\n                    </div>\n                </div>\n    </div>\n";
+module.exports = "\n    <div>\n        <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>Minimum Post age</b>\n                        <p class=\"text-gray\">Minimum Post age desc</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <!-- <counter-Input id=\"min_post_age\" :max-val=\"365\"\n                                       :value.sync=\"minimum_post_age\" ></counter-Input> -->\n                        <counter-Input id=\"min_post_age\" :max-val=\"365\"\n                                       :value.sync=\"generalSettings.minimum_post_age\" ></counter-Input>\n                    </div>\n                </div>\n                <!-- Max Post Age -->\n                <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>Maximum Post age</b>\n                        <p class=\"text-gray\">Maximum Post age</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <!-- <counter-input id=\"max_post_age\" :max-val=\"365\"\n                                       :value.sync=\"maximum_post_age\"></counter-input> -->\n                        <counter-input id=\"max_post_age\" :max-val=\"365\"\n                                       :value.sync=\"generalSettings.maximum_post_age\"></counter-input>\n                    </div>\n                </div>\n    </div>\n";
 
 /***/ }),
 /* 264 */
 /***/ (function(module, exports) {
 
-module.exports = "\n    <div class=\"tab-view\" _v-e19866cc=\"\">\n        <div class=\"panel-body\" _v-e19866cc=\"\">\n            <div class=\"container\" :class=\"'rop-tab-state-'+is_loading\" _v-e19866cc=\"\">\n                <div class=\"columns py-2\" v-if=\"this.apply_exclude_limit_cron\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.cron_type_label}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.cron_type_label_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <!-- @category New Cron System -->\n                            <div style=\"padding: 10px; text-align: left;\" _v-e19866cc=\"\">\n                                <toggle-button :value=\"rop_cron_remote\" :labels=\"{checked: 'Remote Cron', unchecked: 'Local Cron'}\" :width=\"110\" :height=\"28\" :switch-color=\"{checked: '#FFFFFF', unchecked: '#FFFFFF'}\" :color=\"{checked: '#7DCE94', unchecked: '#82C7EB'}\" @change=\"rop_cron_remote = $event.value; update_cron_type_action()\" :disabled=\"!rop_cron_remote_agreement\" :sync=\"true\" _v-e19866cc=\"\">\n                            </toggle-button></div>\n                          <input type=\"checkbox\" :checked=\"rop_cron_remote_agreement\" :disabled=\"rop_cron_remote_agreement\" @change=\"update_agreement_checkbox()\" _v-e19866cc=\"\"> <span v-html=\"labels.cron_type_label_desc_terms\" _v-e19866cc=\"\"></span>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"this.apply_exclude_limit_cron &amp;&amp; ! isBiz\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"! isBiz\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.min_interval_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.min_interval_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <counter-input id=\"default_interval\" :min-val=\"generalSettings.min_interval\" :step-val=\"generalSettings.step_interval\" :value.sync=\"generalSettings.default_interval\" _v-e19866cc=\"\"></counter-input>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n                <!-- <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>{{labels.min_days_title}}</b>\n                        <p class=\"text-gray\">{{labels.min_days_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <counter-Input id=\"min_post_age\" :max-val=\"365\"\n                                       :value.sync=\"generalSettings.minimum_post_age\"></counter-Input>\n                    </div>\n                </div>\n                <!-- Max Post Age -->\n                <!-- <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>{{labels.max_days_title}}</b>\n                        <p class=\"text-gray\">{{labels.max_days_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <counter-input id=\"max_post_age\" :max-val=\"365\"\n                                       :value.sync=\"generalSettings.maximum_post_age\"></counter-input>\n                    </div>\n                </div> --> \n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                <div id=\"post-age-filters\" _v-e19866cc=\"\">\n                     <post-age-filters v-on:min-post-age-change=\"PassMinPostAge\" v-on:max-post-age-change=\"PassMaxPostAge\" _v-e19866cc=\"\"></post-age-filters> \n                </div>\n                   \n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.no_posts_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.no_posts_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <counter-input id=\"no_of_posts\" :value.sync=\"generalSettings.number_of_posts\" _v-e19866cc=\"\"></counter-input>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <!-- Share more than once -->\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.share_once_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.share_once_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" id=\"share_more_than_once\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.more_than_once\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i> {{labels.share_once_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.post_types_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.post_types_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <multiple-select id=\"rop_post_types\" :options=\"postTypes\" :disabled=\"isPro\" :selected=\"generalSettings.selected_post_types\" :changed-selection=\"updatedPostTypes\" _v-e19866cc=\"\"></multiple-select>\n\n                        <p class=\"text-primary rop-post-type-badge\" v-if=\"checkMediaPostType \" v-html=\"labels.post_types_attachament_info\" _v-e19866cc=\"\"></p>\n                    </div>\n                </div>\n\n                <div class=\"columns \" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.post_types_upsell}}</p>\n                    </div>\n                </div>\n\n\t\t\t\t<span class=\"divider\" v-if=\"!isPro\" _v-e19866cc=\"\"></span>\n\n                <!-- Taxonomies -->\n\t\t\t\t<div class=\"columns py-2\" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.taxonomies_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.taxonomies_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div id=\"rop_taxonomies\" class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"input-group\" _v-e19866cc=\"\">\n                            <multiple-select :options=\"taxonomies\" :selected=\"generalSettings.selected_taxonomies\" :changed-selection=\"updatedTaxonomies\" :is_pro_version=\"isPro\" :apply_limit=\"isTaxLimit\" v-on:display-limiter-notice=\"displayProMessage\" _v-e19866cc=\"\"></multiple-select>\n                            <span class=\"input-group-addon vertical-align\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t<label class=\"form-checkbox\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" v-model=\"generalSettings.exclude_taxonomies\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t\t<i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.taxonomies_exclude}}\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</span>\n                        </div>\n                        <p class=\"text-primary rop-post-type-badge\" v-if=\"is_taxonomy_message\" v-html=\"labels.post_types_taxonomy_limit\" _v-e19866cc=\"\"></p>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <!-- Google Analytics -->\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.ga_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.ga_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.ga_tracking\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.ga_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.instant_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.instant_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_instant_share\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.instant_share\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.true_instant_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.true_instant_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.true_instant_share\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.true_instant_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" _v-e19866cc=\"\">\n                  <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                    <b _v-e19866cc=\"\">{{labels.instant_share_default_title}}</b>\n                    <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.instant_share_default_desc}}</p>\n                  </div>\n                  <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                    <div class=\"form-group\" _v-e19866cc=\"\">\n                      <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                        <input type=\"checkbox\" v-model=\"generalSettings.instant_share_default\" _v-e19866cc=\"\">\n                        <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_default_yes}}\n                      </label>\n                    </div>\n                  </div>\n                </div>\n\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.instant_share_future_scheduled_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.instant_share_future_scheduled_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.instant_share_future_scheduled\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_future_scheduled_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <!-- Upsell -->\n                <div class=\"columns \" v-if=\"!isPro &amp;&amp; isInstantShare\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.instant_share_future_scheduled_upsell}}</p>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.custom_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.custom_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_custom_share_msg\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" :disabled=\"!isPro\" v-model=\"generalSettings.custom_messages\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.custom_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" v-if=\"isCustomMsgs\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.custom_share_order_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.custom_share_order_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_custom_share_msg\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" :disabled=\"!isPro\" v-model=\"generalSettings.custom_messages_share_order\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.custom_share_order_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- Upsell -->\n                <div class=\"columns \" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.custom_share_upsell}}</p>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"isCustomMsgs\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.housekeeping}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.housekeeping_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.housekeeping\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.housekeeping_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n            </div>\n        </div>\n        <div class=\"panel-footer text-right\" _v-e19866cc=\"\">\n            <button class=\"btn btn-primary\" @click=\"saveGeneralSettings()\" _v-e19866cc=\"\"><i class=\"fa fa-check\" v-if=\"!this.is_loading\" _v-e19866cc=\"\"></i> <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-e19866cc=\"\"></i> {{labels.save}}\n            </button>\n        </div>\n    </div>\n";
+module.exports = "\n    <div class=\"tab-view\" _v-e19866cc=\"\">\n        <div class=\"panel-body\" _v-e19866cc=\"\">\n            <div class=\"container\" :class=\"'rop-tab-state-'+is_loading\" _v-e19866cc=\"\">\n                <div class=\"columns py-2\" v-if=\"this.apply_exclude_limit_cron\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.cron_type_label}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.cron_type_label_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <!-- @category New Cron System -->\n                            <div style=\"padding: 10px; text-align: left;\" _v-e19866cc=\"\">\n                                <toggle-button :value=\"rop_cron_remote\" :labels=\"{checked: 'Remote Cron', unchecked: 'Local Cron'}\" :width=\"110\" :height=\"28\" :switch-color=\"{checked: '#FFFFFF', unchecked: '#FFFFFF'}\" :color=\"{checked: '#7DCE94', unchecked: '#82C7EB'}\" @change=\"rop_cron_remote = $event.value; update_cron_type_action()\" :disabled=\"!rop_cron_remote_agreement\" :sync=\"true\" _v-e19866cc=\"\">\n                            </toggle-button></div>\n                          <input type=\"checkbox\" :checked=\"rop_cron_remote_agreement\" :disabled=\"rop_cron_remote_agreement\" @change=\"update_agreement_checkbox()\" _v-e19866cc=\"\"> <span v-html=\"labels.cron_type_label_desc_terms\" _v-e19866cc=\"\"></span>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"this.apply_exclude_limit_cron &amp;&amp; ! isBiz\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"! isBiz\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.min_interval_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.min_interval_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <counter-input id=\"default_interval\" :min-val=\"generalSettings.min_interval\" :step-val=\"generalSettings.step_interval\" :value.sync=\"generalSettings.default_interval\" _v-e19866cc=\"\"></counter-input>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n                <!-- <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>{{labels.min_days_title}}</b>\n                        <p class=\"text-gray\">{{labels.min_days_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <counter-Input id=\"min_post_age\" :max-val=\"365\"\n                                       :value.sync=\"generalSettings.minimum_post_age\"></counter-Input>\n                    </div>\n                </div>\n                <!-- Max Post Age -->\n                <!-- <div class=\"columns py-2\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <b>{{labels.max_days_title}}</b>\n                        <p class=\"text-gray\">{{labels.max_days_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\">\n                        <counter-input id=\"max_post_age\" :max-val=\"365\"\n                                       :value.sync=\"generalSettings.maximum_post_age\"></counter-input>\n                    </div>\n                </div> --> \n                <div id=\"post-age-filters\" _v-e19866cc=\"\">\n                     <!-- <post-age-filters  v-on:min-post-age-change=\"PassMinPostAge\" v-on:max-post-age-change=\"PassMaxPostAge\"></post-age-filters>  -->\n                     <!-- <post-age-filters v-on:min-post-age-change=\"PassMinPostAge\" v-on:max-post-age-change=\"PassMaxPostAge\"></post-age-filters>  -->\n                     <post-age-filters _v-e19866cc=\"\"></post-age-filters> \n                </div>\n                   \n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.no_posts_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.no_posts_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <counter-input id=\"no_of_posts\" :value.sync=\"generalSettings.number_of_posts\" _v-e19866cc=\"\"></counter-input>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <!-- Share more than once -->\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.share_once_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.share_once_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" id=\"share_more_than_once\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.more_than_once\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i> {{labels.share_once_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.post_types_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.post_types_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <multiple-select id=\"rop_post_types\" :options=\"postTypes\" :disabled=\"isPro\" :selected=\"generalSettings.selected_post_types\" :changed-selection=\"updatedPostTypes\" _v-e19866cc=\"\"></multiple-select>\n\n                        <p class=\"text-primary rop-post-type-badge\" v-if=\"checkMediaPostType \" v-html=\"labels.post_types_attachament_info\" _v-e19866cc=\"\"></p>\n                    </div>\n                </div>\n\n                <div class=\"columns \" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.post_types_upsell}}</p>\n                    </div>\n                </div>\n\n\t\t\t\t<span class=\"divider\" v-if=\"!isPro\" _v-e19866cc=\"\"></span>\n\n                <!-- Taxonomies -->\n\t\t\t\t<div class=\"columns py-2\" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.taxonomies_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.taxonomies_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div id=\"rop_taxonomies\" class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"input-group\" _v-e19866cc=\"\">\n                            <multiple-select :options=\"taxonomies\" :selected=\"generalSettings.selected_taxonomies\" :changed-selection=\"updatedTaxonomies\" :is_pro_version=\"isPro\" :apply_limit=\"isTaxLimit\" v-on:display-limiter-notice=\"displayProMessage\" _v-e19866cc=\"\"></multiple-select>\n                            <span class=\"input-group-addon vertical-align\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t<label class=\"form-checkbox\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" v-model=\"generalSettings.exclude_taxonomies\" _v-e19866cc=\"\">\n\t\t\t\t\t\t\t\t\t<i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.taxonomies_exclude}}\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</span>\n                        </div>\n                        <p class=\"text-primary rop-post-type-badge\" v-if=\"is_taxonomy_message\" v-html=\"labels.post_types_taxonomy_limit\" _v-e19866cc=\"\"></p>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <!-- Google Analytics -->\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.ga_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.ga_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.ga_tracking\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.ga_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.instant_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.instant_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_instant_share\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.instant_share\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.true_instant_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.true_instant_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.true_instant_share\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.true_instant_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" _v-e19866cc=\"\">\n                  <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                    <b _v-e19866cc=\"\">{{labels.instant_share_default_title}}</b>\n                    <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.instant_share_default_desc}}</p>\n                  </div>\n                  <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                    <div class=\"form-group\" _v-e19866cc=\"\">\n                      <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                        <input type=\"checkbox\" v-model=\"generalSettings.instant_share_default\" _v-e19866cc=\"\">\n                        <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_default_yes}}\n                      </label>\n                    </div>\n                  </div>\n                </div>\n\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" v-if=\"isInstantShare\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.instant_share_future_scheduled_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.instant_share_future_scheduled_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.instant_share_future_scheduled\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.instant_share_future_scheduled_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <!-- Upsell -->\n                <div class=\"columns \" v-if=\"!isPro &amp;&amp; isInstantShare\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.instant_share_future_scheduled_upsell}}</p>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"isInstantShare\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.custom_share_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\"><span v-html=\"labels.custom_share_desc\" _v-e19866cc=\"\"></span></p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_custom_share_msg\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" :disabled=\"!isPro\" v-model=\"generalSettings.custom_messages\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.custom_share_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n\n                <div class=\"columns py-2\" :class=\"'rop-control-container-'+isPro\" v-if=\"isCustomMsgs\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.custom_share_order_title}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.custom_share_order_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label id=\"rop_custom_share_msg\" class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" :disabled=\"!isPro\" v-model=\"generalSettings.custom_messages_share_order\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.custom_share_order_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- Upsell -->\n                <div class=\"columns \" v-if=\"!isPro\" _v-e19866cc=\"\">\n                    <div class=\"column text-center\" _v-e19866cc=\"\">\n                        <p class=\"upsell\" _v-e19866cc=\"\"><i class=\"fa fa-lock\" _v-e19866cc=\"\"></i> {{labels.custom_share_upsell}}</p>\n                    </div>\n                </div>\n                <span class=\"divider\" v-if=\"isCustomMsgs\" _v-e19866cc=\"\"></span>\n\n                <div class=\"columns py-2\" _v-e19866cc=\"\">\n                    <div class=\"column col-6 col-sm-12 vertical-align rop-control\" _v-e19866cc=\"\">\n                        <b _v-e19866cc=\"\">{{labels.housekeeping}}</b>\n                        <p class=\"text-gray\" _v-e19866cc=\"\">{{labels.housekeeping_desc}}</p>\n                    </div>\n                    <div class=\"column col-6 col-sm-12 vertical-align text-left rop-control\" _v-e19866cc=\"\">\n                        <div class=\"form-group\" _v-e19866cc=\"\">\n                            <label class=\"form-checkbox\" _v-e19866cc=\"\">\n                                <input type=\"checkbox\" v-model=\"generalSettings.housekeeping\" _v-e19866cc=\"\">\n                                <i class=\"form-icon\" _v-e19866cc=\"\"></i>{{labels.housekeeping_yes}}\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"divider\" _v-e19866cc=\"\"></span>\n\n            </div>\n        </div>\n        <div class=\"panel-footer text-right\" _v-e19866cc=\"\">\n            <button class=\"btn btn-primary\" @click=\"saveGeneralSettings()\" _v-e19866cc=\"\"><i class=\"fa fa-check\" v-if=\"!this.is_loading\" _v-e19866cc=\"\"></i> <i class=\"fa fa-spinner fa-spin\" v-else=\"\" _v-e19866cc=\"\"></i> {{labels.save}}\n            </button>\n        </div>\n    </div>\n";
 
 /***/ }),
 /* 265 */

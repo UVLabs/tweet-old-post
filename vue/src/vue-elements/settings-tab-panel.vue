@@ -66,12 +66,12 @@
                                        :value.sync="generalSettings.maximum_post_age"></counter-input>
                     </div>
                 </div> --> 
-                <div class="columns py-2">
                 <div id="post-age-filters">
-                     <post-age-filters v-on:min-post-age-change="PassMinPostAge" v-on:max-post-age-change="PassMaxPostAge"></post-age-filters> 
+                     <!-- <post-age-filters  v-on:min-post-age-change="PassMinPostAge" v-on:max-post-age-change="PassMaxPostAge"></post-age-filters>  -->
+                     <!-- <post-age-filters v-on:min-post-age-change="PassMinPostAge" v-on:max-post-age-change="PassMaxPostAge"></post-age-filters>  -->
+                     <post-age-filters></post-age-filters> 
                 </div>
                    
-                </div>
                 <span class="divider"></span>
 
                 <div class="columns py-2">
@@ -314,8 +314,17 @@
 
     // TODO import only if pro plugin detected
     // import postAgeFilters from '../../../../tweet-old-post-pro/assets/js/build/post_age_filters_component.js'
-    import postAgeFilters from '../../../../tweet-old-post-pro/vue/src/vue-elements/post_age_filters.vue'
+//    if( !isPro ){
+   import postAgeFilters from '../../../../tweet-old-post-pro/vue/src/vue-elements/post_age_filters.vue'
+//    System.import('../../../../tweet-old-post-pro/vue/src/vue-elements/post_age_filters.vue');
+//    import postAgeFilters from '../../../../tweet-old-post-pro/vue/src/vue-elements/post_age_filterss.vue'
+//    }
 
+// function loadWidget(widget){
+// 	return {
+//   		[widget]: () =>   System.import('../../../../tweet-old-post-pro/vue/src/vue-elements/post_age_filters.vue')
+// 	}
+// }
 
     Vue.use(ToggleButton);
 
@@ -389,12 +398,12 @@
         },
         methods: {
 
-            PassMinPostAge(value){
-                this.generalSettings.minimum_post_age =  value;
-            },
-            PassMaxPostAge(value){
-                this.generalSettings.maximum_post_age =  value;
-            },
+            // PassMinPostAge(value){
+            //     this.generalSettings.minimum_post_age =  value;
+            // },
+            // PassMaxPostAge(value){
+            //     this.generalSettings.maximum_post_age =  value;
+            // },
             /**
              * Will update settings related to Cron
              * true = Will use remote true Cron Job System
@@ -548,6 +557,7 @@
 			counterInput,
             MultipleSelect,
             postAgeFilters
+            // loadWidget(postAgeFilters)
 		}
 	}
 </script>
