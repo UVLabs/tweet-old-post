@@ -6,12 +6,6 @@ on:
 
 
 jobs:
-  # test:
-  #   name: Testing
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Testing
-  #       run: echo ${{ toJson(github) }}
   dev-zip:
 
     name: Build ZIP and upload to s3
