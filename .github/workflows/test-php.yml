@@ -15,10 +15,11 @@ jobs:
           tools: phpcs, phpcbf
        - name: Install composer
          run: composer install --prefer-dist --no-progress --quiet
-       - name: PHP Lint
-         run: |
-          phpcbf --version
-          composer run lint
+       - name: Run PHPCBF 
+         run: composer run beautify
+         continue-on-error: true
+       - name: Run PHPCS
+         run: composer run lint
 # composer run beautify
 
   php-unit: 
