@@ -2,7 +2,6 @@
 ---
 branches: github-actions-merge-to-branch
 repositoryUrl: https://github.com/UVLabs/tweet-old-post.git
-# repositoryUrl: https://github.com/UVLabs/tweet-old-post/
 plugins:
   - - "@semantic-release/commit-analyzer"
     - preset: simple-preset
