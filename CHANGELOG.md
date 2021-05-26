@@ -1,4 +1,33 @@
+##### [Version 10.0.1](https://github.com/UVLabs/tweet-old-post/compare/v10.0.0...v10.0.1) (2021-05-25)
 
+### Fix
+- Test
+
+#### [Version 10.0.0](https://github.com/UVLabs/tweet-old-post//compare/v9.1.0...v10.0.0) (2021-05-25)
+
+### Features
+- Feature 1
+### Fixes
+- Fix 1
+### Changes
+- Change 1
+
+#### [Version 9.1.0](https://github.com/UVLabs/tweet-old-post//compare/v9.0.1...v9.1.0) (2021-05-25)
+
+### Features
+- New awesome feature
+### Fixes
+- New awesome fix
+Fix: This
+Feat: That
+Change: This
+> Things are getting better every day. 🚀
+
+### v9.0.1 - 2021-04-22 
+ **Changes:** 
+ * [Fix Pro] Issue with saving maximum post age setting for users on Personal Plan
+* [Change] Don't show ROP Log error notice to non-admins
+ 
  ### v9.0.0 - 2021-04-21 
  **Changes:** 
  * [Note] This version is a major update and moves some features to the Pro version of the plugin

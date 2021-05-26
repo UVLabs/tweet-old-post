@@ -20,7 +20,9 @@
     "source": "https://github.com/Codeinwp/tweet-old-post"
   },
   "scripts": {
-    "test": "vendor/bin/phpunit"
+    "test": "vendor/bin/phpunit",
+    "lint": "vendor/bin/phpcs",
+    "beautify": "vendor/bin/phpcbf"
   },
   "autoload": {
     "files": [
@@ -47,6 +49,8 @@
     "installer-disable": true
   },
   "require-dev": {
+    "wp-coding-standards/wpcs": "1.2.1",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
     "phpunit/phpunit": "5.*"
   }
 }
