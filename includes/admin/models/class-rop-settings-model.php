@@ -417,7 +417,7 @@ class Rop_Settings_Model extends Rop_Model_Abstract {
 			$data['default_interval'] = round( $data['default_interval'], 1 );
 		}
 
-		// FIXME This code doesn't seem to do anything.
+		// TODO This code doesn't seem to do anything. Delete once we confirm this.
 		// We're actually checking for this in Rop_Scheduler_Model::create_schedule()
 		if ( isset( $data['interval_r'] ) ) {
 			$data['interval_r'] = floatval( $data['interval_r'] );
