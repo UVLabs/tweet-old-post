@@ -301,6 +301,21 @@ http://revive.social/plugins/revive-old-post
 
 ## Changelog ##
 
+#### [Version 10.1.0](https://github.com/UVLabs/tweet-old-post/compare/v10.0.1...v10.1.0) (2021-05-26)
+
+### Features
+- Feature 1
+- Feature 2
+### Fixes
+- Feature 1
+- Feature 2
+### Changes
+- Change 1
+- Change 2
+
+
+
+
 ##### [Version 10.0.1](https://github.com/UVLabs/tweet-old-post/compare/v10.0.0...v10.0.1) (2021-05-25)
 
 ### Fix
