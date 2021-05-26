@@ -192,23 +192,6 @@ function run_rop() {
 		require_once $vendor_file;
 	}
 
-	if(  class_exists( 'ThemeisleSDK\Loader' ) ){
-		
-		error_log( var_dump( class_exists( 'ThemeisleSDK\Loader' )) );
-		error_log('class exists');
-	}else{
-			// error_log( var_dump( class_exists( 'ThemeisleSDK\\Loader' )) );
-			// error_log( var_dump( class_exists( 'Rop_Activators' )) );
-			$a = class_exists( '\ThemeisleSDK\\Loader' );
-			// error_log( print_r( new Rop_Activators()) );
-		error_log('class does not exist');
-		error_log($a);
-		
-		}
-
-		error_log( var_dump( class_exists( '\ThemeisleSDK\\Loader' )) );
-			error_log( var_dump( class_exists( 'Rop_Activators' )) );
-
 	if ( defined( 'ROP_CRON_ALTERNATIVE' ) && true === ROP_CRON_ALTERNATIVE ) {
 
 		if ( class_exists( 'RopCronSystem\Rop_Cron_Core' ) ) {
