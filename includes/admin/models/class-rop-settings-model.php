@@ -441,7 +441,6 @@ class Rop_Settings_Model extends Rop_Model_Abstract {
 			$data['interval_r'] = round( $data['interval_r'], 1 );
 		}
 		// ***
-
 		// We only need to check this if on General Settings tab.
 		// Otherwise it would throw an error in log whenever this method is called anywhere else.
 		if ( empty( $data['selected_post_types'] ) && array_key_exists( 'minimum_post_age', $data ) ) {

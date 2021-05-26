@@ -15,13 +15,11 @@ jobs:
           tools: phpcs
        - name: Install composer
          run: composer install --prefer-dist --no-progress --quiet
-       - name: List PHP CS standards
-         run: phpcs -i
-       - name: PHP LINT
+       - name: PHP Lint
          run: composer run lint
 
   php-unit: 
-    #needs: code-sniff 
+    needs: code-sniff 
     runs-on: ubuntu-latest
     services:
       mysql:
