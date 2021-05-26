@@ -1,6 +1,6 @@
 name: Test PHP
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   code-sniff:
@@ -17,6 +17,7 @@ jobs:
          run: composer install --prefer-dist --no-progress --quiet
        - name: PHP Lint
          run: |
+          phpcbf --version
           composer run lint
 # composer run beautify
 
