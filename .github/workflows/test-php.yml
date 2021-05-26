@@ -17,8 +17,8 @@ jobs:
          run: composer install --prefer-dist --no-progress --quiet
        - name: PHP Lint
          run: |
-          composer run beautify
           composer run lint
+# composer run beautify
 
   php-unit: 
     needs: code-sniff 
