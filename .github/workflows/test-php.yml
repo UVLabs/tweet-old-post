@@ -12,11 +12,13 @@ jobs:
          uses: shivammathur/setup-php@v2
          with: 
           php-version: '7.2'
-          tools: phpcs
+          tools: phpcs, phpcbf
        - name: Install composer
          run: composer install --prefer-dist --no-progress --quiet
        - name: PHP Lint
-         run: composer run lint
+         run: |
+          composer run beautify
+          composer run lint
 
   php-unit: 
     needs: code-sniff 
