@@ -18,9 +18,11 @@ jobs:
        - name: Run PHPCBF 
          run: composer run beautify
          continue-on-error: true
+# PHPCBF returns exit code 1 when it fixes errors, so we continue letting PHPCS find unfixed issues
        - name: Run PHPCS
          run: composer run lint
-# composer run beautify
+         continue-on-error: false
+
 
   php-unit: 
     needs: code-sniff 
