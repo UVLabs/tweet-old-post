@@ -224,3 +224,4 @@ Rop_Autoloader::define_namespaces( array( 'Rop' ) );
 spl_autoload_register( array( 'Rop_Autoloader', 'loader' ) );
 
 run_rop();
+
