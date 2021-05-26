@@ -19,11 +19,10 @@ plugins:
     - assets:
         - CHANGELOG.md
         - readme.md
-#         - readme.txt
-#         - includes/feedzy-rss-feeds.php
-#         - css/feedzy-rss-feeds.css
-#         - feedzy-rss-feed.php
-#         - package-lock.json
-#         - package.json
+        - readme.txt
+        - includes/tweet-old-post.php
+        - tweet-old-post.php
+        - package-lock.json
+        - package.json
       message: "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
   - - "@semantic-release/github"
