@@ -49,7 +49,7 @@
     "installer-disable": true
   },
   "require-dev": {
-    "wp-coding-standards/wpcs": "1.2.1",
+    "wp-coding-standards/wpcs": "2.3.0",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
     "phpunit/phpunit": "5.*"
   }

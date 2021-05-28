@@ -13,7 +13,7 @@ jobs:
          with: 
           php-version: '7.2'
           tools: phpcs, phpcbf
-       - name: Install composer
+       - name: Run Composer Install
          run: composer install --prefer-dist --no-progress --quiet
        - name: Run PHPCBF 
          run: composer run beautify
