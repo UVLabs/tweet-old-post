@@ -20,6 +20,7 @@
     "source": "https://github.com/Codeinwp/tweet-old-post"
   },
   "scripts": {
+    "build": "sh bin/dist.sh",
     "test": "vendor/bin/phpunit",
     "lint": "vendor/bin/phpcs",
     "beautify": "vendor/bin/phpcbf"
