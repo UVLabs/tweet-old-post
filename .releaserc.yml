@@ -19,7 +19,6 @@ plugins:
         - CHANGELOG.md
         - readme.md
         - readme.txt
-        - includes/tweet-old-post.php
         - tweet-old-post.php
         - package-lock.json
         - package.json
