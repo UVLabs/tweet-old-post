@@ -3,7 +3,7 @@
  *
  * @package tweet-old-post
  */
-module.exports = function (grunt) {
+ module.exports = function (grunt) {
 	grunt.initConfig(
 		{
 			wp_readme_to_markdown: {
@@ -46,4 +46,4 @@ module.exports = function (grunt) {
 	);
 	grunt.loadNpmTasks( 'grunt-version' );
 	grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
-};
+ };
