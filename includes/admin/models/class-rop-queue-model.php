@@ -268,7 +268,6 @@ class Rop_Queue_Model extends Rop_Model_Abstract {
 				// $new_queue = array_merge( $account_queue, array($event_queue) );
 				// $normalized_queue[ $account_id ] = $new_queue;
 				// $account_queue  = $new_queue;
-
 			}
 		}
 

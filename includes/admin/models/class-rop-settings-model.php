@@ -400,7 +400,15 @@ class Rop_Settings_Model extends Rop_Model_Abstract {
 				$data['default_interval'] = 0.1;
 			}
 
-			$min_allowed = apply_filters( 'rop_min_interval_bw_shares_min', ROP_DEBUG ? 0.1 : 5 );
+			$global_settings = new Rop_Global_Settings();
+			$min_hours = 5;
+
+			if ( $global_settings->license_type() > 0 ) {
+				$min_hours = 0.5;
+			}
+
+			$min_allowed = apply_filters( 'rop_min_interval_bw_shares_min', ROP_DEBUG ? 0.1 : $min_hours );
+
 			if ( $data['default_interval'] < $min_allowed ) {
 				$this->logger->alert_error( sprintf( Rop_I18n::get_labels( 'misc.min_interval_between_shares' ), $min_allowed ) );
 				$data['default_interval'] = $min_allowed;
@@ -409,7 +417,7 @@ class Rop_Settings_Model extends Rop_Model_Abstract {
 			$data['default_interval'] = round( $data['default_interval'], 1 );
 		}
 
-		// FIXME This code doesn't seem to do anything.
+		// TODO This code doesn't seem to do anything. Delete once we confirm this.
 		// We're actually checking for this in Rop_Scheduler_Model::create_schedule()
 		if ( isset( $data['interval_r'] ) ) {
 			$data['interval_r'] = floatval( $data['interval_r'] );
@@ -418,7 +426,13 @@ class Rop_Settings_Model extends Rop_Model_Abstract {
 				$data['interval_r'] = 0.1;
 			}
 
-			$min_allowed = apply_filters( 'rop_min_interval_bw_shares_min', ROP_DEBUG ? 0.1 : 5 );
+			$min_hours = 5;
+
+			if ( $global_settings->license_type() > 0 ) {
+				$min_hours = 0.5;
+			}
+
+			$min_allowed = apply_filters( 'rop_min_interval_bw_shares_min', ROP_DEBUG ? 0.1 : $min_hours );
 			if ( $data['interval_r'] < $min_allowed ) {
 				$this->logger->alert_error( sprintf( Rop_I18n::get_labels( 'misc.min_interval_between_shares' ), $min_allowed ) );
 				$data['interval_r'] = $min_allowed;
@@ -427,7 +441,6 @@ class Rop_Settings_Model extends Rop_Model_Abstract {
 			$data['interval_r'] = round( $data['interval_r'], 1 );
 		}
 		// ***
-
 		// We only need to check this if on General Settings tab.
 		// Otherwise it would throw an error in log whenever this method is called anywhere else.
 		if ( empty( $data['selected_post_types'] ) && array_key_exists( 'minimum_post_age', $data ) ) {

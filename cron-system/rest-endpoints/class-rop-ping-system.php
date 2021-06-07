@@ -170,7 +170,6 @@ class Rop_Ping_System extends Rop_System_Base {
 		$time_to_share = Rop_Helpers::extract_time_to_share();// This will be in UNIX time from the database queue.
 
 		// TODO This should only happen if Sharing is active
-
 		if ( empty( $time_to_share ) ) {
 			$this->logger->alert_error( 'Could not fetch future share timer.' );
 

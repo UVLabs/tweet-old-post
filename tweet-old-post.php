@@ -6,7 +6,7 @@
  * This file is read by WordPress to generate the plugin information in the plugin
  * admin area. This file also includes all of the dependencies used by the plugin,
  * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
+ * that starts the plugin
  *
  * @link              https://revive.social
  * @since             3.0.0
@@ -16,7 +16,7 @@
  * Plugin Name: Revive Old Posts
  * Plugin URI: https://revive.social/
  * Description: WordPress plugin that helps you to keeps your old posts alive by sharing them and driving more traffic to them from twitter/facebook or linkedin. It also helps you to promote your content. You can set time and no of posts to share to drive more traffic.For questions, comments, or feature requests, <a href="http://revive.social/support/?utm_source=plugindesc&utm_medium=announce&utm_campaign=top">contact </a> us!
- * Version:           9.0.0
+ * Version:           10.1.2
  * Author:            revive.social
  * Author URI:        https://revive.social/
  * Requires at least: 3.5
@@ -33,7 +33,6 @@
  */
 
 // If this file is called directly, abort.
-
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
@@ -162,7 +161,7 @@ function run_rop() {
 	define( 'ROP_CRON_ALTERNATIVE', $use_remote_cron );
 
 	define( 'ROP_PRO_URL', 'http://revive.social/plugins/revive-old-post/' );
-	define( 'ROP_LITE_VERSION', '9.0.0' );
+	define( 'ROP_LITE_VERSION', '10.1.2' );
 	define( 'ROP_LITE_BASE_FILE', __FILE__ );
 	$debug = false;
 	if ( function_exists( 'wp_get_environment_type' ) ) {
@@ -225,3 +224,4 @@ Rop_Autoloader::define_namespaces( array( 'Rop' ) );
 spl_autoload_register( array( 'Rop_Autoloader', 'loader' ) );
 
 run_rop();
+

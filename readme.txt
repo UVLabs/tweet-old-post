@@ -84,10 +84,10 @@ Revive Old Posts isn't like every other social media marketing tool. We've tailo
 
 **The plugin can automatically share posts from:**
 
+- WordPress to Twitter
 - WordPress to Facebook page
 - WordPress to Facebook Groups [Pro]
 - WordPress to Instagram [Pro]
-- WordPress to Twitter
 - WordPress to Linkedin Profile [Pro]
 - WordPress to Linkedin Page [Pro]
 - WordPress to Tumblr [Pro]
@@ -143,6 +143,8 @@ Some of the available networks and features require the Pro version of the plugi
 
 - Post to Vk Communities [Pro]
 
+- Share multilingual posts to respective pages with WPML example, share English Posts to your English social media accounts and Spanish posts to your Spanish social media accounts. [Pro]
+
 And More! Try Revive Old Posts, see why it's the **best** WordPress social media marketing tool to boost your site traffic and keep your followers engaged.
 
 
@@ -152,7 +154,7 @@ Using the PRO version of Revive Old Posts unlocks a host of additional features 
 
 **Awesome features in Pro:**
 
-- RSS feed sharing. Share feed items from ANY website to your connected social media accounts. With the Revive Network addon(available with Revive Old Posts Pro) it's all possible. 
+- RSS feed sharing. Share feed items from ANY website to your connected social media accounts. With the [Revive Network addon](https://revive.social/plugins/revive-network/) it's all possible (available free with Revive Old Posts Pro). 
 
 - [Support for WordPress Custom Post Types](https://docs.revive.social/article/968-how-to-share-different-wordpress-post-types-to-social-media-w-revive-old-posts) (WooCommerce Products, BigCommerce Products, Recipes etc.)
 
@@ -162,6 +164,7 @@ Using the PRO version of Revive Old Posts unlocks a host of additional features 
 
 - Share **WordPress scheduled posts** to social media on publish. [Learn More](https://docs.revive.social/article/1194-share-scheduled-posts-to-social-media-on-publish-with-revive-old-posts)
 
+- Finer **WPML support** for multilingual websites. [Learn More](https://docs.revive.social/article/1338-how-to-share-different-wpml-languages-to-different-social-media-accounts)
 
 - **WordPress to Facebook Groups** scheduling and auto post
 
@@ -206,12 +209,10 @@ Post questions and issues on the [Support Forum](https://wordpress.org/support/p
 - Read more about social media marketing on [our blog](https://revive.social/blog/).
 - Read more about WordPress on [our blog](https://www.codeinwp.com/blog/).
 - Take a look at our other plugins [see here](https://themeisle.com/wordpress-plugins/).
+- A few major sites that are using the plugin [FinMaster](https://finmasters.com), [Themeisle](https://themeisle.com/), [Codeinwp](https://www.codeinwp.com)
 
 
 
-= Translations =
-
-* sk_SK translation by Patrik Žec [PATWIST](http://patwist.com)
 
 == Installation ==
 
@@ -297,6 +298,86 @@ http://revive.social/plugins/revive-old-post
 
 
 == Changelog ==
+
+##### [Version 10.1.2](https://github.com/UVLabs/tweet-old-post/compare/v10.1.1...v10.1.2) (2021-05-31)
+
+### Features
+- Awesome feature
+
+### Fixes
+- Awesome fix
+
+### Change
+- Awesome Change
+
+
+
+
+##### [Version 10.1.1](https://github.com/UVLabs/tweet-old-post/compare/v10.1.0...v10.1.1) (2021-05-28)
+
+### Features
+- Feature 1
+### Fixes
+- Fix 1
+- Fix 2
+
+
+
+
+#### [Version 10.1.0](https://github.com/UVLabs/tweet-old-post/compare/v10.0.1...v10.1.0) (2021-05-26)
+
+### Features
+- Feature 1
+- Feature 2
+### Fixes
+- Feature 1
+- Feature 2
+### Changes
+- Change 1
+- Change 2
+
+
+
+
+##### [Version 10.0.1](https://github.com/UVLabs/tweet-old-post/compare/v10.0.0...v10.0.1) (2021-05-25)
+
+### Fix
+- Test
+
+
+
+
+#### [Version 10.0.0](https://github.com/UVLabs/tweet-old-post//compare/v9.1.0...v10.0.0) (2021-05-25)
+
+### Features
+- Feature 1
+### Fixes
+- Fix 1
+### Changes
+- Change 1
+
+
+
+
+#### [Version 9.1.0](https://github.com/UVLabs/tweet-old-post//compare/v9.0.1...v9.1.0) (2021-05-25)
+
+### Features
+- New awesome feature
+### Fixes
+- New awesome fix
+Fix: This
+Feat: That
+Change: This
+> Things are getting better every day. 🚀
+
+
+
+= 9.0.1 - 2021-04-22  = 
+
+* [Fix Pro] Issue with saving maximum post age setting for users on Personal Plan
+* [Change] Don't show ROP Log error notice to non-admins
+
+
 = 9.0.0 - 2021-04-21  = 
 
 * [Note] This version is a major update and moves some features to the Pro version of the plugin
